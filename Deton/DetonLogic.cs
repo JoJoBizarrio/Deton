@@ -463,6 +463,7 @@
             II[8] = r1 * Alfa[v, 6] + r2 * Beta[v, 6];
             II[9] = r1 * Alfa[v, 5] + r2 * Beta[v, 5];
             II[10] = r1 * Alfa[v, 7] + r2 * Beta[v, 7];
+
             for (int i = 0; i <= 2; i++)
             {
                 CA[i] = MixTray[i].prm[1];
@@ -472,6 +473,7 @@
                 BENT[i] = MIxTray[i].prm[3];
                 BENT[3 + i] = DilTray[i].prm[3];
             }
+
             Detonation();
 
             // if (avst != 0) then exit;
