@@ -437,7 +437,7 @@
 
             UCJ = D - CE;
         }
-
+        /*
         private void Detka(int v, int j)
         {
             int k = (j - 1) * 5;
@@ -492,5 +492,16 @@
                 Fun[v, 6 + i, j] = RI[i];
             }
         }
+
+        public double[,,] CalculationPropetiesDetonation()
+        {
+
+
+            for (int i = 0; i <= 21; i ++)
+            {
+                Detka(0, i);
+            }
+        }
+        */
     }
 }
