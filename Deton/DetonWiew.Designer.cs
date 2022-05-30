@@ -2092,6 +2092,7 @@
             this.MaximumSize = new System.Drawing.Size(753, 828);
             this.MinimumSize = new System.Drawing.Size(753, 828);
             this.Name = "DetonWiew";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deton";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

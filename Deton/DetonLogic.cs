@@ -44,7 +44,7 @@ namespace Deton
         double[] CA = new double[7];
         double[] HA = new double[7];
         double[] BENT = new double[7];
-        double[] II = new double[11];
+        double[] II = new double[10];
 
         // {param}
         double UCJ, FORCE, DX, TCJ, PCJ, ROCJ, MUCJ;
@@ -318,7 +318,7 @@ namespace Deton
 
         private void UCE()
         {
-            double PKN = 30.0 * P0;
+            double PKN = 30.0 * p0;
             double TKN = 4000.0;
 
             P = PKN;
@@ -395,10 +395,10 @@ namespace Deton
             LI1 = 0;
             LI3 = 0;
 
-            double CN = II[1] * CA[1] + II[2] * CA[2] + II[3] * CA[3] + II[4] * CA[4]
-               + II[5] * CA[5] + II[6] * CA[6];
-            double HM = II[1] * HA[1] + II[2] * HA[2] + II[3] * HA[3] + II[4] * HA[4]
-               + II[5] * HA[5] + II[6] * HA[6];
+            double CN = II[0] * CA[0] + II[1] * CA[1] + II[2] * CA[2] + II[3] * CA[3]
+               + II[4] * CA[4] + II[5] * CA[5];
+            double HM = II[0] * HA[0] + II[1] * HA[1] + II[2] * HA[2] + II[3] * HA[3]
+               + II[4] * HA[4] + II[5] * HA[5];
 
             double Weit1 = (12.011 * CA[0] + 1.008 * HA[0]) * II[0];
             double Weit2 = (12.011 * CA[1] + 1.008 * HA[1]) * II[1];
@@ -410,7 +410,7 @@ namespace Deton
             Weit = Weit + 32.0 * II[6] + 28.016 * II[7] + 40.0 * II[9] + Wair * II[8];
             double All = II[0] + II[1] + II[2] + II[3] + II[4] + II[5] + II[6] + II[7] + II[8] + II[9];
             double MU0 = Weit / All;
-            RO0 = P0 * ATM * MU0 / R / T0;
+            RO0 = p0 * ATM * MU0 / R / T0;
 
             double Alla = (CA[0] + HA[0]) * II[0];
             Alla += (CA[1] + HA[1]) * II[1];
@@ -418,7 +418,7 @@ namespace Deton
             Alla += (CA[3] + HA[3]) * II[3];
             Alla += (CA[4] + HA[4]) * II[4];
             Alla += (CA[5] + HA[5]) * II[5];
-            Alla = Alla + 2 * II[7] + 2 * II[8] + II[10] + (2.0 * 0.9907 + 0.0093) * II[9];
+            Alla = Alla + 2 * II[6] + 2 * II[7] + II[9] + (2.0 * 0.9907 + 0.0093) * II[8];
             MUA = Weit / Alla;
             RIA[0] = 2 * (II[6] + 0.20954 * II[8]) / Alla;
             RIA[1] = HM / Alla;
@@ -507,8 +507,6 @@ namespace Deton
                 {
                     Fun[v, 7 + i, j] = RI[i];
                 }
-
-                MessageBox.Show("точка: " + j);
             }
 
             using StreamWriter streamWriter = new StreamWriter("../result.txt");
@@ -523,6 +521,8 @@ namespace Deton
                     streamWriter.WriteLine();
                     streamWriter.WriteLine();
                 }
+
+                MessageBox.Show("Ready");
             }
         }
     }
