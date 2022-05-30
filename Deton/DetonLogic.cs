@@ -419,6 +419,7 @@
             RIA[3] = 2 * (II[7] + 0.78116 * II[8]) / Alla;
             RIA[4] = (II[9] + 0.0093 * II[8]) / Alla;
 
+            /*
             double ENT7 = 49.0065;
             double ENT8 = 2037 * (298.15 / 293.15 - 1.0);
             double ENT10 = 2.5 * 1.987 * T0;
@@ -430,6 +431,7 @@
             double ENT6 = BENT[5] * 1000.0 / Calor;
             double ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
             ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[6]) + ENT8 * (0.78116 * II[8] + II[7]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
+            */
 
             UCE();
 
@@ -437,71 +439,68 @@
 
             UCJ = D - CE;
         }
-        /*
-        private void Detka(int v, int j)
-        {
-            int k = (j - 1) * 5;
-            double r1 = 1;
-            double r2 = 1;
 
-            if (k == 100)
-            {
-                r1 = 0;
-            }
-            else
-            {
-                r2 = 1.0 * k / (100 - k);
-            }
+        //private void Detka(int v)
+        //{
+        //    double[,,] Fun = new double[3, 17, 21];
 
-            for (int i = 0; i <= 2; i++)
-            {
-                II[i] = r1 * Alfa[v, i];
-                II[3 + i] = r2 * Beta[v, i];
-            }
+        //    for (int j = 1; j<= 21; j++)
+        //    {
+        //        int k = (j - 1) * 5;
+        //        double r1 = 1;
+        //        double r2 = 1;
 
-            II[7] = r1 * Alfa[v, 4] + r2 * Beta[v, 4];
-            II[8] = r1 * Alfa[v, 6] + r2 * Beta[v, 6];
-            II[9] = r1 * Alfa[v, 5] + r2 * Beta[v, 5];
-            II[10] = r1 * Alfa[v, 7] + r2 * Beta[v, 7];
+        //        if (k == 100)
+        //        {
+        //            r1 = 0;
+        //        }
+        //        else
+        //        {
+        //            r2 = 1.0 * k / (100 - k);
+        //        }
 
-            for (int i = 0; i <= 2; i++)
-            {
-                CA[i] = MixTray[i].prm[1];
-                CA[3 + i] = DilTray[i].prm[1];
-                HA[i] = MixTray[i].prm[2];
-                HA[3 + i] = DilTray[i].prm[2];
-                BENT[i] = MIxTray[i].prm[3];
-                BENT[3 + i] = DilTray[i].prm[3];
-            }
+        //        for (int i = 0; i <= 2; i++)
+        //        {
+        //            II[i] = r1 * Alfa[v, i];
+        //            II[3 + i] = r2 * Beta[v, i];
+        //        }
 
-            Detonation();
+        //        II[7] = r1 * Alfa[v, 4] + r2 * Beta[v, 4];
+        //        II[8] = r1 * Alfa[v, 6] + r2 * Beta[v, 6];
+        //        II[9] = r1 * Alfa[v, 5] + r2 * Beta[v, 5];
+        //        II[10] = r1 * Alfa[v, 7] + r2 * Beta[v, 7];
 
-            // if (avst != 0) then exit;
-            // if BreakFlag then exit;
+        //        for (int i = 0; i <= 2; i++)
+        //        {
+        //            CA[i] = MixTray[i].prm[1];
+        //            CA[3 + i] = DilTray[i].prm[1];
+        //            HA[i] = MixTray[i].prm[2];
+        //            HA[3 + i] = DilTray[i].prm[2];
 
-            Fun[v, 0, j] = D; // { DX}
-            Fun[v, 1, j] = T; // { TCJ}
-            Fun[v, 2, j] = P; // { PCJ}
-            Fun[v, 3, j] = RO; //  { ROCJ}
-            Fun[v, 4, j] = D - CE; // { UCJ}
-            Fun[v, 5, j] = MU; // { MUCJ}
-            Fun[v, 6, j] = RO * UCJ * UCJ / 2.0 / ATM; //  { FORCE}
+        //            /*
+        //            BENT[i] = MIxTray[i].prm[3];
+        //            BENT[3 + i] = DilTray[i].prm[3];
+        //            */
+        //        }
 
-            for (int i = 0; i <= 10; i++)
-            {
-                Fun[v, 6 + i, j] = RI[i];
-            }
-        }
+        //        Detonation();
 
-        public double[,,] CalculationPropetiesDetonation()
-        {
+        //        // if (avst != 0) then exit;
+        //        // if BreakFlag then exit;
 
+        //        Fun[v, 0, j] = D; // { DX}
+        //        Fun[v, 1, j] = T; // { TCJ}
+        //        Fun[v, 2, j] = P; // { PCJ}
+        //        Fun[v, 3, j] = RO; //  { ROCJ}
+        //        Fun[v, 4, j] = D - CE; // { UCJ}
+        //        Fun[v, 5, j] = MU; // { MUCJ}
+        //        Fun[v, 6, j] = RO * UCJ * UCJ / 2.0 / ATM; //  { FORCE}
 
-            for (int i = 0; i <= 21; i ++)
-            {
-                Detka(0, i);
-            }
-        }
-        */
+        //        for (int i = 0; i <= 10; i++)
+        //        {
+        //            Fun[v, 7 + i, j] = RI[i];
+        //        }
+        //    }
+        //}
     }
 }

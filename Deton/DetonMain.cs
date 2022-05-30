@@ -1,3 +1,5 @@
+using Deton.Fuels;
+
 namespace Deton
 {
     internal static class DetonMain
@@ -11,7 +13,10 @@ namespace Deton
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new DetonWiew());
+
+            IFuel[] fuels = new IFuel[] {new NotSelected(), new Hydrogen()}; 
+
+            Application.Run(new DetonWiew(fuels));
         }
     }
 }
