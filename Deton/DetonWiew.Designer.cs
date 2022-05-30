@@ -86,9 +86,9 @@
             this.InitialFuel2MolValueTextBoxA = new System.Windows.Forms.TextBox();
             this.InitialFuel1MolValueTextBoxA = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.FinalFuel3MolValueTextBoxA = new System.Windows.Forms.TextBox();
+            this.FinalFuel2MolValueTextBoxA = new System.Windows.Forms.TextBox();
+            this.FinalFuel1MolValueTextBoxA = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
@@ -109,8 +109,8 @@
             this.textBox42 = new System.Windows.Forms.TextBox();
             this.textBox43 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel33 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.FinalAirMolValueTextBoxA = new System.Windows.Forms.TextBox();
+            this.FinalOxygenMolValueTextBoxA = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel40 = new System.Windows.Forms.TableLayoutPanel();
             this.InitialAirMolValueTextBoxA = new System.Windows.Forms.TextBox();
             this.InitialOxygenMolValueTextBoxA = new System.Windows.Forms.TextBox();
@@ -140,8 +140,8 @@
             this.textBox54 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.tableLayoutPanel45 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox55 = new System.Windows.Forms.TextBox();
+            this.FinalArgonMolValueTextBoxA = new System.Windows.Forms.TextBox();
+            this.FinalNitrogenMolValueTextBoxA = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox57 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -317,8 +317,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(644, 634);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -326,7 +326,7 @@
             // 
             this.textBox56.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox56.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox56.Location = new System.Drawing.Point(127, 625);
+            this.textBox56.Location = new System.Drawing.Point(127, 631);
             this.textBox56.Name = "textBox56";
             this.textBox56.Size = new System.Drawing.Size(86, 20);
             this.textBox56.TabIndex = 66;
@@ -355,6 +355,8 @@
             this.InitialArgonMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialArgonMolValueTextBoxA.TabIndex = 1;
             this.InitialArgonMolValueTextBoxA.TabStop = false;
+            this.InitialArgonMolValueTextBoxA.Text = "0";
+            this.InitialArgonMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialNitrogenMolValueTextBoxA
             // 
@@ -365,6 +367,8 @@
             this.InitialNitrogenMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialNitrogenMolValueTextBoxA.TabIndex = 0;
             this.InitialNitrogenMolValueTextBoxA.TabStop = false;
+            this.InitialNitrogenMolValueTextBoxA.Text = "0";
+            this.InitialNitrogenMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel34
             // 
@@ -391,6 +395,7 @@
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(86, 27);
             this.textBox16.TabIndex = 2;
+            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox17
             // 
@@ -400,6 +405,7 @@
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(86, 27);
             this.textBox17.TabIndex = 1;
+            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox18
             // 
@@ -409,6 +415,7 @@
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(86, 27);
             this.textBox18.TabIndex = 0;
+            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel29
             // 
@@ -435,6 +442,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(86, 27);
             this.textBox5.TabIndex = 2;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox14
             // 
@@ -444,6 +452,7 @@
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(86, 27);
             this.textBox14.TabIndex = 1;
+            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox15
             // 
@@ -453,6 +462,7 @@
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(86, 27);
             this.textBox15.TabIndex = 0;
+            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel11
             // 
@@ -493,15 +503,6 @@
             // 
             this.initialFuelComboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.initialFuelComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.initialFuelComboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "",
-            "5",
-            "5",
-            "5"});
             this.initialFuelComboBox1.Location = new System.Drawing.Point(3, 3);
             this.initialFuelComboBox1.Name = "initialFuelComboBox1";
             this.initialFuelComboBox1.Size = new System.Drawing.Size(94, 28);
@@ -717,15 +718,6 @@
             // 
             this.finalFuelComboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.finalFuelComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.finalFuelComboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "",
-            "5",
-            "5",
-            "5"});
             this.finalFuelComboBox1.Location = new System.Drawing.Point(3, 3);
             this.finalFuelComboBox1.Name = "finalFuelComboBox1";
             this.finalFuelComboBox1.Size = new System.Drawing.Size(94, 28);
@@ -967,6 +959,8 @@
             this.InitialFuel3MolValueTextBoxA.Name = "InitialFuel3MolValueTextBoxA";
             this.InitialFuel3MolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialFuel3MolValueTextBoxA.TabIndex = 2;
+            this.InitialFuel3MolValueTextBoxA.Text = "0";
+            this.InitialFuel3MolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialFuel2MolValueTextBoxA
             // 
@@ -976,6 +970,8 @@
             this.InitialFuel2MolValueTextBoxA.Name = "InitialFuel2MolValueTextBoxA";
             this.InitialFuel2MolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialFuel2MolValueTextBoxA.TabIndex = 1;
+            this.InitialFuel2MolValueTextBoxA.Text = "0";
+            this.InitialFuel2MolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialFuel1MolValueTextBoxA
             // 
@@ -985,15 +981,17 @@
             this.InitialFuel1MolValueTextBoxA.Name = "InitialFuel1MolValueTextBoxA";
             this.InitialFuel1MolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialFuel1MolValueTextBoxA.TabIndex = 0;
+            this.InitialFuel1MolValueTextBoxA.Text = "0";
+            this.InitialFuel1MolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel22
             // 
             this.tableLayoutPanel22.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel22.ColumnCount = 1;
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.Controls.Add(this.textBox30, 0, 2);
-            this.tableLayoutPanel22.Controls.Add(this.textBox31, 0, 1);
-            this.tableLayoutPanel22.Controls.Add(this.textBox32, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.FinalFuel3MolValueTextBoxA, 0, 2);
+            this.tableLayoutPanel22.Controls.Add(this.FinalFuel2MolValueTextBoxA, 0, 1);
+            this.tableLayoutPanel22.Controls.Add(this.FinalFuel1MolValueTextBoxA, 0, 0);
             this.tableLayoutPanel22.Location = new System.Drawing.Point(344, 315);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
             this.tableLayoutPanel22.RowCount = 3;
@@ -1003,32 +1001,38 @@
             this.tableLayoutPanel22.Size = new System.Drawing.Size(94, 96);
             this.tableLayoutPanel22.TabIndex = 4;
             // 
-            // textBox30
+            // FinalFuel3MolValueTextBoxA
             // 
-            this.textBox30.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox30.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox30.Location = new System.Drawing.Point(4, 66);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(86, 27);
-            this.textBox30.TabIndex = 2;
+            this.FinalFuel3MolValueTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FinalFuel3MolValueTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FinalFuel3MolValueTextBoxA.Location = new System.Drawing.Point(4, 66);
+            this.FinalFuel3MolValueTextBoxA.Name = "FinalFuel3MolValueTextBoxA";
+            this.FinalFuel3MolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
+            this.FinalFuel3MolValueTextBoxA.TabIndex = 2;
+            this.FinalFuel3MolValueTextBoxA.Text = "0";
+            this.FinalFuel3MolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox31
+            // FinalFuel2MolValueTextBoxA
             // 
-            this.textBox31.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox31.Location = new System.Drawing.Point(4, 35);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(86, 27);
-            this.textBox31.TabIndex = 1;
+            this.FinalFuel2MolValueTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FinalFuel2MolValueTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FinalFuel2MolValueTextBoxA.Location = new System.Drawing.Point(4, 35);
+            this.FinalFuel2MolValueTextBoxA.Name = "FinalFuel2MolValueTextBoxA";
+            this.FinalFuel2MolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
+            this.FinalFuel2MolValueTextBoxA.TabIndex = 1;
+            this.FinalFuel2MolValueTextBoxA.Text = "0";
+            this.FinalFuel2MolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox32
+            // FinalFuel1MolValueTextBoxA
             // 
-            this.textBox32.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox32.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox32.Location = new System.Drawing.Point(4, 4);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(86, 27);
-            this.textBox32.TabIndex = 0;
+            this.FinalFuel1MolValueTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FinalFuel1MolValueTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FinalFuel1MolValueTextBoxA.Location = new System.Drawing.Point(4, 4);
+            this.FinalFuel1MolValueTextBoxA.Name = "FinalFuel1MolValueTextBoxA";
+            this.FinalFuel1MolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
+            this.FinalFuel1MolValueTextBoxA.TabIndex = 0;
+            this.FinalFuel1MolValueTextBoxA.Text = "0";
+            this.FinalFuel1MolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel23
             // 
@@ -1056,6 +1060,7 @@
             this.textBox33.Name = "textBox33";
             this.textBox33.Size = new System.Drawing.Size(86, 27);
             this.textBox33.TabIndex = 2;
+            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox34
             // 
@@ -1065,6 +1070,7 @@
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(86, 27);
             this.textBox34.TabIndex = 1;
+            this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox35
             // 
@@ -1074,6 +1080,7 @@
             this.textBox35.Name = "textBox35";
             this.textBox35.Size = new System.Drawing.Size(86, 27);
             this.textBox35.TabIndex = 0;
+            this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel30
             // 
@@ -1100,6 +1107,7 @@
             this.textBox36.Name = "textBox36";
             this.textBox36.Size = new System.Drawing.Size(86, 27);
             this.textBox36.TabIndex = 2;
+            this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox37
             // 
@@ -1109,6 +1117,7 @@
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(86, 27);
             this.textBox37.TabIndex = 1;
+            this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox38
             // 
@@ -1118,6 +1127,7 @@
             this.textBox38.Name = "textBox38";
             this.textBox38.Size = new System.Drawing.Size(86, 27);
             this.textBox38.TabIndex = 0;
+            this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox7
             // 
@@ -1129,6 +1139,7 @@
             this.textBox7.Size = new System.Drawing.Size(86, 27);
             this.textBox7.TabIndex = 48;
             this.textBox7.TabStop = false;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox8
             // 
@@ -1140,6 +1151,7 @@
             this.textBox8.Size = new System.Drawing.Size(86, 27);
             this.textBox8.TabIndex = 49;
             this.textBox8.TabStop = false;
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox9
             // 
@@ -1151,6 +1163,7 @@
             this.textBox9.Size = new System.Drawing.Size(86, 27);
             this.textBox9.TabIndex = 50;
             this.textBox9.TabStop = false;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox10
             // 
@@ -1162,6 +1175,7 @@
             this.textBox10.Size = new System.Drawing.Size(86, 27);
             this.textBox10.TabIndex = 51;
             this.textBox10.TabStop = false;
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox11
             // 
@@ -1173,6 +1187,7 @@
             this.textBox11.Size = new System.Drawing.Size(86, 27);
             this.textBox11.TabIndex = 52;
             this.textBox11.TabStop = false;
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox12
             // 
@@ -1184,6 +1199,7 @@
             this.textBox12.Size = new System.Drawing.Size(86, 27);
             this.textBox12.TabIndex = 53;
             this.textBox12.TabStop = false;
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox39
             // 
@@ -1195,6 +1211,7 @@
             this.textBox39.Size = new System.Drawing.Size(86, 27);
             this.textBox39.TabIndex = 54;
             this.textBox39.TabStop = false;
+            this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox40
             // 
@@ -1206,6 +1223,7 @@
             this.textBox40.Size = new System.Drawing.Size(86, 27);
             this.textBox40.TabIndex = 55;
             this.textBox40.TabStop = false;
+            this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox41
             // 
@@ -1217,36 +1235,39 @@
             this.textBox41.Size = new System.Drawing.Size(86, 27);
             this.textBox41.TabIndex = 56;
             this.textBox41.TabStop = false;
+            this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox42
             // 
             this.textBox42.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox42.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox42.Location = new System.Drawing.Point(550, 593);
+            this.textBox42.Location = new System.Drawing.Point(550, 595);
             this.textBox42.Name = "textBox42";
             this.textBox42.Size = new System.Drawing.Size(86, 27);
             this.textBox42.TabIndex = 57;
             this.textBox42.TabStop = false;
+            this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox43
             // 
             this.textBox43.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox43.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox43.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox43.Location = new System.Drawing.Point(449, 593);
+            this.textBox43.Location = new System.Drawing.Point(449, 595);
             this.textBox43.Name = "textBox43";
             this.textBox43.Size = new System.Drawing.Size(86, 27);
             this.textBox43.TabIndex = 58;
             this.textBox43.TabStop = false;
+            this.textBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel33
             // 
             this.tableLayoutPanel33.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel33.ColumnCount = 1;
             this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel33.Controls.Add(this.textBox20, 0, 1);
-            this.tableLayoutPanel33.Controls.Add(this.textBox19, 0, 0);
+            this.tableLayoutPanel33.Controls.Add(this.FinalAirMolValueTextBoxA, 0, 1);
+            this.tableLayoutPanel33.Controls.Add(this.FinalOxygenMolValueTextBoxA, 0, 0);
             this.tableLayoutPanel33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tableLayoutPanel33.Location = new System.Drawing.Point(344, 418);
             this.tableLayoutPanel33.Name = "tableLayoutPanel33";
@@ -1256,23 +1277,27 @@
             this.tableLayoutPanel33.Size = new System.Drawing.Size(94, 64);
             this.tableLayoutPanel33.TabIndex = 5;
             // 
-            // textBox20
+            // FinalAirMolValueTextBoxA
             // 
-            this.textBox20.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox20.Location = new System.Drawing.Point(4, 35);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(86, 27);
-            this.textBox20.TabIndex = 1;
+            this.FinalAirMolValueTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FinalAirMolValueTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FinalAirMolValueTextBoxA.Location = new System.Drawing.Point(4, 35);
+            this.FinalAirMolValueTextBoxA.Name = "FinalAirMolValueTextBoxA";
+            this.FinalAirMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
+            this.FinalAirMolValueTextBoxA.TabIndex = 1;
+            this.FinalAirMolValueTextBoxA.Text = "0";
+            this.FinalAirMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox19
+            // FinalOxygenMolValueTextBoxA
             // 
-            this.textBox19.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox19.Location = new System.Drawing.Point(4, 4);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(86, 27);
-            this.textBox19.TabIndex = 0;
+            this.FinalOxygenMolValueTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FinalOxygenMolValueTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FinalOxygenMolValueTextBoxA.Location = new System.Drawing.Point(4, 4);
+            this.FinalOxygenMolValueTextBoxA.Name = "FinalOxygenMolValueTextBoxA";
+            this.FinalOxygenMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
+            this.FinalOxygenMolValueTextBoxA.TabIndex = 0;
+            this.FinalOxygenMolValueTextBoxA.Text = "0";
+            this.FinalOxygenMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel40
             // 
@@ -1297,6 +1322,8 @@
             this.InitialAirMolValueTextBoxA.Name = "InitialAirMolValueTextBoxA";
             this.InitialAirMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialAirMolValueTextBoxA.TabIndex = 1;
+            this.InitialAirMolValueTextBoxA.Text = "0";
+            this.InitialAirMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialOxygenMolValueTextBoxA
             // 
@@ -1306,6 +1333,8 @@
             this.InitialOxygenMolValueTextBoxA.Name = "InitialOxygenMolValueTextBoxA";
             this.InitialOxygenMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialOxygenMolValueTextBoxA.TabIndex = 0;
+            this.InitialOxygenMolValueTextBoxA.Text = "0";
+            this.InitialOxygenMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel36
             // 
@@ -1330,6 +1359,7 @@
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(86, 27);
             this.textBox23.TabIndex = 2;
+            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox24
             // 
@@ -1339,6 +1369,7 @@
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(86, 27);
             this.textBox24.TabIndex = 1;
+            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel35
             // 
@@ -1363,6 +1394,7 @@
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(86, 27);
             this.textBox21.TabIndex = 2;
+            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox22
             // 
@@ -1372,6 +1404,7 @@
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(86, 27);
             this.textBox22.TabIndex = 1;
+            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel39
             // 
@@ -1397,6 +1430,7 @@
             this.textBox28.Size = new System.Drawing.Size(86, 27);
             this.textBox28.TabIndex = 2;
             this.textBox28.TabStop = false;
+            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox29
             // 
@@ -1407,6 +1441,7 @@
             this.textBox29.Size = new System.Drawing.Size(86, 27);
             this.textBox29.TabIndex = 1;
             this.textBox29.TabStop = false;
+            this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel38
             // 
@@ -1432,6 +1467,7 @@
             this.textBox26.Size = new System.Drawing.Size(86, 27);
             this.textBox26.TabIndex = 2;
             this.textBox26.TabStop = false;
+            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox27
             // 
@@ -1442,6 +1478,7 @@
             this.textBox27.Size = new System.Drawing.Size(86, 27);
             this.textBox27.TabIndex = 1;
             this.textBox27.TabStop = false;
+            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel41
             // 
@@ -1466,6 +1503,7 @@
             this.textBox47.Name = "textBox47";
             this.textBox47.Size = new System.Drawing.Size(86, 27);
             this.textBox47.TabIndex = 2;
+            this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox48
             // 
@@ -1475,6 +1513,7 @@
             this.textBox48.Name = "textBox48";
             this.textBox48.Size = new System.Drawing.Size(86, 27);
             this.textBox48.TabIndex = 1;
+            this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel42
             // 
@@ -1499,6 +1538,7 @@
             this.textBox49.Name = "textBox49";
             this.textBox49.Size = new System.Drawing.Size(86, 27);
             this.textBox49.TabIndex = 2;
+            this.textBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox50
             // 
@@ -1508,6 +1548,7 @@
             this.textBox50.Name = "textBox50";
             this.textBox50.Size = new System.Drawing.Size(86, 27);
             this.textBox50.TabIndex = 1;
+            this.textBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel43
             // 
@@ -1533,6 +1574,7 @@
             this.textBox51.Size = new System.Drawing.Size(86, 27);
             this.textBox51.TabIndex = 2;
             this.textBox51.TabStop = false;
+            this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox52
             // 
@@ -1543,6 +1585,7 @@
             this.textBox52.Size = new System.Drawing.Size(86, 27);
             this.textBox52.TabIndex = 1;
             this.textBox52.TabStop = false;
+            this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel44
             // 
@@ -1568,6 +1611,7 @@
             this.textBox53.Size = new System.Drawing.Size(86, 27);
             this.textBox53.TabIndex = 2;
             this.textBox53.TabStop = false;
+            this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox54
             // 
@@ -1578,6 +1622,7 @@
             this.textBox54.Size = new System.Drawing.Size(86, 27);
             this.textBox54.TabIndex = 1;
             this.textBox54.TabStop = false;
+            this.textBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
@@ -1588,7 +1633,7 @@
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label21.Location = new System.Drawing.Point(4, 590);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(333, 31);
+            this.label21.Size = new System.Drawing.Size(333, 37);
             this.label21.TabIndex = 17;
             this.label21.Text = "O2/(Stech.O2):";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1598,8 +1643,8 @@
             this.tableLayoutPanel45.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel45.ColumnCount = 1;
             this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel45.Controls.Add(this.textBox44, 0, 1);
-            this.tableLayoutPanel45.Controls.Add(this.textBox55, 0, 0);
+            this.tableLayoutPanel45.Controls.Add(this.FinalArgonMolValueTextBoxA, 0, 1);
+            this.tableLayoutPanel45.Controls.Add(this.FinalNitrogenMolValueTextBoxA, 0, 0);
             this.tableLayoutPanel45.Location = new System.Drawing.Point(344, 489);
             this.tableLayoutPanel45.Name = "tableLayoutPanel45";
             this.tableLayoutPanel45.RowCount = 2;
@@ -1608,25 +1653,29 @@
             this.tableLayoutPanel45.Size = new System.Drawing.Size(94, 64);
             this.tableLayoutPanel45.TabIndex = 6;
             // 
-            // textBox44
+            // FinalArgonMolValueTextBoxA
             // 
-            this.textBox44.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox44.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox44.Location = new System.Drawing.Point(4, 35);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(86, 27);
-            this.textBox44.TabIndex = 1;
-            this.textBox44.TabStop = false;
+            this.FinalArgonMolValueTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FinalArgonMolValueTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FinalArgonMolValueTextBoxA.Location = new System.Drawing.Point(4, 35);
+            this.FinalArgonMolValueTextBoxA.Name = "FinalArgonMolValueTextBoxA";
+            this.FinalArgonMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
+            this.FinalArgonMolValueTextBoxA.TabIndex = 1;
+            this.FinalArgonMolValueTextBoxA.TabStop = false;
+            this.FinalArgonMolValueTextBoxA.Text = "0";
+            this.FinalArgonMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox55
+            // FinalNitrogenMolValueTextBoxA
             // 
-            this.textBox55.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox55.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox55.Location = new System.Drawing.Point(4, 4);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(86, 27);
-            this.textBox55.TabIndex = 0;
-            this.textBox55.TabStop = false;
+            this.FinalNitrogenMolValueTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FinalNitrogenMolValueTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FinalNitrogenMolValueTextBoxA.Location = new System.Drawing.Point(4, 4);
+            this.FinalNitrogenMolValueTextBoxA.Name = "FinalNitrogenMolValueTextBoxA";
+            this.FinalNitrogenMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
+            this.FinalNitrogenMolValueTextBoxA.TabIndex = 0;
+            this.FinalNitrogenMolValueTextBoxA.TabStop = false;
+            this.FinalNitrogenMolValueTextBoxA.Text = "0";
+            this.FinalNitrogenMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel15
             // 
@@ -1634,7 +1683,7 @@
             this.tableLayoutPanel15.ColumnCount = 2;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(344, 625);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(344, 631);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1646,11 +1695,12 @@
             this.textBox57.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox57.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox57.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox57.Location = new System.Drawing.Point(348, 593);
+            this.textBox57.Location = new System.Drawing.Point(348, 595);
             this.textBox57.Name = "textBox57";
             this.textBox57.Size = new System.Drawing.Size(86, 27);
             this.textBox57.TabIndex = 67;
             this.textBox57.TabStop = false;
+            this.textBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel2
             // 
@@ -2210,15 +2260,15 @@
         private TextBox textBox5;
         private TextBox textBox14;
         private TextBox textBox15;
-        private TextBox textBox20;
-        private TextBox textBox19;
+        private TextBox FinalAirMolValueTextBoxA;
+        private TextBox FinalOxygenMolValueTextBoxA;
         private TextBox InitialFuel3MolValueTextBoxA;
         private TextBox InitialFuel2MolValueTextBoxA;
         private TextBox InitialFuel1MolValueTextBoxA;
         private TableLayoutPanel tableLayoutPanel22;
-        private TextBox textBox30;
-        private TextBox textBox31;
-        private TextBox textBox32;
+        private TextBox FinalFuel3MolValueTextBoxA;
+        private TextBox FinalFuel2MolValueTextBoxA;
+        private TextBox FinalFuel1MolValueTextBoxA;
         private TableLayoutPanel tableLayoutPanel23;
         private TextBox textBox33;
         private TextBox textBox34;
@@ -2266,8 +2316,8 @@
         private TextBox textBox53;
         private TextBox textBox54;
         private TableLayoutPanel tableLayoutPanel45;
-        private TextBox textBox44;
-        private TextBox textBox55;
+        private TextBox FinalArgonMolValueTextBoxA;
+        private TextBox FinalNitrogenMolValueTextBoxA;
         private TextBox textBox57;
     }
 }
