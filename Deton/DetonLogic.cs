@@ -339,14 +339,14 @@ namespace Deton
             {
                 for (int j = 1; j <= 9; j++)
                 {
-                    LKP[j] = LKP[j] + Y * K[j, i]; // LKP[j]=LKP[j]+Y*K[J,I]; - тут заглавные буквы индексов, че?
+                    LKP[j] += Y * K[j, i];
                     Y *= X;
                 }
             }
 
             for (int i = 1; i <= 9; i++)
             {
-                LKP[i] = LKP[i] * E;
+                LKP[i] *= E;
             }
 
             LKP[2] = 0;
@@ -420,7 +420,7 @@ namespace Deton
 
             ENT = 0;
 
-            double[] ENTJ = new double[19];
+            double[] ENTJ = new double[20];
 
             for (int i = 0; i <= 9; i++)
             {
@@ -434,7 +434,7 @@ namespace Deton
             {
                 for (int j = 0; j <= 9; j++)
                 {
-                    ENTJ[j] = ENTJ[j] + Y * H[j, i];
+                    ENTJ[j] += Y * H[j, i];
                 }
 
                 Y *= X;
@@ -462,7 +462,7 @@ namespace Deton
             {
                 for (int j = 0; j <= 9; j++)
                 {
-                    ENTJ[j] = ENTJ[j] + IY * Y * H[j, i];
+                    ENTJ[j] += IY * Y * H[j, i];
                 }
 
                 Y *= X;
@@ -474,8 +474,8 @@ namespace Deton
                 GF += RI[i] * ENTJ[i];
             }
 
-            GF /= R * 4186.8 + 2.5 * RI[10];
-            GF /= GF - 1.0;
+            GF = GF / R * 4186.8 + 2.5 * RI[10];
+            GF = GF / (GF - 1.0);
         }
 
         private void EQI()
@@ -553,7 +553,7 @@ namespace Deton
             {
                 double PK = P;
                 double TK = T;
-                P *= (1.0 + ED);
+                P = P * (1.0 + ED);
                 FUCE();
 
                 // if (avst != 0) then exit;
@@ -563,7 +563,7 @@ namespace Deton
                 double F2P = FUCE2;
 
                 P = PK;
-                T *= (1.0 + ED);
+                T = T * (1.0 + ED);
                 FUCE();
 
                 // if (avst != 0) then exit;
@@ -582,7 +582,7 @@ namespace Deton
                 if ((Math.Abs(FUCE1) + Math.Abs(FUCE2)) < 0.3E-5)
                 {
                     //MessageBox.Show("|Fuce1| + |Fuce2| < 0.3E-5");
-                    return; 
+                    return;
                 }
 
                 F1P = (F1P - FUCE1) / P / ED;
@@ -597,8 +597,8 @@ namespace Deton
 
                 if (DPT >= 0.1)
                 {
-                    DP = DP * 0.1 / DPT;
-                    DT = DT * 0.1 / DPT;
+                    DP *= 0.1 / DPT;
+                    DT *= 0.1 / DPT;
                 }
 
                 P += DP;
@@ -628,7 +628,7 @@ namespace Deton
             double Weit5 = (12.011 * CA[4] + 1.008 * HA[4]) * II[4];
             double Weit6 = (12.011 * CA[5] + 1.008 * HA[5]) * II[5];
             double Weit = Weit1 + Weit2 + Weit3 + Weit4 + Weit5 + Weit6;
-            Weit = Weit + 32.0 * II[6] + 28.016 * II[7] + 40.0 * II[9] + Wair * II[8];  // 6 - кислород, 7 - азот, 9 - аргон, 8 - кислород
+            Weit += 32.0 * II[6] + 28.016 * II[7] + 40.0 * II[9] + Wair * II[8];  // 6 - кислород, 7 - азот, 9 - аргон, 8 - кислород
             double All = II[0] + II[1] + II[2] + II[3] + II[4] + II[5] + II[6] + II[7] + II[8] + II[9];
             double MU0 = Weit / All;
             RO0 = P0 * ATM * MU0 / R / T0;
@@ -640,26 +640,29 @@ namespace Deton
             Alla += (CA[4] + HA[4]) * II[4];
             Alla += (CA[5] + HA[5]) * II[5];
             Alla = Alla + 2 * II[6] + 2 * II[7] + II[9] + (2.0 * 0.9907 + 0.0093) * II[8];
+
             MUA = Weit / Alla;
+
             RIA[0] = 2 * (II[6] + 0.20954 * II[8]) / Alla;
             RIA[1] = HM / Alla;
             RIA[2] = CN / Alla;
             RIA[3] = 2 * (II[7] + 0.78116 * II[8]) / Alla;
             RIA[4] = (II[9] + 0.0093 * II[8]) / Alla;
 
-
             double ENT7 = 49.0065;
             double ENT8 = 2037 * (298.15 / 293.15 - 1.0);
             double ENT10 = 2.5 * 1.987 * T0;
+            /*
             double ENT1 = BENT[0] * 1000.0 / Calor;
             double ENT2 = BENT[1] * 1000.0 / Calor;
             double ENT3 = BENT[2] * 1000.0 / Calor;
             double ENT4 = BENT[3] * 1000.0 / Calor;
             double ENT5 = BENT[4] * 1000.0 / Calor;
             double ENT6 = BENT[5] * 1000.0 / Calor;
+            
             ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
             ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (0.78116 * II[8] + II[7]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
-
+            */
             UCE();
 
             // if BreakFlag then exit;
