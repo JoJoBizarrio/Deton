@@ -6,6 +6,8 @@
 
         public int CarbonAmount => 0;
 
+        public double Entropy => 0.13052;
+
         public override string ToString()
         {
             return "H2";

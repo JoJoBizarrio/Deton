@@ -354,7 +354,6 @@
             this.InitialArgonMolValueTextBoxA.Name = "InitialArgonMolValueTextBoxA";
             this.InitialArgonMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialArgonMolValueTextBoxA.TabIndex = 1;
-            this.InitialArgonMolValueTextBoxA.TabStop = false;
             this.InitialArgonMolValueTextBoxA.Text = "0";
             this.InitialArgonMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -366,7 +365,6 @@
             this.InitialNitrogenMolValueTextBoxA.Name = "InitialNitrogenMolValueTextBoxA";
             this.InitialNitrogenMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialNitrogenMolValueTextBoxA.TabIndex = 0;
-            this.InitialNitrogenMolValueTextBoxA.TabStop = false;
             this.InitialNitrogenMolValueTextBoxA.Text = "0";
             this.InitialNitrogenMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1429,7 +1427,6 @@
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(86, 27);
             this.textBox28.TabIndex = 2;
-            this.textBox28.TabStop = false;
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox29
@@ -1440,7 +1437,6 @@
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(86, 27);
             this.textBox29.TabIndex = 1;
-            this.textBox29.TabStop = false;
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel38
@@ -1466,7 +1462,6 @@
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(86, 27);
             this.textBox26.TabIndex = 2;
-            this.textBox26.TabStop = false;
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox27
@@ -1477,7 +1472,6 @@
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(86, 27);
             this.textBox27.TabIndex = 1;
-            this.textBox27.TabStop = false;
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel41
@@ -1573,7 +1567,6 @@
             this.textBox51.Name = "textBox51";
             this.textBox51.Size = new System.Drawing.Size(86, 27);
             this.textBox51.TabIndex = 2;
-            this.textBox51.TabStop = false;
             this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox52
@@ -1584,7 +1577,6 @@
             this.textBox52.Name = "textBox52";
             this.textBox52.Size = new System.Drawing.Size(86, 27);
             this.textBox52.TabIndex = 1;
-            this.textBox52.TabStop = false;
             this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel44
@@ -1610,7 +1602,6 @@
             this.textBox53.Name = "textBox53";
             this.textBox53.Size = new System.Drawing.Size(86, 27);
             this.textBox53.TabIndex = 2;
-            this.textBox53.TabStop = false;
             this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox54
@@ -1621,7 +1612,6 @@
             this.textBox54.Name = "textBox54";
             this.textBox54.Size = new System.Drawing.Size(86, 27);
             this.textBox54.TabIndex = 1;
-            this.textBox54.TabStop = false;
             this.textBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
@@ -1661,7 +1651,6 @@
             this.FinalArgonMolValueTextBoxA.Name = "FinalArgonMolValueTextBoxA";
             this.FinalArgonMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.FinalArgonMolValueTextBoxA.TabIndex = 1;
-            this.FinalArgonMolValueTextBoxA.TabStop = false;
             this.FinalArgonMolValueTextBoxA.Text = "0";
             this.FinalArgonMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1673,7 +1662,6 @@
             this.FinalNitrogenMolValueTextBoxA.Name = "FinalNitrogenMolValueTextBoxA";
             this.FinalNitrogenMolValueTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.FinalNitrogenMolValueTextBoxA.TabIndex = 0;
-            this.FinalNitrogenMolValueTextBoxA.TabStop = false;
             this.FinalNitrogenMolValueTextBoxA.Text = "0";
             this.FinalNitrogenMolValueTextBoxA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2081,6 +2069,7 @@
             // 
             // DetonWiew
             // 
+            this.AcceptButton = this.CalculationButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 781);
@@ -2089,9 +2078,13 @@
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(753, 828);
             this.MinimumSize = new System.Drawing.Size(753, 828);
             this.Name = "DetonWiew";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deton";
             this.menuStrip1.ResumeLayout(false);

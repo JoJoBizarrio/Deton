@@ -12,9 +12,9 @@ namespace Deton
         double[] RIA = new double[5];
 
         // {ENTO} 
-        double RO0, P0, ENT0, CALOR; //, ATM
+        double RO0, ENT0; // P0, ATM,  CALOR
 
-        const double p0 = 1.0;
+        const double P0 = 1.0;
         const double R = 8314.41;
         const double ATM = 101325.0;
         const double Calor = 4.1868;
@@ -28,7 +28,6 @@ namespace Deton
         // {HK}
         double[,] H = new double[19, 12];
         double[,] K = new double[19, 12];
-
         // {GF} 
         double GF;
 
@@ -51,28 +50,252 @@ namespace Deton
         double[] RI = new double[11];
         double[] RIRI = new double[10];
 
-        static private double EXP(double value)
+        private void SetHK()
         {
-            return Math.Exp(value);
+            // {O=0}
+            H[0, 1] = -2.2933E-4;
+            H[0, 2] = 1.9597E-2;
+            H[0, 3] = 4.99429;
+            H[0, 4] = -0.02955;
+            H[0, 5] = -0.9995;
+            H[0, 6] = 7.1506;
+            H[0, 7] = -26.0162;
+            H[0, 8] = 61.4432;
+            H[0, 9] = -74.189;
+            H[0, 10] = 34.31;
+            H[0, 11] = 59548 - 1581;
+
+            //{O2=1}
+            H[1, 1] = -2.689E-4;
+            H[1, 2] = 3.7752E-2;
+            H[1, 3] = 5.20537;
+            H[1, 4] = 30.47837;
+            H[1, 5] = -146.8618;
+            H[1, 6] = 421.1702;
+            H[1, 7] = -584.5084;
+            H[1, 8] = 132.5392;
+            H[1, 9] = 525.966;
+            H[1, 10] = -409.939;
+            H[1, 11] = 0 - 2040;
+
+            K[1, 0] = 0.2073E-4;
+            K[1, 1] = -2.57848;
+            K[1, 2] = 9.11264;
+            K[1, 3] = -6.67363;
+            K[1, 4] = 15.829;
+            K[1, 5] = -29.6389;
+            K[1, 6] = 29.0916;
+            K[1, 7] = -0.4219;
+            K[1, 8] = -24.562;
+            K[1, 9] = 14.941;
+            K[1, 11] = 1.04532;
+
+            //{H=2}
+            H[2, 1] = 0.0895E-4;
+            H[2, 2] = -0.0706E-2;
+            H[2, 3] = 4.98866;
+            H[2, 4] = -0.27833;
+            H[2, 5] = 1.9779;
+            H[2, 6] = -7.7112;
+            H[2, 7] = 16.3916;
+            H[2, 8] = -17.2924;
+            H[2, 9] = 6.023;
+            H[2, 10] = 1.451;
+            H[2, 11] = 52096 - 1456;
+
+            //{H2=3}
+            H[3, 1] = 1.2613E-4;
+            H[3, 2] = -2.0862E-2;
+            H[3, 3] = 7.60193;
+            H[3, 4] = -11.88908;
+            H[3, 5] = 102.3183;
+            H[3, 6] = -315.2948;
+            H[3, 7] = 435.2557;
+            H[3, 8] = -98.3582;
+            H[3, 9] = -361.534;
+            H[3, 10] = 270.535;
+            H[3, 11] = 0 - 1984;
+
+            K[3, 0] = 0.1183E-4;
+            K[3, 1] = -2.26099;
+            K[3, 2] = 6.35191;
+            K[3, 3] = 2.47658;
+            K[3, 4] = -10.748;
+            K[3, 5] = 21.8446;
+            K[3, 6] = -21.989;
+            K[3, 7] = 2.7874;
+            K[3, 8] = 13.607;
+            K[3, 9] = -8.355;
+            K[3, 11] = 0.51912;
+
+            //{OH=4}
+            H[4, 1] = -1.856E-4;
+            H[4, 2] = 0.5161E-2;
+            H[4, 3] = 7.30835;
+            H[4, 4] = -9.70431;
+            H[4, 5] = 105.1446;
+            H[4, 6] = -367.8405;
+            H[4, 7] = 569.9797;
+            H[4, 8] = -183.3183;
+            H[4, 9] = -472.257;
+            H[4, 10] = 395.277;
+            H[4, 11] = 9318 - 2071;
+
+            K[4, 0] = 0.038E-4;
+            K[4, 1] = -2.21811;
+            K[4, 2] = 6.17935;
+            K[4, 3] = 2.05348;
+            K[4, 4] = -11.3821;
+            K[4, 5] = 26.755;
+            K[4, 6] = -31.6665;
+            K[4, 7] = 9.9422;
+            K[4, 8] = 14.718;
+            K[4, 9] = -11.224;
+            K[4, 11] = 0.5845;
+
+            //{H20=5}
+            H[5, 1] = -3.961E-4;
+            H[5, 2] = 3.456E-2;
+            H[5, 3] = 6.8699;
+            H[5, 4] = 10.3562;
+            H[5, 5] = 65.58;
+            H[5, 6] = -327.904;
+            H[5, 7] = 566.943;
+            H[5, 8] = -212.793;
+            H[5, 9] = -445.63;
+            H[5, 10] = 387.42;
+            H[5, 11] = -57786 - 2328;
+
+            K[5, 0] = -0.202E-4;
+            K[5, 1] = -4.79032;
+            K[5, 2] = 15.1064;
+            K[5, 3] = -2.3913;
+            K[5, 4] = -6.843;
+            K[5, 5] = 23.284;
+            K[5, 6] = -30.605;
+            K[5, 7] = 10.471;
+            K[5, 8] = 13.97;
+            K[5, 9] = -10.93;
+            K[5, 11] = 1.7708;
+
+            //{CO=6}
+            H[6, 1] = -7.163E-4;
+            H[6, 2] = 6.28381E-2;
+            H[6, 3] = 5.02467;
+            H[6, 4] = 23.16888;
+            H[6, 5] = -76.7948;
+            H[6, 6] = 135.1824;
+            H[6, 7] = -75.6202;
+            H[6, 8] = -118.9548;
+            H[6, 9] = 203.306;
+            H[6, 10] = -86.358;
+            H[6, 11] = -26425 - 2038;
+
+            K[6, 0] = -0.504E-4;
+            K[6, 1] = -5.58272;
+            K[6, 2] = 9.23656;
+            K[6, 3] = -4.86254;
+            K[6, 4] = 7.3986;
+            K[6, 5] = -7.0747;
+            K[6, 6] = 0.6576;
+            K[6, 7] = 7.2612;
+            K[6, 8] = -7.846;
+            K[6, 9] = 2.686;
+            K[6, 11] = 1.06736;
+
+            //{CO2=7}
+            H[7, 1] = 7.474E-4;
+            H[7, 2] = -4.994E-2;
+            H[7, 3] = 6.8842;
+            H[7, 4] = 55.2554;
+            H[7, 5] = -222.559;
+            H[7, 6] = 514.499;
+            H[7, 7] = -557.259;
+            H[7, 8] = -48.917;
+            H[7, 9] = 663.79;
+            H[7, 10] = -423.16;
+            H[7, 11] = -94054 - 2195;
+
+            K[7, 0] = 1.345E-4;
+            K[7, 1] = -8.35985;
+            K[7, 2] = 19.1101;
+            K[7, 3] = -11.8812;
+            K[7, 4] = 23.217;
+            K[7, 5] = -34.186;
+            K[7, 6] = 25.55;
+            K[7, 7] = 6.886;
+            K[7, 8] = -27.32;
+            K[7, 9] = 14.27;
+            K[7, 11] = 1.7524;
+
+            //{N2=8}
+            H[8, 1] = -7.8225E-4;
+            H[8, 2] = 6.4682E-2;
+            H[8, 3] = 5.10173;
+            H[8, 4] = 20.50549;
+            H[8, 5] = -60.28;
+            H[8, 6] = 89.7273;
+            H[8, 7] = -28.7247;
+            H[8, 8] = -86.8081;
+            H[8, 9] = 95.59;
+            H[8, 10] = -22.473;
+            H[8, 11] = 0 - 2037;
+
+            K[8, 0] = -0.8883E-4;
+            K[8, 1] = -4.90398;
+            K[8, 2] = 8.87033;
+            K[8, 3] = -4.78573;
+            K[8, 4] = 7.7988;
+            K[8, 5] = -9.7634;
+            K[8, 6] = 5.572;
+            K[8, 7] = 4.0956;
+            K[8, 8] = -7.551;
+            K[8, 9] = 2.923;
+            K[8, 11] = 1.07605;
+
+            //{NO=9}
+            H[9, 1] = -7.935E-4;
+            H[9, 2] = 7.9052E-2;
+            H[9, 3] = 4.83286;
+            H[9, 4] = 29.07911;
+            H[9, 5] = -120.2217;
+            H[9, 6] = 286.738;
+            H[9, 7] = -334.5202;
+            H[9, 8] = 32.0833;
+            H[9, 9] = 308.769;
+            H[9, 10] = -212.369;
+            H[9, 11] = 21600 - 2158;
+
+            K[9, 0] = -0.6333E-4;
+            K[9, 1] = -3.26574;
+            K[9, 2] = 8.53274;
+            K[9, 3] = -6.51362;
+            K[9, 4] = 13.6333;
+            K[9, 5] = -21.9805;
+            K[9, 6] = 18.8564;
+            K[9, 7] = 1.4339;
+            K[9, 8] = -15.983;
+            K[9, 9] = 8.812;
+            K[9, 11] = 1.13077;
         }
 
         private void FEQI()
         {
-            RI[0] = EXP(LI1);
-            RI[1] = EXP(2 * LI1 - LKP[1]) * P;
-            RI[2] = EXP(LI3);
-            RI[3] = EXP(2 * LI3 - LKP[3]) * P;
-            RI[4] = EXP(LI1 + LI3 - LKP[4]) * P;
-            RI[5] = EXP(LI1 + 2 * LI3 - LKP[5]) * P * P;
+            RI[0] = Math.Exp(LI1);
+            RI[1] = Math.Exp(2 * LI1 - LKP[1]) * P;
+            RI[2] = Math.Exp(LI3);
+            RI[3] = Math.Exp(2 * LI3 - LKP[3]) * P;
+            RI[4] = Math.Exp(LI1 + LI3 - LKP[4]) * P;
+            RI[5] = Math.Exp(LI1 + 2 * LI3 - LKP[5]) * P * P;
 
             MU = MUA / RIA[1] * (RI[2] + RI[4] + 2 * (RI[3] + RI[5]));
 
-            double W = RI[0] * P * EXP(LKP[6] - LKP[7]);
+            double W = RI[0] * P * Math.Exp(LKP[6] - LKP[7]);
 
             RI[6] = RIA[2] * MU / MUA / (1.0 + W);
             RI[7] = RI[6] * W;
 
-            double W1 = EXP(2 * LKP[9] - LKP[8] - 2 * LI1) / P;
+            double W1 = Math.Exp(2 * LKP[9] - LKP[8] - 2 * LI1) / P;
             double W2 = RIA[3] * MU / MUA;
 
             RI[9] = 2.0 * W2 / (Math.Sqrt(1.0 + 8.0 * W1 * W2) + 1.0);
@@ -145,11 +368,10 @@ namespace Deton
 
             double DL = 1.0E-3;
             LKPI(T);
-            int I1 = 0;
+            //int I1 = 0;
 
-            do
+            for (int i = 0; i <= 600; i++)
             {
-                I1++;
                 FEQI();
 
                 if (Math.Abs(FEQ1) + Math.Abs(FEQ2) < 0.00001)
@@ -157,11 +379,11 @@ namespace Deton
                     break;
                 }
 
-                if (I1 > 600)
-                {
-                    avst = 1;
-                    break;
-                }
+                //if (I1 > 600)
+                //{
+                //    avst = 1;
+                //    break;
+                //}
 
                 double KLI1 = LI1;
                 double KLI3 = LI3;
@@ -195,7 +417,8 @@ namespace Deton
 
                 // if BreakFlag then exit;
             }
-            while (I1 <= 600);
+
+            ENT = 0;
 
             double[] ENTJ = new double[19];
 
@@ -318,21 +541,19 @@ namespace Deton
 
         private void UCE()
         {
-            double PKN = 30.0 * p0;
+            double PKN = 30.0 * P0;
             double TKN = 4000.0;
 
             P = PKN;
             T = TKN;
 
-            int i = 0;
             double ED = 0.001;
 
-            do
+            for (int i = 0; i <= 100; i++)
             {
                 double PK = P;
                 double TK = T;
-                i++;
-                P *= 1.0 + ED;
+                P *= (1.0 + ED);
                 FUCE();
 
                 // if (avst != 0) then exit;
@@ -342,7 +563,7 @@ namespace Deton
                 double F2P = FUCE2;
 
                 P = PK;
-                T *= 1.0 + ED;
+                T *= (1.0 + ED);
                 FUCE();
 
                 // if (avst != 0) then exit;
@@ -360,7 +581,8 @@ namespace Deton
                 // if (avst != 0) then exit;
                 if ((Math.Abs(FUCE1) + Math.Abs(FUCE2)) < 0.3E-5)
                 {
-                    // then exit; 
+                    //MessageBox.Show("|Fuce1| + |Fuce2| < 0.3E-5");
+                    return; 
                 }
 
                 F1P = (F1P - FUCE1) / P / ED;
@@ -382,7 +604,6 @@ namespace Deton
                 P += DP;
                 T += DT;
             }
-            while (i < 100);
 
             avst = 2;
         }
@@ -407,10 +628,10 @@ namespace Deton
             double Weit5 = (12.011 * CA[4] + 1.008 * HA[4]) * II[4];
             double Weit6 = (12.011 * CA[5] + 1.008 * HA[5]) * II[5];
             double Weit = Weit1 + Weit2 + Weit3 + Weit4 + Weit5 + Weit6;
-            Weit = Weit + 32.0 * II[6] + 28.016 * II[7] + 40.0 * II[9] + Wair * II[8];
+            Weit = Weit + 32.0 * II[6] + 28.016 * II[7] + 40.0 * II[9] + Wair * II[8];  // 6 - кислород, 7 - азот, 9 - аргон, 8 - кислород
             double All = II[0] + II[1] + II[2] + II[3] + II[4] + II[5] + II[6] + II[7] + II[8] + II[9];
             double MU0 = Weit / All;
-            RO0 = p0 * ATM * MU0 / R / T0;
+            RO0 = P0 * ATM * MU0 / R / T0;
 
             double Alla = (CA[0] + HA[0]) * II[0];
             Alla += (CA[1] + HA[1]) * II[1];
@@ -426,7 +647,7 @@ namespace Deton
             RIA[3] = 2 * (II[7] + 0.78116 * II[8]) / Alla;
             RIA[4] = (II[9] + 0.0093 * II[8]) / Alla;
 
-            /*
+
             double ENT7 = 49.0065;
             double ENT8 = 2037 * (298.15 / 293.15 - 1.0);
             double ENT10 = 2.5 * 1.987 * T0;
@@ -436,9 +657,8 @@ namespace Deton
             double ENT4 = BENT[3] * 1000.0 / Calor;
             double ENT5 = BENT[4] * 1000.0 / Calor;
             double ENT6 = BENT[5] * 1000.0 / Calor;
-            double ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
-            ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[6]) + ENT8 * (0.78116 * II[8] + II[7]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
-            */
+            ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
+            ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (0.78116 * II[8] + II[7]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
 
             UCE();
 
@@ -449,11 +669,45 @@ namespace Deton
 
         public void Detka(int v, double[,] Alfa, double[,] Beta, IFuel[] initialFuels, IFuel[] finalFuels)
         {
-            double[,,] Fun = new double[3, 19, 22];
+            double[,,] Fun = new double[3, 18, 21];
+            SetHK();
 
-            for (int j = 1; j <= 21; j++)
+            for (int j = 0; j < 21; j++)
             {
-                int k = (j - 1) * 5;
+                CA = new double[7];
+
+                T = 0;
+                P = 0;
+                RO = 0;
+                MU = 0;
+                MUA = 0;
+                CE = 0;
+                CF = 0;
+                LI1 = 0;
+                LI3 = 0;
+                ENT = 0; //, R
+
+                RO0 = 0;
+
+                RIA = new double[5];
+
+                LKP = new double[10];
+
+                FEQ1 = 0;
+                FEQ2 = 0;
+
+                GF = 0;
+
+                GE = 0;
+
+                FUCE1 = 0;
+                FUCE2 = 0;
+
+                UCJ = 0;
+
+                RI = new double[11];
+
+                int k = j * 5;
                 double r1 = 1;
                 double r2 = 1;
 
@@ -481,13 +735,12 @@ namespace Deton
                 {
                     CA[i] = initialFuels[i].CarbonAmount;
                     CA[3 + i] = finalFuels[i].CarbonAmount;
+
                     HA[i] = initialFuels[i].HydrogenAmount;
                     HA[3 + i] = finalFuels[i].HydrogenAmount;
 
-                    /*
-                    BENT[i] = MIxTray[i].prm[3];
-                    BENT[3 + i] = DilTray[i].prm[3];
-                    */
+                    BENT[i] = initialFuels[i].Entropy;
+                    BENT[3 + i] = finalFuels[i].Entropy;
                 }
 
                 Detonation();

@@ -6,6 +6,11 @@
 
         int HydrogenAmount { get; }
 
+        /// <summary>
+        /// Стандартная энтропия образования при н.у. - кДж/(моль*К)
+        /// </summary>
+        double Entropy { get; }
+
         string ToString();
     }
 }
