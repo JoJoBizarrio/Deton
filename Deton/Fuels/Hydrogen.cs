@@ -6,7 +6,7 @@
 
         public int CarbonAmount => 0;
 
-        public double Entropy => 0.13052;
+        public double Entropy => 0.0;
 
         public override string ToString()
         {

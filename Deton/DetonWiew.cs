@@ -21,19 +21,19 @@ namespace Deton
                 finalFuelComboBox3.Items.Add(e);
             }
 
-            initialFuelComboBox1.SelectedIndex = 1;
+            initialFuelComboBox1.SelectedIndex = 0;
             initialFuelComboBox2.SelectedIndex = 0;
             initialFuelComboBox3.SelectedIndex = 0;
 
-            finalFuelComboBox1.SelectedIndex = 1;
+            finalFuelComboBox1.SelectedIndex = 0;
             finalFuelComboBox2.SelectedIndex = 0;
             finalFuelComboBox3.SelectedIndex = 0;
 
-            InitialFuel1MolValueTextBoxA.Text = "1";
-            FinalFuel1MolValueTextBoxA.Text = "1";
+            //InitialFuel1MolValueTextBoxA.Text = "1";
+            //FinalFuel1MolValueTextBoxA.Text = "1";
 
-            InitialOxygenMolValueTextBoxA.Text = "1";
-            FinalOxygenMolValueTextBoxA.Text = "2";
+            //InitialOxygenMolValueTextBoxA.Text = "1";
+            //FinalOxygenMolValueTextBoxA.Text = "2";
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,7 +43,6 @@ namespace Deton
 
         private void CalculationButton_Click(object sender, EventArgs e)
         {
-
             if (ACheckBox1.Checked)
             {
                 double[,] alfa = new double[1, 7];

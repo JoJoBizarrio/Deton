@@ -1717,6 +1717,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BCheckBox2.AutoSize = true;
+            this.BCheckBox2.Enabled = false;
             this.BCheckBox2.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BCheckBox2.Location = new System.Drawing.Point(535, 3);
             this.BCheckBox2.Name = "BCheckBox2";
@@ -1731,6 +1732,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CCheckBox3.AutoSize = true;
+            this.CCheckBox3.Enabled = false;
             this.CCheckBox3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CCheckBox3.Location = new System.Drawing.Point(636, 3);
             this.CCheckBox3.Name = "CCheckBox3";
