@@ -281,26 +281,26 @@ namespace Deton
 
         private void FEQI()
         {
-            RI[0] = Math.Exp(LI1);
-            RI[1] = Math.Exp(2 * LI1 - LKP[1]) * P;
-            RI[2] = Math.Exp(LI3);
-            RI[3] = Math.Exp(2 * LI3 - LKP[3]) * P;
-            RI[4] = Math.Exp(LI1 + LI3 - LKP[4]) * P;
-            RI[5] = Math.Exp(LI1 + 2 * LI3 - LKP[5]) * P * P;
+            RI[0] = Math.Exp(LI1);                                     // конц-ия равн-ная O
+            RI[1] = Math.Exp(2 * LI1 - LKP[1]) * P;                    // конц-ия равн-ная О2
+            RI[2] = Math.Exp(LI3);                                     // конц-ия равн-ная Н
+            RI[3] = Math.Exp(2 * LI3 - LKP[3]) * P;                    // конц-ия равн-ная Н2
+            RI[4] = Math.Exp(LI1 + LI3 - LKP[4]) * P;                  // конц-ия равн-ная ОН
+            RI[5] = Math.Exp(LI1 + 2 * LI3 - LKP[5]) * P * P;          // конц-ия равн-ная Н2О
 
             MU = MUA / RIA[1] * (RI[2] + RI[4] + 2 * (RI[3] + RI[5]));
 
             double W = RI[0] * P * Math.Exp(LKP[6] - LKP[7]);
 
-            RI[6] = RIA[2] * MU / MUA / (1.0 + W);
-            RI[7] = RI[6] * W;
+            RI[6] = RIA[2] * MU / MUA / (1.0 + W);                     // конц-ия равн-ная СО
+            RI[7] = RI[6] * W;                                         // конц-ия равн-ная СО2
 
             double W1 = Math.Exp(2 * LKP[9] - LKP[8] - 2 * LI1) / P;
             double W2 = RIA[3] * MU / MUA;
 
-            RI[9] = 2.0 * W2 / (Math.Sqrt(1.0 + 8.0 * W1 * W2) + 1.0);
-            RI[8] = RI[9] * W1 * RI[9];
-            RI[10] = RIA[4] * MU / MUA;
+            RI[9] = 2.0 * W2 / (Math.Sqrt(1.0 + 8.0 * W1 * W2) + 1.0); // конц-ия равн-ная N2
+            RI[8] = RI[9] * W1 * RI[9];                                // конц-ия равн-ная NO
+            RI[10] = RIA[4] * MU / MUA;                                // конц-ия равн-ная Ar
 
             FEQ1 = (RI[0] + 2.0 * RI[1] - 0.5 * RI[2] - RI[3] + 0.5 * RI[4] + RI[6] + 2.0 * RI[7] + RI[9]) / (0.5 * RI[2] + RI[3] + 0.5 * RI[4] + RI[5]);
 
@@ -378,7 +378,6 @@ namespace Deton
                 {
                     break;
                 }
-
                 //if (I1 > 600)
                 //{
                 //    avst = 1;
@@ -579,12 +578,13 @@ namespace Deton
                 double S = RO / RO0;
 
                 // if (avst != 0) then exit;
+                /*
                 if ((Math.Abs(FUCE1) + Math.Abs(FUCE2)) < 0.3E-5)
                 {
                     //MessageBox.Show("|Fuce1| + |Fuce2| < 0.3E-5");
                     return;
                 }
-
+                */
                 F1P = (F1P - FUCE1) / P / ED;
                 F2P = (F2P - FUCE2) / P / ED;
                 F1T = (F1T - FUCE1) / T / ED;
@@ -628,9 +628,11 @@ namespace Deton
             double Weit5 = (12.011 * CA[4] + 1.008 * HA[4]) * II[4];
             double Weit6 = (12.011 * CA[5] + 1.008 * HA[5]) * II[5];
             double Weit = Weit1 + Weit2 + Weit3 + Weit4 + Weit5 + Weit6;
-            Weit += 32.0 * II[6] + 28.016 * II[7] + 40.0 * II[9] + Wair * II[8];  // 6 - кислород, 7 - азот, 9 - аргон, 8 - кислород
+
+            Weit += 32.0 * II[6] + 28.016 * II[7] + 40.0 * II[9] + Wair * II[8];  // 6 - кислород, 7 - азот, 9 - аргон, 8 - воздух
             double All = II[0] + II[1] + II[2] + II[3] + II[4] + II[5] + II[6] + II[7] + II[8] + II[9];
             double MU0 = Weit / All;
+
             RO0 = P0 * ATM * MU0 / R / T0;
 
             double Alla = (CA[0] + HA[0]) * II[0];
@@ -639,7 +641,7 @@ namespace Deton
             Alla += (CA[3] + HA[3]) * II[3];
             Alla += (CA[4] + HA[4]) * II[4];
             Alla += (CA[5] + HA[5]) * II[5];
-            Alla = Alla + 2 * II[6] + 2 * II[7] + II[9] + (2.0 * 0.9907 + 0.0093) * II[8];
+            Alla += 2 * II[6] + 2 * II[7] + II[9] + (2.0 * 0.9907 + 0.0093) * II[8];
 
             MUA = Weit / Alla;
 
@@ -652,17 +654,15 @@ namespace Deton
             double ENT7 = 49.0065;
             double ENT8 = 2037 * (298.15 / 293.15 - 1.0);
             double ENT10 = 2.5 * 1.987 * T0;
-            /*
             double ENT1 = BENT[0] * 1000.0 / Calor;
             double ENT2 = BENT[1] * 1000.0 / Calor;
             double ENT3 = BENT[2] * 1000.0 / Calor;
             double ENT4 = BENT[3] * 1000.0 / Calor;
             double ENT5 = BENT[4] * 1000.0 / Calor;
             double ENT6 = BENT[5] * 1000.0 / Calor;
-            
+
             ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
             ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (0.78116 * II[8] + II[7]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
-            */
             UCE();
 
             // if BreakFlag then exit;
@@ -677,7 +677,10 @@ namespace Deton
 
             for (int j = 0; j < 21; j++)
             {
-                CA = new double[7];
+                CA = new double[6];
+                HA = new double[6];
+                BENT = new double[6];
+                II = new double[10];
 
                 T = 0;
                 P = 0;
@@ -689,8 +692,11 @@ namespace Deton
                 LI1 = 0;
                 LI3 = 0;
                 ENT = 0; //, R
+                D = 0;
 
                 RO0 = 0;
+                ENT = 0;
+                ENT0 = 0;
 
                 RIA = new double[5];
 
@@ -700,7 +706,6 @@ namespace Deton
                 FEQ2 = 0;
 
                 GF = 0;
-
                 GE = 0;
 
                 FUCE1 = 0;
@@ -778,7 +783,7 @@ namespace Deton
                     streamWriter.WriteLine();
                 }
 
-                MessageBox.Show("Ready");
+                MessageBox.Show("Done.");
             }
         }
     }
