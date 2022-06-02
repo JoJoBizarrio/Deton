@@ -69,7 +69,7 @@ namespace Deton
                 IFuel[] finalFuels = new IFuel[] { (IFuel)finalFuelComboBox1.SelectedItem, (IFuel)finalFuelComboBox2.SelectedItem, (IFuel)finalFuelComboBox3.SelectedItem };
 
                 DetonLogic detonLogic = new DetonLogic();
-                detonLogic.Detka(0, alfa, beta, initialFuels, finalFuels);  
+                detonLogic.Detka(0, alfa, beta, initialFuels, finalFuels);
             }
         }
     }

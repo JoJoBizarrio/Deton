@@ -40,10 +40,10 @@ namespace Deton
 
         // {ENTR}
 
-        double[] CA = new double[7];
-        double[] HA = new double[7];
-        double[] BENT = new double[7];
-        double[] II = new double[10];
+        double[] CA = new double[6];
+        double[] HA = new double[6];
+        double[] BENT = new double[6];
+        double[] II = new double[9];
 
         // {param}
         double UCJ, FORCE, DX, TCJ, PCJ, ROCJ, MUCJ;
@@ -340,8 +340,9 @@ namespace Deton
                 for (int j = 1; j <= 9; j++)
                 {
                     LKP[j] += Y * K[j, i];
-                    Y *= X;
                 }
+
+                Y *= X;
             }
 
             for (int i = 1; i <= 9; i++)
@@ -378,6 +379,7 @@ namespace Deton
                 {
                     break;
                 }
+
                 //if (I1 > 600)
                 //{
                 //    avst = 1;
@@ -578,13 +580,12 @@ namespace Deton
                 double S = RO / RO0;
 
                 // if (avst != 0) then exit;
-                /*
+
                 if ((Math.Abs(FUCE1) + Math.Abs(FUCE2)) < 0.3E-5)
                 {
-                    //MessageBox.Show("|Fuce1| + |Fuce2| < 0.3E-5");
                     return;
                 }
-                */
+
                 F1P = (F1P - FUCE1) / P / ED;
                 F2P = (F2P - FUCE2) / P / ED;
                 F1T = (F1T - FUCE1) / T / ED;
@@ -660,7 +661,7 @@ namespace Deton
             double ENT4 = BENT[3] * 1000.0 / Calor;
             double ENT5 = BENT[4] * 1000.0 / Calor;
             double ENT6 = BENT[5] * 1000.0 / Calor;
-
+            
             ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
             ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (0.78116 * II[8] + II[7]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
             UCE();
