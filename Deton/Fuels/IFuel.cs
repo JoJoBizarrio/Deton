@@ -7,9 +7,9 @@
         int HydrogenAmount { get; }
 
         /// <summary>
-        /// Стандартная энтропия образования при н.у. - кДж/(моль*К)
+        /// Стандартная энтальпия образования при н.у. - кДж/(моль*К)
         /// </summary>
-        double Entropy { get; }
+        double Enthalpy { get; }
 
         string ToString();
     }

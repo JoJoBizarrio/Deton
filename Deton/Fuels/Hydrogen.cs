@@ -2,11 +2,11 @@
 {
     internal class Hydrogen : IFuel
     {
-        public int HydrogenAmount => 2;
-
         public int CarbonAmount => 0;
 
-        public double Entropy => 0.0;
+        public int HydrogenAmount => 2;
+
+        public double Enthalpy => 0.0;
 
         public override string ToString()
         {

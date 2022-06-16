@@ -22,9 +22,9 @@ namespace Deton
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            // ApplicationConfiguration.Initialize();
 
-            IFuel[] fuels = new IFuel[] {new NotSelected(), new Hydrogen(), new Acetylene()}; 
+            IFuel[] fuels = new IFuel[] { new NotSelected(), new Hydrogen(), new Acetylene(), new Butane(), new Butene(), new Ethane(), new Ethylene(), new Methane(), new Pentane(), new Propane(), new Propylene() };
 
             Application.Run(new DetonWiew(fuels));
         }

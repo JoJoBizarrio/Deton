@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 using Deton.Fuels;
 
-namespace Deton
+namespace Deton.Logic
 {
-    internal class DetonLogic
+    internal class FunctionsPointsCalculator
     {
         // {EXIT}
         double D, GAMA1, MU0, MUMIN, MUMAX, E, KPA;
@@ -591,7 +591,7 @@ namespace Deton
 
                 // if (avst != 0) then exit;
 
-                if ((Math.Abs(FUCE1) + Math.Abs(FUCE2)) < 0.3E-5)
+                if (Math.Abs(FUCE1) + Math.Abs(FUCE2) < 0.3E-5)
                 {
                     return;
                 }
@@ -671,7 +671,7 @@ namespace Deton
             double ENT4 = BENT[3] * 1000.0 / Calor;
             double ENT5 = BENT[4] * 1000.0 / Calor;
             double ENT6 = BENT[5] * 1000.0 / Calor;
-            
+
             ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
             ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (0.78116 * II[8] + II[7]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
             UCE();
@@ -681,121 +681,107 @@ namespace Deton
             UCJ = D - CE;
         }
 
-        public void Detka(int v, double[,] Alfa, double[,] Beta, IFuel[] initialFuels, IFuel[] finalFuels)
+        public double[] Detka(int j, double[] Alfa, double[] Beta, IFuel[] initialFuels, IFuel[] finalFuels)
         {
-            double[,,] Fun = new double[3, 18, 21];
+            double[] functionsPoints = new double[18];
+
             SetHK();
 
-            for (int j = 0; j < 21; j++)
+            CA = new double[6];
+            HA = new double[6];
+            BENT = new double[6];
+            II = new double[10];
+
+            T = 0;
+            P = 0;
+            RO = 0;
+            MU = 0;
+            MUA = 0;
+            CE = 0;
+            CF = 0;
+            LI1 = 0;
+            LI3 = 0;
+            ENT = 0; //, R
+            D = 0;
+
+            RO0 = 0;
+            ENT = 0;
+            ENT0 = 0;
+
+            RIA = new double[5];
+
+            LKP = new double[10];
+
+            FEQ1 = 0;
+            FEQ2 = 0;
+
+            GF = 0;
+            GE = 0;
+
+            FUCE1 = 0;
+            FUCE2 = 0;
+
+            UCJ = 0;
+
+            RI = new double[11];
+
+            int k = j * 5;
+            double r1 = 1;
+            double r2 = 1;
+
+            if (k == 100)
             {
-                CA = new double[6];
-                HA = new double[6];
-                BENT = new double[6];
-                II = new double[10];
-
-                T = 0;
-                P = 0;
-                RO = 0;
-                MU = 0;
-                MUA = 0;
-                CE = 0;
-                CF = 0;
-                LI1 = 0;
-                LI3 = 0;
-                ENT = 0; //, R
-                D = 0;
-
-                RO0 = 0;
-                ENT = 0;
-                ENT0 = 0;
-
-                RIA = new double[5];
-
-                LKP = new double[10];
-
-                FEQ1 = 0;
-                FEQ2 = 0;
-
-                GF = 0;
-                GE = 0;
-
-                FUCE1 = 0;
-                FUCE2 = 0;
-
-                UCJ = 0;
-
-                RI = new double[11];
-
-                int k = j * 5;
-                double r1 = 1;
-                double r2 = 1;
-
-                if (k == 100)
-                {
-                    r1 = 0;
-                }
-                else
-                {
-                    r2 = 1.0 * k / (100 - k);
-                }
-
-                for (int i = 0; i <= 2; i++)
-                {
-                    II[i] = r1 * Alfa[v, i];
-                    II[3 + i] = r2 * Beta[v, i];
-                }
-
-                II[6] = r1 * Alfa[v, 3] + r2 * Beta[v, 3];
-                II[7] = r1 * Alfa[v, 5] + r2 * Beta[v, 5];
-                II[8] = r1 * Alfa[v, 4] + r2 * Beta[v, 4];
-                II[9] = r1 * Alfa[v, 6] + r2 * Beta[v, 6];
-
-                for (int i = 0; i <= 2; i++)
-                {
-                    CA[i] = initialFuels[i].CarbonAmount;
-                    CA[3 + i] = finalFuels[i].CarbonAmount;
-
-                    HA[i] = initialFuels[i].HydrogenAmount;
-                    HA[3 + i] = finalFuels[i].HydrogenAmount;
-
-                    BENT[i] = initialFuels[i].Entropy;
-                    BENT[3 + i] = finalFuels[i].Entropy;
-                }
-
-                Detonation();
-
-                // if (avst != 0) then exit;
-                // if BreakFlag then exit;
-
-                Fun[v, 0, j] = D; // { DX}
-                Fun[v, 1, j] = T; // { TCJ}
-                Fun[v, 2, j] = P; // { PCJ}
-                Fun[v, 3, j] = RO; //  { ROCJ}
-                Fun[v, 4, j] = D - CE; // { UCJ}
-                Fun[v, 5, j] = MU; // { MUCJ}
-                Fun[v, 6, j] = RO * UCJ * UCJ / 2.0 / ATM; //  { FORCE}
-
-                for (int i = 0; i <= 10; i++)
-                {
-                    Fun[v, 7 + i, j] = RI[i];
-                }
+                r1 = 0;
+            }
+            else
+            {
+                r2 = 1.0 * k / (100 - k);
             }
 
-            using StreamWriter streamWriter = new StreamWriter("../result.txt");
+            for (int i = 0; i <= 2; i++)
             {
-                for (int i = 0; i < Fun.GetLength(2); i++)
-                {
-                    for (int j = 0; j < Fun.GetLength(1); j++)
-                    {
-                        streamWriter.WriteLine(Fun[v, j, i]);
-                    }
-
-                    streamWriter.WriteLine();
-                    streamWriter.WriteLine();
-                }
-
-                MessageBox.Show("Done.");
+                II[i] = r1 * Alfa[i];
+                II[3 + i] = r2 * Beta[i];
             }
+
+            II[6] = r1 * Alfa[3] + r2 * Beta[3];
+            II[7] = r1 * Alfa[5] + r2 * Beta[5];
+            II[8] = r1 * Alfa[4] + r2 * Beta[4];
+            II[9] = r1 * Alfa[6] + r2 * Beta[6];
+
+            for (int i = 0; i <= 2; i++)
+            {
+                CA[i] = initialFuels[i].CarbonAmount;
+                CA[3 + i] = finalFuels[i].CarbonAmount;
+
+                HA[i] = initialFuels[i].HydrogenAmount;
+                HA[3 + i] = finalFuels[i].HydrogenAmount;
+
+                BENT[i] = initialFuels[i].Enthalpy;
+                BENT[3 + i] = finalFuels[i].Enthalpy;
+            }
+
+            Detonation();
+
+            // if (avst != 0) then exit;
+            // if BreakFlag then exit;
+
+            functionsPoints[0] = D; // { DX}
+            functionsPoints[1] = T; // { TCJ}
+            functionsPoints[2] = P; // { PCJ}
+            functionsPoints[3] = RO; //  { ROCJ}
+            functionsPoints[4] = D - CE; // { UCJ}
+            functionsPoints[5] = MU; // { MUCJ}
+            functionsPoints[6] = RO * UCJ * UCJ / 2.0 / ATM; //  { FORCE}
+
+            for (int i = 0; i <= 10; i++)
+            {
+                functionsPoints[7 + i] = RI[i];
+            }
+
+            return functionsPoints;
+
+            
         }
     }
 }
