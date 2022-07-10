@@ -455,8 +455,8 @@ namespace Deton
             // 
             this.tableLayoutPanel11.AutoSize = true;
             this.tableLayoutPanel11.ColumnCount = 2;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.74496F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.25504F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.74269F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.25731F));
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.label23, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -476,14 +476,14 @@ namespace Deton
             this.tableLayoutPanel5.Controls.Add(this.InitialFuelComboBox2, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.InitialFuelComboBox3, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(211, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(218, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(131, 101);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(124, 101);
             this.tableLayoutPanel5.TabIndex = 6;
             // 
             // InitialFuelComboBox1
@@ -493,7 +493,7 @@ namespace Deton
             this.InitialFuelComboBox1.Location = new System.Drawing.Point(3, 3);
             this.InitialFuelComboBox1.MaxDropDownItems = 15;
             this.InitialFuelComboBox1.Name = "InitialFuelComboBox1";
-            this.InitialFuelComboBox1.Size = new System.Drawing.Size(125, 28);
+            this.InitialFuelComboBox1.Size = new System.Drawing.Size(118, 28);
             this.InitialFuelComboBox1.TabIndex = 0;
             // 
             // InitialFuelComboBox2
@@ -503,7 +503,7 @@ namespace Deton
             this.InitialFuelComboBox2.Location = new System.Drawing.Point(3, 36);
             this.InitialFuelComboBox2.MaxDropDownItems = 15;
             this.InitialFuelComboBox2.Name = "InitialFuelComboBox2";
-            this.InitialFuelComboBox2.Size = new System.Drawing.Size(125, 28);
+            this.InitialFuelComboBox2.Size = new System.Drawing.Size(118, 28);
             this.InitialFuelComboBox2.TabIndex = 1;
             // 
             // InitialFuelComboBox3
@@ -513,7 +513,7 @@ namespace Deton
             this.InitialFuelComboBox3.Location = new System.Drawing.Point(3, 69);
             this.InitialFuelComboBox3.MaxDropDownItems = 15;
             this.InitialFuelComboBox3.Name = "InitialFuelComboBox3";
-            this.InitialFuelComboBox3.Size = new System.Drawing.Size(125, 28);
+            this.InitialFuelComboBox3.Size = new System.Drawing.Size(118, 28);
             this.InitialFuelComboBox3.TabIndex = 2;
             // 
             // label23
@@ -521,7 +521,7 @@ namespace Deton
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(23, 31);
+            this.label23.Location = new System.Drawing.Point(27, 31);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(164, 38);
             this.label23.TabIndex = 48;
@@ -673,8 +673,8 @@ namespace Deton
             // 
             this.tableLayoutPanel14.AutoSize = true;
             this.tableLayoutPanel14.ColumnCount = 2;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.03509F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.96491F));
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -694,14 +694,14 @@ namespace Deton
             this.tableLayoutPanel6.Controls.Add(this.FinalFuelComboBox2, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.FinalFuelComboBox3, 0, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(239, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(219, 0);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(103, 96);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(123, 96);
             this.tableLayoutPanel6.TabIndex = 50;
             // 
             // FinalFuelComboBox1
@@ -711,7 +711,7 @@ namespace Deton
             this.FinalFuelComboBox1.Location = new System.Drawing.Point(3, 3);
             this.FinalFuelComboBox1.MaxDropDownItems = 15;
             this.FinalFuelComboBox1.Name = "FinalFuelComboBox1";
-            this.FinalFuelComboBox1.Size = new System.Drawing.Size(97, 28);
+            this.FinalFuelComboBox1.Size = new System.Drawing.Size(117, 28);
             this.FinalFuelComboBox1.TabIndex = 0;
             // 
             // FinalFuelComboBox2
@@ -721,7 +721,7 @@ namespace Deton
             this.FinalFuelComboBox2.Location = new System.Drawing.Point(3, 35);
             this.FinalFuelComboBox2.MaxDropDownItems = 15;
             this.FinalFuelComboBox2.Name = "FinalFuelComboBox2";
-            this.FinalFuelComboBox2.Size = new System.Drawing.Size(97, 28);
+            this.FinalFuelComboBox2.Size = new System.Drawing.Size(117, 28);
             this.FinalFuelComboBox2.TabIndex = 1;
             // 
             // FinalFuelComboBox3
@@ -731,7 +731,7 @@ namespace Deton
             this.FinalFuelComboBox3.Location = new System.Drawing.Point(3, 67);
             this.FinalFuelComboBox3.MaxDropDownItems = 15;
             this.FinalFuelComboBox3.Name = "FinalFuelComboBox3";
-            this.FinalFuelComboBox3.Size = new System.Drawing.Size(97, 28);
+            this.FinalFuelComboBox3.Size = new System.Drawing.Size(117, 28);
             this.FinalFuelComboBox3.TabIndex = 2;
             // 
             // label26
@@ -739,7 +739,7 @@ namespace Deton
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(37, 29);
+            this.label26.Location = new System.Drawing.Point(27, 29);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(164, 38);
             this.label26.TabIndex = 49;
