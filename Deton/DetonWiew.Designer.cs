@@ -317,7 +317,7 @@ namespace Deton
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(645, 629);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(645, 637);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel37
@@ -1674,21 +1674,21 @@ namespace Deton
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel2.Controls.Add(this.BCheckBox, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.CCheckBox, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.CalculationButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.ACheckBox, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 700);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 717);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(735, 75);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(735, 66);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // BCheckBox
@@ -1699,9 +1699,9 @@ namespace Deton
             this.BCheckBox.AutoSize = true;
             this.BCheckBox.Enabled = false;
             this.BCheckBox.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BCheckBox.Location = new System.Drawing.Point(533, 3);
+            this.BCheckBox.Location = new System.Drawing.Point(540, 3);
             this.BCheckBox.Name = "BCheckBox";
-            this.BCheckBox.Size = new System.Drawing.Size(95, 69);
+            this.BCheckBox.Size = new System.Drawing.Size(91, 60);
             this.BCheckBox.TabIndex = 1;
             this.BCheckBox.Text = "B";
             this.BCheckBox.UseVisualStyleBackColor = true;
@@ -1714,9 +1714,9 @@ namespace Deton
             this.CCheckBox.AutoSize = true;
             this.CCheckBox.Enabled = false;
             this.CCheckBox.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CCheckBox.Location = new System.Drawing.Point(634, 3);
+            this.CCheckBox.Location = new System.Drawing.Point(637, 3);
             this.CCheckBox.Name = "CCheckBox";
-            this.CCheckBox.Size = new System.Drawing.Size(98, 69);
+            this.CCheckBox.Size = new System.Drawing.Size(95, 60);
             this.CCheckBox.TabIndex = 2;
             this.CCheckBox.Text = "C";
             this.CCheckBox.UseVisualStyleBackColor = true;
@@ -1724,7 +1724,7 @@ namespace Deton
             // CalculationButton
             // 
             this.CalculationButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CalculationButton.Location = new System.Drawing.Point(50, 13);
+            this.CalculationButton.Location = new System.Drawing.Point(55, 9);
             this.CalculationButton.Name = "CalculationButton";
             this.CalculationButton.Size = new System.Drawing.Size(328, 48);
             this.CalculationButton.TabIndex = 3;
@@ -1739,9 +1739,9 @@ namespace Deton
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ACheckBox.AutoSize = true;
             this.ACheckBox.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ACheckBox.Location = new System.Drawing.Point(432, 3);
+            this.ACheckBox.Location = new System.Drawing.Point(441, 3);
             this.ACheckBox.Name = "ACheckBox";
-            this.ACheckBox.Size = new System.Drawing.Size(95, 69);
+            this.ACheckBox.Size = new System.Drawing.Size(93, 60);
             this.ACheckBox.TabIndex = 0;
             this.ACheckBox.Text = "A";
             this.ACheckBox.UseVisualStyleBackColor = true;
@@ -1759,7 +1759,7 @@ namespace Deton
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 312F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(95, 629);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(95, 637);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // label2
@@ -1767,7 +1767,7 @@ namespace Deton
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(5, 120);
+            this.label2.Location = new System.Drawing.Point(5, 124);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(84, 76);
@@ -1780,7 +1780,7 @@ namespace Deton
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(10, 434);
+            this.label15.Location = new System.Drawing.Point(10, 442);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 76);
             this.label15.TabIndex = 1;
@@ -1792,9 +1792,9 @@ namespace Deton
             this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel4.ColumnCount = 4;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel4.Controls.Add(this.label14, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label16, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label17, 2, 0);
@@ -1811,7 +1811,7 @@ namespace Deton
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(151, 5);
+            this.label14.Location = new System.Drawing.Point(162, 5);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(114, 38);
             this.label14.TabIndex = 7;
@@ -1823,7 +1823,7 @@ namespace Deton
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(450, 5);
+            this.label16.Location = new System.Drawing.Point(470, 5);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(35, 38);
             this.label16.TabIndex = 8;
@@ -1835,7 +1835,7 @@ namespace Deton
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(553, 5);
+            this.label17.Location = new System.Drawing.Point(569, 5);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(33, 38);
             this.label17.TabIndex = 9;
@@ -1847,7 +1847,7 @@ namespace Deton
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(660, 5);
+            this.label18.Location = new System.Drawing.Point(667, 5);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(34, 38);
             this.label18.TabIndex = 10;
@@ -2054,7 +2054,7 @@ namespace Deton
             this.AcceptButton = this.CalculationButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 775);
+            this.ClientSize = new System.Drawing.Size(735, 783);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel4);
@@ -2063,8 +2063,8 @@ namespace Deton
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(753, 822);
-            this.MinimumSize = new System.Drawing.Size(753, 822);
+            this.MaximumSize = new System.Drawing.Size(753, 830);
+            this.MinimumSize = new System.Drawing.Size(753, 830);
             this.Name = "DetonWiew";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
