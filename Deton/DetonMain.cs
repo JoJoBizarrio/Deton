@@ -24,7 +24,20 @@ namespace Deton
             // see https://aka.ms/applicationconfiguration.
             // ApplicationConfiguration.Initialize();
 
-            IFuel[] fuels = new IFuel[] { new NotSelected(), new Hydrogen(), new Acetylene(), new Butane(), new Butene(), new Ethane(), new Ethylene(), new Methane(), new Pentane(), new Propane(), new Propylene() };
+            IFuel[] fuels = new IFuel[] 
+            { 
+                new NotSelected(), 
+                new Hydrogen(), 
+                new Acetylene(), 
+                new Butane(), 
+                new Butene(), 
+                new Ethane(),
+                new Ethylene(),
+                new Methane(), 
+                new Pentane(), 
+                new Propane(), 
+                new Propylene()
+            };
 
             Application.Run(new DetonWiew(fuels));
         }

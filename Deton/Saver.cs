@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace Deton
@@ -17,17 +13,23 @@ namespace Deton
                 Directory.CreateDirectory("../save");
             }
 
-            string path = "../save/autosave1.txt";
-            string format = ".txt";
-            int i = 2;
+            string path1 = "../save/autosave1.csv";
+            string csvFormat = ".csv";
+            int i = 1;
 
-            while (File.Exists(path))
+            while (File.Exists(path1))
             {
-                path = path.Remove(path.Length - format.Length  - (i % 1000).ToString().Length) + i.ToString() + format;
+                path1 = path1.Remove(path1.Length - csvFormat.Length  - (i % 1000).ToString().Length);
+
                 i++;
+
+                path1 = path1 + i.ToString() + csvFormat;
             }
 
-            using StreamWriter streamWriter = new StreamWriter(path);
+            string txtFormat = ".txt";
+            string path2 = path1.Remove(path1.Length - csvFormat.Length) + txtFormat;
+
+            using StreamWriter streamWriter = new StreamWriter(path2);
             {
                 for (int j = 0; j < functionsPoints[j].Length ; j++)
                 {
@@ -43,9 +45,9 @@ namespace Deton
 
             streamWriter.Dispose();
 
-            if (File.Exists(path))
+            if (File.Exists(path2))
             {
-                File.Move(path, path.Replace(".txt", ".csv"));
+                File.Move(path2, path2.Replace(txtFormat, csvFormat));
             }
         }
     }
