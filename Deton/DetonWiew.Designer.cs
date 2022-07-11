@@ -70,15 +70,15 @@ namespace Deton
             this.FinalFuelComboBox3 = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.label27 = new System.Windows.Forms.Label();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.label28 = new System.Windows.Forms.Label();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -173,6 +173,9 @@ namespace Deton
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel37.SuspendLayout();
@@ -211,6 +214,7 @@ namespace Deton
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -382,6 +386,7 @@ namespace Deton
             this.InitialFuel3MolValueTextBoxC.Name = "InitialFuel3MolValueTextBoxC";
             this.InitialFuel3MolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.InitialFuel3MolValueTextBoxC.TabIndex = 2;
+            this.InitialFuel3MolValueTextBoxC.Text = "0";
             this.InitialFuel3MolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialFuel2MolValueTextBoxC
@@ -392,6 +397,7 @@ namespace Deton
             this.InitialFuel2MolValueTextBoxC.Name = "InitialFuel2MolValueTextBoxC";
             this.InitialFuel2MolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.InitialFuel2MolValueTextBoxC.TabIndex = 1;
+            this.InitialFuel2MolValueTextBoxC.Text = "0";
             this.InitialFuel2MolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialFuel1MolValueTextBoxC
@@ -402,6 +408,7 @@ namespace Deton
             this.InitialFuel1MolValueTextBoxC.Name = "InitialFuel1MolValueTextBoxC";
             this.InitialFuel1MolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.InitialFuel1MolValueTextBoxC.TabIndex = 0;
+            this.InitialFuel1MolValueTextBoxC.Text = "0";
             this.InitialFuel1MolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel29
@@ -429,6 +436,7 @@ namespace Deton
             this.InitialFuel3MolValueTextBoxB.Name = "InitialFuel3MolValueTextBoxB";
             this.InitialFuel3MolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.InitialFuel3MolValueTextBoxB.TabIndex = 2;
+            this.InitialFuel3MolValueTextBoxB.Text = "0";
             this.InitialFuel3MolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialFuel2MolValueTextBoxB
@@ -439,6 +447,7 @@ namespace Deton
             this.InitialFuel2MolValueTextBoxB.Name = "InitialFuel2MolValueTextBoxB";
             this.InitialFuel2MolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.InitialFuel2MolValueTextBoxB.TabIndex = 1;
+            this.InitialFuel2MolValueTextBoxB.Text = "0";
             this.InitialFuel2MolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialFuel1MolValueTextBoxB
@@ -449,14 +458,15 @@ namespace Deton
             this.InitialFuel1MolValueTextBoxB.Name = "InitialFuel1MolValueTextBoxB";
             this.InitialFuel1MolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.InitialFuel1MolValueTextBoxB.TabIndex = 0;
+            this.InitialFuel1MolValueTextBoxB.Text = "0";
             this.InitialFuel1MolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel11
             // 
             this.tableLayoutPanel11.AutoSize = true;
             this.tableLayoutPanel11.ColumnCount = 2;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.74269F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.25731F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.19289F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.8071F));
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.label23, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -476,14 +486,14 @@ namespace Deton
             this.tableLayoutPanel5.Controls.Add(this.InitialFuelComboBox2, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.InitialFuelComboBox3, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(218, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(219, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(124, 101);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(123, 101);
             this.tableLayoutPanel5.TabIndex = 6;
             // 
             // InitialFuelComboBox1
@@ -493,7 +503,7 @@ namespace Deton
             this.InitialFuelComboBox1.Location = new System.Drawing.Point(3, 3);
             this.InitialFuelComboBox1.MaxDropDownItems = 15;
             this.InitialFuelComboBox1.Name = "InitialFuelComboBox1";
-            this.InitialFuelComboBox1.Size = new System.Drawing.Size(118, 28);
+            this.InitialFuelComboBox1.Size = new System.Drawing.Size(117, 28);
             this.InitialFuelComboBox1.TabIndex = 0;
             // 
             // InitialFuelComboBox2
@@ -503,7 +513,7 @@ namespace Deton
             this.InitialFuelComboBox2.Location = new System.Drawing.Point(3, 36);
             this.InitialFuelComboBox2.MaxDropDownItems = 15;
             this.InitialFuelComboBox2.Name = "InitialFuelComboBox2";
-            this.InitialFuelComboBox2.Size = new System.Drawing.Size(118, 28);
+            this.InitialFuelComboBox2.Size = new System.Drawing.Size(117, 28);
             this.InitialFuelComboBox2.TabIndex = 1;
             // 
             // InitialFuelComboBox3
@@ -513,7 +523,7 @@ namespace Deton
             this.InitialFuelComboBox3.Location = new System.Drawing.Point(3, 69);
             this.InitialFuelComboBox3.MaxDropDownItems = 15;
             this.InitialFuelComboBox3.Name = "InitialFuelComboBox3";
-            this.InitialFuelComboBox3.Size = new System.Drawing.Size(118, 28);
+            this.InitialFuelComboBox3.Size = new System.Drawing.Size(117, 28);
             this.InitialFuelComboBox3.TabIndex = 2;
             // 
             // label23
@@ -532,8 +542,8 @@ namespace Deton
             // 
             this.tableLayoutPanel12.AutoSize = true;
             this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel8, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.label24, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -547,18 +557,21 @@ namespace Deton
             // 
             // tableLayoutPanel8
             // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel8.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(239, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(222, 0);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(96, 64);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(120, 64);
             this.tableLayoutPanel8.TabIndex = 8;
             // 
             // label3
@@ -568,7 +581,7 @@ namespace Deton
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(4, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 31);
+            this.label3.Size = new System.Drawing.Size(112, 31);
             this.label3.TabIndex = 16;
             this.label3.Text = "Air";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -583,7 +596,7 @@ namespace Deton
             this.label1.Location = new System.Drawing.Point(1, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 30);
+            this.label1.Size = new System.Drawing.Size(118, 30);
             this.label1.TabIndex = 15;
             this.label1.Text = "O2";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -593,7 +606,7 @@ namespace Deton
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(61, 13);
+            this.label24.Location = new System.Drawing.Point(52, 13);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(117, 38);
             this.label24.TabIndex = 49;
@@ -604,8 +617,8 @@ namespace Deton
             // 
             this.tableLayoutPanel13.AutoSize = true;
             this.tableLayoutPanel13.ColumnCount = 2;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel9, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.label25, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -619,18 +632,21 @@ namespace Deton
             // 
             // tableLayoutPanel9
             // 
+            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel9.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.labelNitrogen, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(239, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(222, 0);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(96, 64);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(120, 64);
             this.tableLayoutPanel9.TabIndex = 9;
             // 
             // label5
@@ -640,7 +656,7 @@ namespace Deton
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(4, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 31);
+            this.label5.Size = new System.Drawing.Size(112, 31);
             this.label5.TabIndex = 18;
             this.label5.Text = "Ar";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -652,7 +668,7 @@ namespace Deton
             this.labelNitrogen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelNitrogen.Location = new System.Drawing.Point(4, 1);
             this.labelNitrogen.Name = "labelNitrogen";
-            this.labelNitrogen.Size = new System.Drawing.Size(88, 30);
+            this.labelNitrogen.Size = new System.Drawing.Size(112, 30);
             this.labelNitrogen.TabIndex = 17;
             this.labelNitrogen.Text = "N2";
             this.labelNitrogen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -662,7 +678,7 @@ namespace Deton
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(41, 13);
+            this.label25.Location = new System.Drawing.Point(32, 13);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(157, 38);
             this.label25.TabIndex = 50;
@@ -750,80 +766,85 @@ namespace Deton
             // 
             this.tableLayoutPanel16.AutoSize = true;
             this.tableLayoutPanel16.ColumnCount = 2;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel20, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.label27, 0, 0);
-            this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel20, 1, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel16.Location = new System.Drawing.Point(4, 429);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel16.Size = new System.Drawing.Size(342, 64);
             this.tableLayoutPanel16.TabIndex = 14;
             this.tableLayoutPanel16.TabStop = true;
             // 
-            // label27
-            // 
-            this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(61, 13);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(117, 38);
-            this.label27.TabIndex = 50;
-            this.label27.Text = "Oxiders:";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tableLayoutPanel20
             // 
+            this.tableLayoutPanel20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel20.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel20.ColumnCount = 1;
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Controls.Add(this.label10, 0, 1);
-            this.tableLayoutPanel20.Controls.Add(this.label11, 0, 0);
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(239, 0);
+            this.tableLayoutPanel20.Controls.Add(this.label11, 0, 1);
+            this.tableLayoutPanel20.Controls.Add(this.label29, 0, 0);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(222, 0);
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(96, 64);
-            this.tableLayoutPanel20.TabIndex = 9;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(4, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 31);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Air";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(120, 64);
+            this.tableLayoutPanel20.TabIndex = 51;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(4, 1);
+            this.label11.Location = new System.Drawing.Point(4, 32);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 30);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "O2";
+            this.label11.Size = new System.Drawing.Size(112, 31);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Air";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(1, 1);
+            this.label29.Margin = new System.Windows.Forms.Padding(0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(118, 30);
+            this.label29.TabIndex = 15;
+            this.label29.Text = "O2";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label27.Location = new System.Drawing.Point(52, 13);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(117, 38);
+            this.label27.TabIndex = 50;
+            this.label27.Text = "Oxiders:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel17
             // 
             this.tableLayoutPanel17.AutoSize = true;
             this.tableLayoutPanel17.ColumnCount = 2;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel21, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
-            this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel21, 1, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(4, 500);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
@@ -833,33 +854,24 @@ namespace Deton
             this.tableLayoutPanel17.TabIndex = 0;
             this.tableLayoutPanel17.TabStop = true;
             // 
-            // label28
-            // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(41, 13);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(157, 38);
-            this.label28.TabIndex = 51;
-            this.label28.Text = "Inert gases:";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tableLayoutPanel21
             // 
+            this.tableLayoutPanel21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel21.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel21.ColumnCount = 1;
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel21.Controls.Add(this.label12, 0, 1);
             this.tableLayoutPanel21.Controls.Add(this.label13, 0, 0);
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(239, 0);
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(222, 0);
             this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
             this.tableLayoutPanel21.RowCount = 2;
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(96, 64);
-            this.tableLayoutPanel21.TabIndex = 10;
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(120, 64);
+            this.tableLayoutPanel21.TabIndex = 52;
             // 
             // label12
             // 
@@ -868,7 +880,7 @@ namespace Deton
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(4, 32);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 31);
+            this.label12.Size = new System.Drawing.Size(112, 31);
             this.label12.TabIndex = 18;
             this.label12.Text = "Ar";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -880,10 +892,22 @@ namespace Deton
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(4, 1);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 30);
+            this.label13.Size = new System.Drawing.Size(112, 30);
             this.label13.TabIndex = 17;
             this.label13.Text = "N2";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label28.Location = new System.Drawing.Point(32, 13);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(157, 38);
+            this.label28.TabIndex = 51;
+            this.label28.Text = "Inert gases:";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label19
             // 
@@ -1053,6 +1077,7 @@ namespace Deton
             this.FinalFuel3MolValueTextBoxB.Name = "FinalFuel3MolValueTextBoxB";
             this.FinalFuel3MolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.FinalFuel3MolValueTextBoxB.TabIndex = 2;
+            this.FinalFuel3MolValueTextBoxB.Text = "0";
             this.FinalFuel3MolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FinalFuel2MolValueTextBoxB
@@ -1063,6 +1088,7 @@ namespace Deton
             this.FinalFuel2MolValueTextBoxB.Name = "FinalFuel2MolValueTextBoxB";
             this.FinalFuel2MolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.FinalFuel2MolValueTextBoxB.TabIndex = 1;
+            this.FinalFuel2MolValueTextBoxB.Text = "0";
             this.FinalFuel2MolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FinalFuel1MolValueTextBoxB
@@ -1073,6 +1099,7 @@ namespace Deton
             this.FinalFuel1MolValueTextBoxB.Name = "FinalFuel1MolValueTextBoxB";
             this.FinalFuel1MolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.FinalFuel1MolValueTextBoxB.TabIndex = 0;
+            this.FinalFuel1MolValueTextBoxB.Text = "0";
             this.FinalFuel1MolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel30
@@ -1100,6 +1127,7 @@ namespace Deton
             this.FinalFuel3MolValueTextBoxC.Name = "FinalFuel3MolValueTextBoxC";
             this.FinalFuel3MolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.FinalFuel3MolValueTextBoxC.TabIndex = 2;
+            this.FinalFuel3MolValueTextBoxC.Text = "0";
             this.FinalFuel3MolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FinalFuel2MolValueTextBoxC
@@ -1110,6 +1138,7 @@ namespace Deton
             this.FinalFuel2MolValueTextBoxC.Name = "FinalFuel2MolValueTextBoxC";
             this.FinalFuel2MolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.FinalFuel2MolValueTextBoxC.TabIndex = 1;
+            this.FinalFuel2MolValueTextBoxC.Text = "0";
             this.FinalFuel2MolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FinalFuel1MolValueTextBoxC
@@ -1120,6 +1149,7 @@ namespace Deton
             this.FinalFuel1MolValueTextBoxC.Name = "FinalFuel1MolValueTextBoxC";
             this.FinalFuel1MolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.FinalFuel1MolValueTextBoxC.TabIndex = 0;
+            this.FinalFuel1MolValueTextBoxC.Text = "0";
             this.FinalFuel1MolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialEquimolarTextBoxA
@@ -1129,6 +1159,7 @@ namespace Deton
             this.InitialEquimolarTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InitialEquimolarTextBoxA.Location = new System.Drawing.Point(355, 255);
             this.InitialEquimolarTextBoxA.Name = "InitialEquimolarTextBoxA";
+            this.InitialEquimolarTextBoxA.ReadOnly = true;
             this.InitialEquimolarTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialEquimolarTextBoxA.TabIndex = 48;
             this.InitialEquimolarTextBoxA.TabStop = false;
@@ -1141,6 +1172,7 @@ namespace Deton
             this.InitialStoichiometricTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InitialStoichiometricTextBoxA.Location = new System.Drawing.Point(355, 291);
             this.InitialStoichiometricTextBoxA.Name = "InitialStoichiometricTextBoxA";
+            this.InitialStoichiometricTextBoxA.ReadOnly = true;
             this.InitialStoichiometricTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.InitialStoichiometricTextBoxA.TabIndex = 49;
             this.InitialStoichiometricTextBoxA.TabStop = false;
@@ -1153,6 +1185,7 @@ namespace Deton
             this.InitialEquimolarTextBoxB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InitialEquimolarTextBoxB.Location = new System.Drawing.Point(453, 255);
             this.InitialEquimolarTextBoxB.Name = "InitialEquimolarTextBoxB";
+            this.InitialEquimolarTextBoxB.ReadOnly = true;
             this.InitialEquimolarTextBoxB.Size = new System.Drawing.Size(86, 27);
             this.InitialEquimolarTextBoxB.TabIndex = 50;
             this.InitialEquimolarTextBoxB.TabStop = false;
@@ -1165,6 +1198,7 @@ namespace Deton
             this.InitialStoichiometricTextBoxB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InitialStoichiometricTextBoxB.Location = new System.Drawing.Point(453, 291);
             this.InitialStoichiometricTextBoxB.Name = "InitialStoichiometricTextBoxB";
+            this.InitialStoichiometricTextBoxB.ReadOnly = true;
             this.InitialStoichiometricTextBoxB.Size = new System.Drawing.Size(86, 27);
             this.InitialStoichiometricTextBoxB.TabIndex = 51;
             this.InitialStoichiometricTextBoxB.TabStop = false;
@@ -1177,6 +1211,7 @@ namespace Deton
             this.InitialEquimolarTextBoxC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InitialEquimolarTextBoxC.Location = new System.Drawing.Point(552, 255);
             this.InitialEquimolarTextBoxC.Name = "InitialEquimolarTextBoxC";
+            this.InitialEquimolarTextBoxC.ReadOnly = true;
             this.InitialEquimolarTextBoxC.Size = new System.Drawing.Size(86, 27);
             this.InitialEquimolarTextBoxC.TabIndex = 52;
             this.InitialEquimolarTextBoxC.TabStop = false;
@@ -1189,6 +1224,7 @@ namespace Deton
             this.InitialStoichiometricTextBoxC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InitialStoichiometricTextBoxC.Location = new System.Drawing.Point(552, 291);
             this.InitialStoichiometricTextBoxC.Name = "InitialStoichiometricTextBoxC";
+            this.InitialStoichiometricTextBoxC.ReadOnly = true;
             this.InitialStoichiometricTextBoxC.Size = new System.Drawing.Size(86, 27);
             this.InitialStoichiometricTextBoxC.TabIndex = 53;
             this.InitialStoichiometricTextBoxC.TabStop = false;
@@ -1201,6 +1237,7 @@ namespace Deton
             this.FinalEquimolarTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FinalEquimolarTextBoxA.Location = new System.Drawing.Point(355, 572);
             this.FinalEquimolarTextBoxA.Name = "FinalEquimolarTextBoxA";
+            this.FinalEquimolarTextBoxA.ReadOnly = true;
             this.FinalEquimolarTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.FinalEquimolarTextBoxA.TabIndex = 54;
             this.FinalEquimolarTextBoxA.TabStop = false;
@@ -1213,6 +1250,7 @@ namespace Deton
             this.FinalEquimolarTextBoxB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FinalEquimolarTextBoxB.Location = new System.Drawing.Point(453, 572);
             this.FinalEquimolarTextBoxB.Name = "FinalEquimolarTextBoxB";
+            this.FinalEquimolarTextBoxB.ReadOnly = true;
             this.FinalEquimolarTextBoxB.Size = new System.Drawing.Size(86, 27);
             this.FinalEquimolarTextBoxB.TabIndex = 55;
             this.FinalEquimolarTextBoxB.TabStop = false;
@@ -1225,6 +1263,7 @@ namespace Deton
             this.FinalEquimolarTextBoxC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FinalEquimolarTextBoxC.Location = new System.Drawing.Point(552, 572);
             this.FinalEquimolarTextBoxC.Name = "FinalEquimolarTextBoxC";
+            this.FinalEquimolarTextBoxC.ReadOnly = true;
             this.FinalEquimolarTextBoxC.Size = new System.Drawing.Size(86, 27);
             this.FinalEquimolarTextBoxC.TabIndex = 56;
             this.FinalEquimolarTextBoxC.TabStop = false;
@@ -1237,6 +1276,7 @@ namespace Deton
             this.FinalStoichiometricTextBoxC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FinalStoichiometricTextBoxC.Location = new System.Drawing.Point(552, 608);
             this.FinalStoichiometricTextBoxC.Name = "FinalStoichiometricTextBoxC";
+            this.FinalStoichiometricTextBoxC.ReadOnly = true;
             this.FinalStoichiometricTextBoxC.Size = new System.Drawing.Size(86, 27);
             this.FinalStoichiometricTextBoxC.TabIndex = 57;
             this.FinalStoichiometricTextBoxC.TabStop = false;
@@ -1249,6 +1289,7 @@ namespace Deton
             this.FinalStoichiometricTextBoxB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FinalStoichiometricTextBoxB.Location = new System.Drawing.Point(453, 608);
             this.FinalStoichiometricTextBoxB.Name = "FinalStoichiometricTextBoxB";
+            this.FinalStoichiometricTextBoxB.ReadOnly = true;
             this.FinalStoichiometricTextBoxB.Size = new System.Drawing.Size(86, 27);
             this.FinalStoichiometricTextBoxB.TabIndex = 58;
             this.FinalStoichiometricTextBoxB.TabStop = false;
@@ -1352,6 +1393,7 @@ namespace Deton
             this.FinalAirMolValueTextBoxC.Name = "FinalAirMolValueTextBoxC";
             this.FinalAirMolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.FinalAirMolValueTextBoxC.TabIndex = 2;
+            this.FinalAirMolValueTextBoxC.Text = "0";
             this.FinalAirMolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FinalOxygenMolValueTextBoxC
@@ -1362,6 +1404,7 @@ namespace Deton
             this.FinalOxygenMolValueTextBoxC.Name = "FinalOxygenMolValueTextBoxC";
             this.FinalOxygenMolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.FinalOxygenMolValueTextBoxC.TabIndex = 1;
+            this.FinalOxygenMolValueTextBoxC.Text = "0";
             this.FinalOxygenMolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel35
@@ -1387,6 +1430,7 @@ namespace Deton
             this.FinalAirMolValueTextBoxB.Name = "FinalAirMolValueTextBoxB";
             this.FinalAirMolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.FinalAirMolValueTextBoxB.TabIndex = 2;
+            this.FinalAirMolValueTextBoxB.Text = "0";
             this.FinalAirMolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FinalOxygenMolValueTextBoxB
@@ -1397,6 +1441,7 @@ namespace Deton
             this.FinalOxygenMolValueTextBoxB.Name = "FinalOxygenMolValueTextBoxB";
             this.FinalOxygenMolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.FinalOxygenMolValueTextBoxB.TabIndex = 1;
+            this.FinalOxygenMolValueTextBoxB.Text = "0";
             this.FinalOxygenMolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel39
@@ -1422,6 +1467,7 @@ namespace Deton
             this.FinalArgonMolValueTextBoxC.Name = "FinalArgonMolValueTextBoxC";
             this.FinalArgonMolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.FinalArgonMolValueTextBoxC.TabIndex = 2;
+            this.FinalArgonMolValueTextBoxC.Text = "0";
             this.FinalArgonMolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FinalNitrogenMolValueTextBoxC
@@ -1432,6 +1478,7 @@ namespace Deton
             this.FinalNitrogenMolValueTextBoxC.Name = "FinalNitrogenMolValueTextBoxC";
             this.FinalNitrogenMolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.FinalNitrogenMolValueTextBoxC.TabIndex = 1;
+            this.FinalNitrogenMolValueTextBoxC.Text = "0";
             this.FinalNitrogenMolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel38
@@ -1457,6 +1504,7 @@ namespace Deton
             this.FinalArgonMolValueTextBoxB.Name = "FinalArgonMolValueTextBoxB";
             this.FinalArgonMolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.FinalArgonMolValueTextBoxB.TabIndex = 2;
+            this.FinalArgonMolValueTextBoxB.Text = "0";
             this.FinalArgonMolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FinalNitrogenMolValueTextBoxB
@@ -1467,6 +1515,7 @@ namespace Deton
             this.FinalNitrogenMolValueTextBoxB.Name = "FinalNitrogenMolValueTextBoxB";
             this.FinalNitrogenMolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.FinalNitrogenMolValueTextBoxB.TabIndex = 1;
+            this.FinalNitrogenMolValueTextBoxB.Text = "0";
             this.FinalNitrogenMolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel41
@@ -1492,6 +1541,7 @@ namespace Deton
             this.InitialAirMolValueTextBoxB.Name = "InitialAirMolValueTextBoxB";
             this.InitialAirMolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.InitialAirMolValueTextBoxB.TabIndex = 2;
+            this.InitialAirMolValueTextBoxB.Text = "0";
             this.InitialAirMolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialOxygenMolValueTextBoxB
@@ -1502,6 +1552,7 @@ namespace Deton
             this.InitialOxygenMolValueTextBoxB.Name = "InitialOxygenMolValueTextBoxB";
             this.InitialOxygenMolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.InitialOxygenMolValueTextBoxB.TabIndex = 1;
+            this.InitialOxygenMolValueTextBoxB.Text = "0";
             this.InitialOxygenMolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel42
@@ -1527,6 +1578,7 @@ namespace Deton
             this.InitialAirMolValueTextBoxC.Name = "InitialAirMolValueTextBoxC";
             this.InitialAirMolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.InitialAirMolValueTextBoxC.TabIndex = 2;
+            this.InitialAirMolValueTextBoxC.Text = "0";
             this.InitialAirMolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialOxygenMolValueTextBoxC
@@ -1537,6 +1589,7 @@ namespace Deton
             this.InitialOxygenMolValueTextBoxC.Name = "InitialOxygenMolValueTextBoxC";
             this.InitialOxygenMolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.InitialOxygenMolValueTextBoxC.TabIndex = 1;
+            this.InitialOxygenMolValueTextBoxC.Text = "0";
             this.InitialOxygenMolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel43
@@ -1562,6 +1615,7 @@ namespace Deton
             this.InitialArgonMolValueTextBoxC.Name = "InitialArgonMolValueTextBoxC";
             this.InitialArgonMolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.InitialArgonMolValueTextBoxC.TabIndex = 2;
+            this.InitialArgonMolValueTextBoxC.Text = "0";
             this.InitialArgonMolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialNitrogenMolValueTextBoxC
@@ -1572,6 +1626,7 @@ namespace Deton
             this.InitialNitrogenMolValueTextBoxC.Name = "InitialNitrogenMolValueTextBoxC";
             this.InitialNitrogenMolValueTextBoxC.Size = new System.Drawing.Size(81, 27);
             this.InitialNitrogenMolValueTextBoxC.TabIndex = 1;
+            this.InitialNitrogenMolValueTextBoxC.Text = "0";
             this.InitialNitrogenMolValueTextBoxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel44
@@ -1597,6 +1652,7 @@ namespace Deton
             this.InitialArgonMolValueTextBoxB.Name = "InitialArgonMolValueTextBoxB";
             this.InitialArgonMolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.InitialArgonMolValueTextBoxB.TabIndex = 2;
+            this.InitialArgonMolValueTextBoxB.Text = "0";
             this.InitialArgonMolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitialNitrogenMolValueTextBoxB
@@ -1607,6 +1663,7 @@ namespace Deton
             this.InitialNitrogenMolValueTextBoxB.Name = "InitialNitrogenMolValueTextBoxB";
             this.InitialNitrogenMolValueTextBoxB.Size = new System.Drawing.Size(81, 27);
             this.InitialNitrogenMolValueTextBoxB.TabIndex = 1;
+            this.InitialNitrogenMolValueTextBoxB.Text = "0";
             this.InitialNitrogenMolValueTextBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel45
@@ -1653,6 +1710,7 @@ namespace Deton
             this.FinalStoichiometricTextBoxA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FinalStoichiometricTextBoxA.Location = new System.Drawing.Point(355, 608);
             this.FinalStoichiometricTextBoxA.Name = "FinalStoichiometricTextBoxA";
+            this.FinalStoichiometricTextBoxA.ReadOnly = true;
             this.FinalStoichiometricTextBoxA.Size = new System.Drawing.Size(86, 27);
             this.FinalStoichiometricTextBoxA.TabIndex = 67;
             this.FinalStoichiometricTextBoxA.TabStop = false;
@@ -1674,8 +1732,8 @@ namespace Deton
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel2.Controls.Add(this.BCheckBox, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.CCheckBox, 3, 0);
@@ -1697,11 +1755,10 @@ namespace Deton
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BCheckBox.AutoSize = true;
-            this.BCheckBox.Enabled = false;
             this.BCheckBox.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BCheckBox.Location = new System.Drawing.Point(540, 3);
+            this.BCheckBox.Location = new System.Drawing.Point(539, 3);
             this.BCheckBox.Name = "BCheckBox";
-            this.BCheckBox.Size = new System.Drawing.Size(91, 60);
+            this.BCheckBox.Size = new System.Drawing.Size(92, 60);
             this.BCheckBox.TabIndex = 1;
             this.BCheckBox.Text = "B";
             this.BCheckBox.UseVisualStyleBackColor = true;
@@ -1712,7 +1769,6 @@ namespace Deton
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CCheckBox.AutoSize = true;
-            this.CCheckBox.Enabled = false;
             this.CCheckBox.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CCheckBox.Location = new System.Drawing.Point(637, 3);
             this.CCheckBox.Name = "CCheckBox";
@@ -1741,7 +1797,7 @@ namespace Deton
             this.ACheckBox.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ACheckBox.Location = new System.Drawing.Point(441, 3);
             this.ACheckBox.Name = "ACheckBox";
-            this.ACheckBox.Size = new System.Drawing.Size(93, 60);
+            this.ACheckBox.Size = new System.Drawing.Size(92, 60);
             this.ACheckBox.TabIndex = 0;
             this.ACheckBox.Text = "A";
             this.ACheckBox.UseVisualStyleBackColor = true;
@@ -2049,6 +2105,49 @@ namespace Deton
             this.tableLayoutPanel28.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel28.TabIndex = 0;
             // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel15.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel15.ColumnCount = 1;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.Controls.Add(this.label4, 0, 1);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel15.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(4, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 97);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Air";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(1, 1);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(198, 25);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "O2";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DetonWiew
             // 
             this.AcceptButton = this.CalculationButton;
@@ -2143,6 +2242,8 @@ namespace Deton
             this.tableLayoutPanel18.PerformLayout();
             this.tableLayoutPanel19.ResumeLayout(false);
             this.tableLayoutPanel19.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2180,12 +2281,6 @@ namespace Deton
         private Label label3;
         private Label label5;
         private Label labelNitrogen;
-        private TableLayoutPanel tableLayoutPanel20;
-        private Label label10;
-        private Label label11;
-        private TableLayoutPanel tableLayoutPanel21;
-        private Label label12;
-        private Label label13;
         private Label label2;
         private Label label15;
         private Label label14;
@@ -2308,5 +2403,14 @@ namespace Deton
         private TextBox InitialNitrogenMolValueTextBoxC;
         private TextBox InitialArgonMolValueTextBoxB;
         private TextBox InitialNitrogenMolValueTextBoxB;
+        private TableLayoutPanel tableLayoutPanel20;
+        private Label label11;
+        private Label label29;
+        private TableLayoutPanel tableLayoutPanel21;
+        private Label label12;
+        private Label label13;
+        private TableLayoutPanel tableLayoutPanel15;
+        private Label label4;
+        private Label label10;
     }
 }
