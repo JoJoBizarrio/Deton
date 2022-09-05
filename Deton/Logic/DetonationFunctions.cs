@@ -12,7 +12,7 @@ namespace Deton.Logic
     {
         public DetonationFunctions(double[] Alfa, double[] Beta, IFuel[] initialFuels, IFuel[] finalFuels, int pointsAmount = 20)
         {
-            FunctionsPointsCalculator functionsPointsCalculator = new();
+            FunctionsPointsCalculator functionsPointsCalculator = new FunctionsPointsCalculator();
 
             List<double[]> detonationFunctions = new List<double[]>(pointsAmount + 1);
 

@@ -46,6 +46,19 @@ namespace Deton
             FinalOxygenMolValueTextBoxA.Text = "2";
         }
 
+        private void UpdateO2()
+        {
+            
+
+            Mixture mixture = new Mixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
+                                           Convert.ToDouble(InitialFuel1MolValueTextBoxA.Text), Convert.ToDouble(InitialFuel2MolValueTextBoxA.Text),
+                                           Convert.ToDouble(InitialFuel3MolValueTextBoxA.Text), Convert.ToDouble(InitialOxygenMolValueTextBoxA.Text),
+                                           Convert.ToDouble(InitialAirMolValueTextBoxA.Text), Convert.ToDouble(InitialNitrogenMolValueTextBoxA.Text),
+                                           Convert.ToDouble(InitialArgonMolValueTextBoxA.Text));
+
+            InitialEquimolarTextBoxA.Text = Convert.ToString(mixture.O2toEquimolarO2Value);
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dispose();
@@ -71,6 +84,7 @@ namespace Deton
                 return;
             }
 
+            //Mixture initialMixture = new Mixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem, InitialFuel1MolValueTextBoxA.Text);
             IFuel[] initialFuels = new IFuel[] { (IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem };
             IFuel[] finalFuels = new IFuel[] { (IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem };
 
@@ -78,22 +92,6 @@ namespace Deton
             {
                 double[] alfaA = new double[7];
                 double[] betaA = new double[7];
-
-                InitialFuel1MolValueTextBoxA.Text = InitialFuel1MolValueTextBoxA.Text.Replace('.', ',');
-                InitialFuel2MolValueTextBoxA.Text = InitialFuel2MolValueTextBoxA.Text.Replace('.', ',');
-                InitialFuel3MolValueTextBoxA.Text = InitialFuel3MolValueTextBoxA.Text.Replace('.', ',');
-                InitialOxygenMolValueTextBoxA.Text = InitialOxygenMolValueTextBoxA.Text.Replace('.', ',');
-                InitialAirMolValueTextBoxA.Text = InitialAirMolValueTextBoxA.Text.Replace('.', ',');
-                InitialArgonMolValueTextBoxA.Text = InitialArgonMolValueTextBoxA.Text.Replace('.', ',');
-                InitialNitrogenMolValueTextBoxA.Text = InitialNitrogenMolValueTextBoxA.Text.Replace('.', ',');
-
-                FinalFuel1MolValueTextBoxA.Text = FinalFuel1MolValueTextBoxA.Text.Replace('.', ',');
-                FinalFuel2MolValueTextBoxA.Text = FinalFuel2MolValueTextBoxA.Text.Replace('.', ',');
-                FinalFuel3MolValueTextBoxA.Text = FinalFuel3MolValueTextBoxA.Text.Replace('.', ',');
-                FinalOxygenMolValueTextBoxA.Text = FinalOxygenMolValueTextBoxA.Text.Replace('.', ',');
-                FinalAirMolValueTextBoxA.Text = FinalAirMolValueTextBoxA.Text.Replace('.', ',');
-                FinalArgonMolValueTextBoxA.Text = FinalArgonMolValueTextBoxA.Text.Replace('.', ',');
-                FinalNitrogenMolValueTextBoxA.Text = FinalNitrogenMolValueTextBoxA.Text.Replace('.', ',');
 
                 if (!double.TryParse(InitialFuel1MolValueTextBoxA.Text, out alfaA[0]) ||
                     !double.TryParse(InitialFuel2MolValueTextBoxA.Text, out alfaA[1]) ||
@@ -127,22 +125,6 @@ namespace Deton
                 double[] alfaB = new double[7];
                 double[] betaB = new double[7];
 
-                InitialFuel1MolValueTextBoxB.Text = InitialFuel1MolValueTextBoxB.Text.Replace('.', ',');
-                InitialFuel2MolValueTextBoxB.Text = InitialFuel2MolValueTextBoxB.Text.Replace('.', ',');
-                InitialFuel3MolValueTextBoxB.Text = InitialFuel3MolValueTextBoxB.Text.Replace('.', ',');
-                InitialOxygenMolValueTextBoxB.Text = InitialOxygenMolValueTextBoxB.Text.Replace('.', ',');
-                InitialAirMolValueTextBoxB.Text = InitialAirMolValueTextBoxB.Text.Replace('.', ',');
-                InitialArgonMolValueTextBoxB.Text = InitialArgonMolValueTextBoxB.Text.Replace('.', ',');
-                InitialNitrogenMolValueTextBoxB.Text = InitialNitrogenMolValueTextBoxB.Text.Replace('.', ',');
-
-                FinalFuel1MolValueTextBoxB.Text = FinalFuel1MolValueTextBoxB.Text.Replace('.', ',');
-                FinalFuel2MolValueTextBoxB.Text = FinalFuel2MolValueTextBoxB.Text.Replace('.', ',');
-                FinalFuel3MolValueTextBoxB.Text = FinalFuel3MolValueTextBoxB.Text.Replace('.', ',');
-                FinalOxygenMolValueTextBoxB.Text = FinalOxygenMolValueTextBoxB.Text.Replace('.', ',');
-                FinalAirMolValueTextBoxB.Text = FinalAirMolValueTextBoxB.Text.Replace('.', ',');
-                FinalArgonMolValueTextBoxB.Text = FinalArgonMolValueTextBoxB.Text.Replace('.', ',');
-                FinalNitrogenMolValueTextBoxB.Text = FinalNitrogenMolValueTextBoxB.Text.Replace('.', ',');
-
                 if (!double.TryParse(InitialFuel1MolValueTextBoxB.Text, out alfaB[0]) ||
                     !double.TryParse(InitialFuel2MolValueTextBoxB.Text, out alfaB[1]) ||
                     !double.TryParse(InitialFuel3MolValueTextBoxB.Text, out alfaB[2]) ||
@@ -167,22 +149,6 @@ namespace Deton
                     return;
                 }
 
-                //alfaB[0] = Convert.ToDouble(InitialFuel1MolValueTextBoxB.Text);
-                //alfaB[1] = Convert.ToDouble(InitialFuel2MolValueTextBoxB.Text);
-                //alfaB[2] = Convert.ToDouble(InitialFuel3MolValueTextBoxB.Text);
-                //alfaB[3] = Convert.ToDouble(InitialOxygenMolValueTextBoxB.Text);
-                //alfaB[4] = Convert.ToDouble(InitialAirMolValueTextBoxB.Text);
-                //alfaB[5] = Convert.ToDouble(InitialArgonMolValueTextBoxB.Text);
-                //alfaB[6] = Convert.ToDouble(InitialNitrogenMolValueTextBoxB.Text);
-
-                //betaB[0] = Convert.ToDouble(FinalFuel1MolValueTextBoxB.Text);
-                //betaB[1] = Convert.ToDouble(FinalFuel2MolValueTextBoxB.Text);
-                //betaB[2] = Convert.ToDouble(FinalFuel3MolValueTextBoxB.Text);
-                //betaB[3] = Convert.ToDouble(FinalOxygenMolValueTextBoxB.Text);
-                //betaB[4] = Convert.ToDouble(FinalAirMolValueTextBoxB.Text);
-                //betaB[5] = Convert.ToDouble(FinalArgonMolValueTextBoxB.Text);
-                //betaB[6] = Convert.ToDouble(FinalNitrogenMolValueTextBoxB.Text);
-
                 DetonationFunctions BdetonationFunctions = new DetonationFunctions(alfaB, betaB, initialFuels, finalFuels);
             }
 
@@ -190,22 +156,6 @@ namespace Deton
             {
                 double[] alfaC = new double[7];
                 double[] betaC = new double[7];
-
-                InitialFuel1MolValueTextBoxC.Text = InitialFuel1MolValueTextBoxC.Text.Replace('.', ',');
-                InitialFuel2MolValueTextBoxC.Text = InitialFuel2MolValueTextBoxC.Text.Replace('.', ',');
-                InitialFuel3MolValueTextBoxC.Text = InitialFuel3MolValueTextBoxC.Text.Replace('.', ',');
-                InitialOxygenMolValueTextBoxC.Text = InitialOxygenMolValueTextBoxC.Text.Replace('.', ',');
-                InitialAirMolValueTextBoxC.Text = InitialAirMolValueTextBoxC.Text.Replace('.', ',');
-                InitialArgonMolValueTextBoxC.Text = InitialArgonMolValueTextBoxC.Text.Replace('.', ',');
-                InitialNitrogenMolValueTextBoxC.Text = InitialNitrogenMolValueTextBoxC.Text.Replace('.', ',');
-
-                FinalFuel1MolValueTextBoxC.Text = FinalFuel1MolValueTextBoxC.Text.Replace('.', ',');
-                FinalFuel2MolValueTextBoxC.Text = FinalFuel2MolValueTextBoxC.Text.Replace('.', ',');
-                FinalFuel3MolValueTextBoxC.Text = FinalFuel3MolValueTextBoxC.Text.Replace('.', ',');
-                FinalOxygenMolValueTextBoxC.Text = FinalOxygenMolValueTextBoxC.Text.Replace('.', ',');
-                FinalAirMolValueTextBoxC.Text = FinalAirMolValueTextBoxC.Text.Replace('.', ',');
-                FinalArgonMolValueTextBoxC.Text = FinalArgonMolValueTextBoxC.Text.Replace('.', ',');
-                FinalNitrogenMolValueTextBoxC.Text = FinalNitrogenMolValueTextBoxC.Text.Replace('.', ',');
 
                 alfaC[0] = Convert.ToDouble(InitialFuel1MolValueTextBoxC.Text);
                 alfaC[1] = Convert.ToDouble(InitialFuel2MolValueTextBoxC.Text);
@@ -227,6 +177,19 @@ namespace Deton
             }
 
             MessageBox.Show("Done.", "Calculations completed");
+        }
+
+        private void InitialFuel1MolValueTextBoxA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symbol = e.KeyChar;
+
+            if (!Char.IsDigit(symbol) && symbol != 8 && symbol != 44)
+            {
+                e.Handled = true;
+            }
+
+
+            UpdateO2();
         }
     }
 }
