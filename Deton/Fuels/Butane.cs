@@ -10,7 +10,7 @@
 
         public override string ToString()
         {
-            return "C4H10";
+            return "Butane (C4H10)";
         }
     }
 }

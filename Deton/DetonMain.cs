@@ -27,16 +27,16 @@ namespace Deton
             IFuel[] fuels = new IFuel[] 
             { 
                 new NotSelected(), 
-                new Hydrogen(), 
-                new Acetylene(), 
-                new Butane(), 
-                new Butene(), 
+                new Hydrogen(),
+                new Methane(),
                 new Ethane(),
                 new Ethylene(),
-                new Methane(), 
-                new Pentane(), 
-                new Propane(), 
-                new Propylene()
+                new Acetylene(),
+                new Propane(),
+                new Propylene(),
+                new Butane(), 
+                new Butene(), 
+                new Pentane() 
             };
 
             Application.Run(new DetonWiew(fuels));

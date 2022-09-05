@@ -10,7 +10,7 @@
 
         public override string ToString()
         {
-            return "C3H6";
+            return "Propylene (C3H6)";
         }
     }
 }

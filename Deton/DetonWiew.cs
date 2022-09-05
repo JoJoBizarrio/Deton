@@ -191,5 +191,21 @@ namespace Deton
 
             UpdateO2();
         }
+
+        private void UpdateO2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mixture mixture = new Mixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
+                                          Convert.ToDouble(InitialFuel1MolValueTextBoxA.Text), Convert.ToDouble(InitialFuel2MolValueTextBoxA.Text),
+                                          Convert.ToDouble(InitialFuel3MolValueTextBoxA.Text), Convert.ToDouble(InitialOxygenMolValueTextBoxA.Text),
+                                          Convert.ToDouble(InitialAirMolValueTextBoxA.Text), Convert.ToDouble(InitialNitrogenMolValueTextBoxA.Text),
+                                          Convert.ToDouble(InitialArgonMolValueTextBoxA.Text));
+
+            InitialEquimolarTextBoxA.Text = Convert.ToString(mixture.O2toEquimolarO2Value);
+        }
+
+        private void ExitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

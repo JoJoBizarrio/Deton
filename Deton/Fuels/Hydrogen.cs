@@ -10,7 +10,7 @@
 
         public override string ToString()
         {
-            return "H2";
+            return "Hydrogen (H2)";
         }
     }
 }
