@@ -13,21 +13,25 @@ namespace Deton.Graphically
                 Directory.CreateDirectory("../save");
             }
 
-            string path1 = "../save/autosave1.csv";
+
+            string path = "../save/autosave999.csv";
+            string previoslyPath = "../save/autosave998.csv"; ;
             string csvFormat = ".csv";
-            int i = 1;
+            int i = 998;
 
-            while (File.Exists(path1))
+            while (!File.Exists(previoslyPath))
             {
-                path1 = path1.Remove(path1.Length - csvFormat.Length  - (i % 1000).ToString().Length);
+                path = previoslyPath;
 
-                i++;
+                previoslyPath = previoslyPath.Remove(previoslyPath.Length - csvFormat.Length  - (i % 1000).ToString().Length);
 
-                path1 = path1 + i.ToString() + csvFormat;
+                i--;
+
+                previoslyPath = previoslyPath + i.ToString() + csvFormat;
             }
 
             string txtFormat = ".txt";
-            string path2 = path1.Remove(path1.Length - csvFormat.Length) + txtFormat;
+            string path2 = path.Remove(path.Length - csvFormat.Length) + txtFormat;
 
             using StreamWriter streamWriter = new StreamWriter(path2);
             {
