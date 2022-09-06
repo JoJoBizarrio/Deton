@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Deton.Fuels;
 using Deton.Logic;
 
-namespace Deton
+namespace Deton.Graphically
 {
     internal partial class DetonWiew : Form
     {
@@ -179,7 +179,7 @@ namespace Deton
         private void UpdateO2_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = new TextBox();
-            
+
             if (sender.GetType() == textBox.GetType())
             {
                 textBox = sender as TextBox;
@@ -191,67 +191,115 @@ namespace Deton
                 }
             }
 
-            if (ACheckBox.Checked)
+            if (double.TryParse(InitialFuel1MolValueTextBoxA.Text, out double InitialFuel1MolValueA) && double.TryParse(InitialFuel2MolValueTextBoxA.Text, out double InitialFuel2MolValueA) &&
+            double.TryParse(InitialFuel3MolValueTextBoxA.Text, out double InitialFuel3MolValueA) && double.TryParse(InitialOxygenMolValueTextBoxA.Text, out double InitialOxygenMolValueA) &&
+            double.TryParse(InitialAirMolValueTextBoxA.Text, out double InitialAirMolValueA) && double.TryParse(InitialNitrogenMolValueTextBoxA.Text, out double InitialNitrogenMolValueA) &&
+            double.TryParse(InitialArgonMolValueTextBoxA.Text, out double InitialArgonMolValueA))
             {
                 Mixture initialMixtureA = new Mixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
-                                          Double.TryParse(InitialFuel1MolValueTextBoxA.Text, out double d), Convert.ToDouble(InitialFuel2MolValueTextBoxA.Text),
-                                          Convert.ToDouble(InitialFuel3MolValueTextBoxA.Text), Convert.ToDouble(InitialOxygenMolValueTextBoxA.Text),
-                                          Convert.ToDouble(InitialAirMolValueTextBoxA.Text), Convert.ToDouble(InitialNitrogenMolValueTextBoxA.Text),
-                                          Convert.ToDouble(InitialArgonMolValueTextBoxA.Text));
+                                                      InitialFuel1MolValueA, InitialFuel2MolValueA, InitialFuel3MolValueA,
+                                                      InitialOxygenMolValueA, InitialAirMolValueA, InitialNitrogenMolValueA, InitialArgonMolValueA);
 
                 InitialEquimolarTextBoxA.Text = Convert.ToString(Math.Round(initialMixtureA.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
                 InitialStoichiometricTextBoxA.Text = Convert.ToString(Math.Round(initialMixtureA.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
+            }
+            else
+            {
+                InitialEquimolarTextBoxA.Text = "Ошибка";
+                InitialStoichiometricTextBoxA.Text = "Ошибка";
+            }
 
+            if (double.TryParse(FinalFuel1MolValueTextBoxA.Text, out double FinalFuel1MolValueA) && double.TryParse(FinalFuel2MolValueTextBoxA.Text, out double FinalFuel2MolValueA) &&
+            double.TryParse(FinalFuel3MolValueTextBoxA.Text, out double FinalFuel3MolValueA) && double.TryParse(FinalOxygenMolValueTextBoxA.Text, out double FinalOxygenMolValueA) &&
+            double.TryParse(FinalAirMolValueTextBoxA.Text, out double FinalAirMolValueA) && double.TryParse(FinalNitrogenMolValueTextBoxA.Text, out double FinalNitrogenMolValueA) &&
+            double.TryParse(FinalArgonMolValueTextBoxA.Text, out double FinalArgonMolValueA))
+            {
                 Mixture finalMixtureA = new Mixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
-                                          Convert.ToDouble(FinalFuel1MolValueTextBoxA.Text), Convert.ToDouble(FinalFuel2MolValueTextBoxA.Text),
-                                          Convert.ToDouble(FinalFuel3MolValueTextBoxA.Text), Convert.ToDouble(FinalOxygenMolValueTextBoxA.Text),
-                                          Convert.ToDouble(FinalAirMolValueTextBoxA.Text), Convert.ToDouble(FinalNitrogenMolValueTextBoxA.Text),
-                                          Convert.ToDouble(FinalArgonMolValueTextBoxA.Text));
+                                                     FinalFuel1MolValueA, FinalFuel2MolValueA, FinalFuel3MolValueA,
+                                                     FinalOxygenMolValueA, FinalAirMolValueA, FinalNitrogenMolValueA, FinalArgonMolValueA);
 
                 FinalEquimolarTextBoxA.Text = Convert.ToString(Math.Round(finalMixtureA.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
                 FinalStoichiometricTextBoxA.Text = Convert.ToString(Math.Round(finalMixtureA.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
             }
+            else
+            {
+                InitialEquimolarTextBoxA.Text = "Ошибка";
+                InitialStoichiometricTextBoxA.Text = "Ошибка";
+            }
 
-            if (BCheckBox.Checked)
+            if (double.TryParse(InitialFuel1MolValueTextBoxB.Text, out double InitialFuel1MolValueB) && double.TryParse(InitialFuel2MolValueTextBoxB.Text, out double InitialFuel2MolValueB) &&
+            double.TryParse(InitialFuel3MolValueTextBoxB.Text, out double InitialFuel3MolValueB) && double.TryParse(InitialOxygenMolValueTextBoxB.Text, out double InitialOxygenMolValueB) &&
+            double.TryParse(InitialAirMolValueTextBoxB.Text, out double InitialAirMolValueB) && double.TryParse(InitialNitrogenMolValueTextBoxB.Text, out double InitialNitrogenMolValueB) &&
+            double.TryParse(InitialArgonMolValueTextBoxB.Text, out double InitialArgonMolValueB))
             {
                 Mixture initialMixtureB = new Mixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
-                                          Convert.ToDouble(InitialFuel1MolValueTextBoxB.Text), Convert.ToDouble(InitialFuel2MolValueTextBoxB.Text),
-                                          Convert.ToDouble(InitialFuel3MolValueTextBoxB.Text), Convert.ToDouble(InitialOxygenMolValueTextBoxB.Text),
-                                          Convert.ToDouble(InitialAirMolValueTextBoxB.Text), Convert.ToDouble(InitialNitrogenMolValueTextBoxB.Text),
-                                          Convert.ToDouble(InitialArgonMolValueTextBoxB.Text));
+                                                         InitialFuel1MolValueB, InitialFuel2MolValueB, InitialFuel3MolValueB,
+                                                         InitialOxygenMolValueB, InitialAirMolValueB, InitialNitrogenMolValueB, InitialArgonMolValueB);
 
                 InitialEquimolarTextBoxB.Text = Convert.ToString(Math.Round(initialMixtureB.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
                 InitialStoichiometricTextBoxB.Text = Convert.ToString(Math.Round(initialMixtureB.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
+            }
+            else
+            {
+                InitialEquimolarTextBoxB.Text = "Ошибка";
+                InitialStoichiometricTextBoxB.Text = "Ошибка";
+            }
+
+            if (double.TryParse(FinalFuel1MolValueTextBoxB.Text, out double FinalFuel1MolValueB) && double.TryParse(FinalFuel2MolValueTextBoxB.Text, out double FinalFuel2MolValueB) &&
+             double.TryParse(FinalFuel3MolValueTextBoxB.Text, out double FinalFuel3MolValueB) && double.TryParse(FinalOxygenMolValueTextBoxB.Text, out double FinalOxygenMolValueB) &&
+             double.TryParse(FinalAirMolValueTextBoxB.Text, out double FinalAirMolValueB) && double.TryParse(FinalNitrogenMolValueTextBoxB.Text, out double FinalNitrogenMolValueB) &&
+             double.TryParse(FinalArgonMolValueTextBoxB.Text, out double FinalArgonMolValueB))
+            {
+
 
                 Mixture finalMixtureB = new Mixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
-                                          Convert.ToDouble(FinalFuel1MolValueTextBoxB.Text), Convert.ToDouble(FinalFuel2MolValueTextBoxB.Text),
-                                          Convert.ToDouble(FinalFuel3MolValueTextBoxB.Text), Convert.ToDouble(FinalOxygenMolValueTextBoxB.Text),
-                                          Convert.ToDouble(FinalAirMolValueTextBoxB.Text), Convert.ToDouble(FinalNitrogenMolValueTextBoxB.Text),
-                                          Convert.ToDouble(FinalArgonMolValueTextBoxB.Text));
+                                                     FinalFuel1MolValueB, FinalFuel2MolValueB, FinalFuel3MolValueB,
+                                                     FinalOxygenMolValueB, FinalAirMolValueB, FinalNitrogenMolValueB, FinalArgonMolValueB);
 
                 FinalEquimolarTextBoxB.Text = Convert.ToString(Math.Round(finalMixtureB.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
                 FinalStoichiometricTextBoxB.Text = Convert.ToString(Math.Round(finalMixtureB.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
             }
+            else
+            {
+                FinalEquimolarTextBoxB.Text = "Ошибка";
+                FinalStoichiometricTextBoxB.Text = "Ошибка";
+            }
 
-            if (CCheckBox.Checked)
+
+            if (double.TryParse(InitialFuel1MolValueTextBoxC.Text, out double InitialFuel1MolValueC) && double.TryParse(InitialFuel2MolValueTextBoxC.Text, out double InitialFuel2MolValueC) &&
+            double.TryParse(InitialFuel3MolValueTextBoxC.Text, out double InitialFuel3MolValueC) && double.TryParse(InitialOxygenMolValueTextBoxC.Text, out double InitialOxygenMolValueC) &&
+            double.TryParse(InitialAirMolValueTextBoxC.Text, out double InitialAirMolValueC) && double.TryParse(InitialNitrogenMolValueTextBoxC.Text, out double InitialNitrogenMolValueC) &&
+            double.TryParse(InitialArgonMolValueTextBoxC.Text, out double InitialArgonMolValueC))
             {
                 Mixture initialMixtureC = new Mixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
-                                          Convert.ToDouble(InitialFuel1MolValueTextBoxC.Text), Convert.ToDouble(InitialFuel2MolValueTextBoxC.Text),
-                                          Convert.ToDouble(InitialFuel3MolValueTextBoxC.Text), Convert.ToDouble(InitialOxygenMolValueTextBoxC.Text),
-                                          Convert.ToDouble(InitialAirMolValueTextBoxC.Text), Convert.ToDouble(InitialNitrogenMolValueTextBoxC.Text),
-                                          Convert.ToDouble(InitialArgonMolValueTextBoxC.Text));
+                                       InitialFuel1MolValueC, InitialFuel2MolValueC, InitialFuel3MolValueC,
+                                       InitialOxygenMolValueC, InitialAirMolValueC, InitialNitrogenMolValueC, InitialArgonMolValueC);
 
                 InitialEquimolarTextBoxC.Text = Convert.ToString(Math.Round(initialMixtureC.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
                 InitialStoichiometricTextBoxC.Text = Convert.ToString(Math.Round(initialMixtureC.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
+            }
+            else
+            {
+                InitialEquimolarTextBoxC.Text = "Ошибка";
+                InitialStoichiometricTextBoxC.Text = "Ошибка";
+            }
 
+            if (double.TryParse(FinalFuel1MolValueTextBoxC.Text, out double FinalFuel1MolValueC) && double.TryParse(FinalFuel2MolValueTextBoxC.Text, out double FinalFuel2MolValueC) &&
+            double.TryParse(FinalFuel3MolValueTextBoxC.Text, out double FinalFuel3MolValueC) && double.TryParse(FinalOxygenMolValueTextBoxC.Text, out double FinalOxygenMolValueC) &&
+            double.TryParse(FinalAirMolValueTextBoxC.Text, out double FinalAirMolValueC) && double.TryParse(FinalNitrogenMolValueTextBoxC.Text, out double FinalNitrogenMolValueC) &&
+            double.TryParse(FinalArgonMolValueTextBoxC.Text, out double FinalArgonMolValueC))
+            {
                 Mixture finalMixtureC = new Mixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
-                                          Convert.ToDouble(FinalFuel1MolValueTextBoxC.Text), Convert.ToDouble(FinalFuel2MolValueTextBoxC.Text),
-                                          Convert.ToDouble(FinalFuel3MolValueTextBoxC.Text), Convert.ToDouble(FinalOxygenMolValueTextBoxC.Text),
-                                          Convert.ToDouble(FinalAirMolValueTextBoxC.Text), Convert.ToDouble(FinalNitrogenMolValueTextBoxC.Text),
-                                          Convert.ToDouble(FinalArgonMolValueTextBoxC.Text));
+                                                     FinalFuel1MolValueC, FinalFuel2MolValueC, FinalFuel3MolValueC,
+                                                     FinalOxygenMolValueC, FinalAirMolValueC, FinalNitrogenMolValueC, FinalArgonMolValueC);
 
                 FinalEquimolarTextBoxC.Text = Convert.ToString(Math.Round(finalMixtureC.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
                 FinalStoichiometricTextBoxC.Text = Convert.ToString(Math.Round(finalMixtureC.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
+            }
+            else
+            {
+                FinalEquimolarTextBoxC.Text = "Ошибка";
+                FinalStoichiometricTextBoxC.Text = "Ошибка";
             }
         }
     }

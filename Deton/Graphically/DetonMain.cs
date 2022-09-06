@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using Deton.Fuels;
 
-namespace Deton
+namespace Deton.Graphically
 {
     internal static class DetonMain
     {

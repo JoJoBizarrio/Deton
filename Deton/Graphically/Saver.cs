@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Deton
+namespace Deton.Graphically
 {
     internal class Saver
     {
