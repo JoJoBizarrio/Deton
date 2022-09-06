@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Deton.Actuación
+namespace Deton.Graphically
 {
     partial class DetonWiew
     {
