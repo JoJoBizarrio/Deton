@@ -10,7 +10,7 @@
 
         public override string ToString()
         {
-            return "Pentane (C5H12)";
+            return "C5H12 - Pentane";
         }
     }
 }

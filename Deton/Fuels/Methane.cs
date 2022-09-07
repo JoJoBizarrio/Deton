@@ -10,7 +10,7 @@
 
         public override string ToString()
         {
-            return "Methane (CH4)";
+            return "CH4 - Methane";
         }
     }
 }

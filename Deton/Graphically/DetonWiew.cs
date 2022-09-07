@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Deton.Fuels;
 using Deton.Logic;
+using Windows.System;
 
 namespace Deton.Graphically
 {
@@ -301,6 +302,11 @@ namespace Deton.Graphically
                 FinalEquimolarTextBoxC.Text = "Ошибка";
                 FinalStoichiometricTextBoxC.Text = "Ошибка";
             }
+        }
+
+        async private void autosaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            await Launcher.LaunchFolderPathAsync(Environment.CurrentDirectory + "\\Autosave");
         }
     }
 }
