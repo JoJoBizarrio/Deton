@@ -11,9 +11,10 @@ namespace Deton.Logic
         public IFuel Fuel2 { get; }
         public IFuel Fuel3 { get; }
 
-        public readonly IFuel[] fuelsArray = new IFuel[3];
+        public readonly IFuel[] FuelsArray = new IFuel[3];
 
-        public double Fuel1MolValue { get; set; }
+        public double Fuel1MolValue { get; }
+
         public double Fuel2MolValue { get; }
         public double Fuel3MolValue { get; }
 
@@ -34,9 +35,9 @@ namespace Deton.Logic
             Fuel2 = new NotSelected();
             Fuel3 = new NotSelected();
 
-            fuelsArray[0] = Fuel1;
-            fuelsArray[1] = Fuel2;
-            fuelsArray[2] = Fuel3;
+            FuelsArray[0] = Fuel1;
+            FuelsArray[1] = Fuel2;
+            FuelsArray[2] = Fuel3;
         }
 
         public Mixture(IFuel fuel1, IFuel fuel2, IFuel fuel3, double fuel1MolValue, double fuel2MolValue, double fuel3MolValue,
@@ -46,9 +47,9 @@ namespace Deton.Logic
             Fuel2 = fuel2;
             Fuel3 = fuel3;
 
-            fuelsArray[0] = Fuel1;
-            fuelsArray[1] = Fuel2;
-            fuelsArray[2] = Fuel3;
+            FuelsArray[0] = Fuel1;
+            FuelsArray[1] = Fuel2;
+            FuelsArray[2] = Fuel3;
 
             Fuel1MolValue = fuel1MolValue;
             Fuel2MolValue = fuel2MolValue;
@@ -58,9 +59,14 @@ namespace Deton.Logic
             NitrogenMolValue = nitrogenMolValue;
             ArgonMolValue = argonMolValue;
 
-            ValuesArray[0] = fuel1MolValue;
-            ValuesArray[1] = fuel2MolValue;
-            ValuesArray[2] = fuel3MolValue;
+            for (int i = 0; i < 3; i++)
+            {
+                if (FuelsArray[i] != new NotSelected() && ValuesArray[i] == 0)
+                {
+                    ValuesArray[i] = double.Epsilon;
+                }
+            }
+
             ValuesArray[3] = oxygenMolValue;
             ValuesArray[4] = airMolValue;
             ValuesArray[5] = nitrogenMolValue;
@@ -116,7 +122,7 @@ namespace Deton.Logic
                 stringBuilder.Append("Air");
             }
 
-            if (NitrogenMolValue !=  0)
+            if (NitrogenMolValue != 0)
             {
                 stringBuilder.Append(" + ");
                 stringBuilder.Append(NitrogenMolValue);

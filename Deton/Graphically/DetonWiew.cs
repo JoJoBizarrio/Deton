@@ -15,7 +15,7 @@ namespace Deton.Graphically
 {
     internal partial class DetonWiew : Form
     {
-        double Epsilon = 0.00000001;
+        readonly double Epsilon = 0.00000001;
 
         public DetonWiew(IFuel[] fuels)
         {
@@ -72,46 +72,56 @@ namespace Deton.Graphically
             IFuel[] initialFuels = new IFuel[] { (IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem };
             IFuel[] finalFuels = new IFuel[] { (IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem };
 
-            Mixture initialMixtureA = GetParsedMixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
-                                              InitialFuel1MolValueTextBoxA.Text, InitialFuel2MolValueTextBoxA.Text, InitialFuel3MolValueTextBoxA.Text,
-                                              InitialOxygenMolValueTextBoxA.Text, InitialAirMolValueTextBoxA.Text, InitialNitrogenMolValueTextBoxA.Text, InitialAirMolValueTextBoxA.Text);
 
-            Mixture initialMixtureB = GetParsedMixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
+            if (ACheckBox.Checked)
+            {
+                Mixture initialMixtureA = GetParsedMixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
+                                            InitialFuel1MolValueTextBoxA.Text, InitialFuel2MolValueTextBoxA.Text, InitialFuel3MolValueTextBoxA.Text,
+                                            InitialOxygenMolValueTextBoxA.Text, InitialAirMolValueTextBoxA.Text, InitialNitrogenMolValueTextBoxA.Text, InitialAirMolValueTextBoxA.Text);
+
+                Mixture finalMixtureA = GetParsedMixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
+                                                 FinalFuel1MolValueTextBoxA.Text, FinalFuel2MolValueTextBoxA.Text, FinalFuel3MolValueTextBoxA.Text,
+                                                 FinalOxygenMolValueTextBoxA.Text, FinalAirMolValueTextBoxA.Text, FinalNitrogenMolValueTextBoxA.Text, FinalAirMolValueTextBoxA.Text);
+
+                if (IsPossibleCalñulate(ACheckBox, initialMixtureA, finalMixtureA))
+                {
+                    DetonationFunctions.CalculateDetonationFunctions(initialMixtureA.ValuesArray, finalMixtureA.ValuesArray, initialFuels, finalFuels);
+                    MessageBox.Show("Done of variant A.", "Calculations completed");
+                }
+            }
+
+            if (BCheckBox.Checked)
+            {
+                Mixture initialMixtureB = GetParsedMixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
                                                   InitialFuel1MolValueTextBoxB.Text, InitialFuel2MolValueTextBoxB.Text, InitialFuel3MolValueTextBoxB.Text,
                                                   InitialOxygenMolValueTextBoxB.Text, InitialAirMolValueTextBoxB.Text, InitialNitrogenMolValueTextBoxB.Text, InitialAirMolValueTextBoxB.Text);
 
-            Mixture initialMixtureC = GetParsedMixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
-                                                  InitialFuel1MolValueTextBoxC.Text, InitialFuel2MolValueTextBoxC.Text, InitialFuel3MolValueTextBoxC.Text,
-                                                  InitialOxygenMolValueTextBoxC.Text, InitialAirMolValueTextBoxC.Text, InitialNitrogenMolValueTextBoxC.Text, InitialAirMolValueTextBoxC.Text);
+                Mixture finalMixtureB = GetParsedMixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
+                                                 FinalFuel1MolValueTextBoxB.Text, FinalFuel2MolValueTextBoxB.Text, FinalFuel3MolValueTextBoxB.Text,
+                                                 FinalOxygenMolValueTextBoxB.Text, FinalAirMolValueTextBoxB.Text, FinalNitrogenMolValueTextBoxB.Text, FinalAirMolValueTextBoxB.Text);
 
-            Mixture finalMixtureA = GetParsedMixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
-                                                  FinalFuel1MolValueTextBoxA.Text, FinalFuel2MolValueTextBoxA.Text, FinalFuel3MolValueTextBoxA.Text,
-                                                  FinalOxygenMolValueTextBoxA.Text, FinalAirMolValueTextBoxA.Text, FinalNitrogenMolValueTextBoxA.Text, FinalAirMolValueTextBoxA.Text);
-
-            Mixture finalMixtureB = GetParsedMixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
-                                                  FinalFuel1MolValueTextBoxB.Text, FinalFuel2MolValueTextBoxB.Text, FinalFuel3MolValueTextBoxB.Text,
-                                                  FinalOxygenMolValueTextBoxB.Text, FinalAirMolValueTextBoxB.Text, FinalNitrogenMolValueTextBoxB.Text, FinalAirMolValueTextBoxB.Text);
-
-            Mixture finalMixtureC = GetParsedMixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
-                                                  FinalFuel1MolValueTextBoxC.Text, FinalFuel2MolValueTextBoxC.Text, FinalFuel3MolValueTextBoxC.Text,
-                                                  FinalOxygenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text, FinalNitrogenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text);
-
-            if (ACheckBox.Checked && IsPossibleCalñulate(ACheckBox, initialMixtureA, finalMixtureA))
-            {
-                DetonationFunctions detonationFunctions = new DetonationFunctions(initialMixtureA.ValuesArray, finalMixtureA.ValuesArray, initialFuels, finalFuels);
-                MessageBox.Show("Done of variant A.", "Calculations completed");
+                if (IsPossibleCalñulate(BCheckBox, initialMixtureB, finalMixtureB))
+                {
+                    DetonationFunctions.CalculateDetonationFunctions(initialMixtureB.ValuesArray, finalMixtureB.ValuesArray, initialFuels, finalFuels);
+                    MessageBox.Show("Done of variant B.", "Calculations completed");
+                }
             }
 
-            if (BCheckBox.Checked && IsPossibleCalñulate(BCheckBox, initialMixtureB, finalMixtureB))
+            if (CCheckBox.Checked)
             {
-                DetonationFunctions detonationFunctions = new DetonationFunctions(initialMixtureB.ValuesArray, finalMixtureB.ValuesArray, initialFuels, finalFuels);
-                MessageBox.Show("Done of variant B.", "Calculations completed");
-            }
+                Mixture initialMixtureC = GetParsedMixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem,
+                                                 InitialFuel1MolValueTextBoxC.Text, InitialFuel2MolValueTextBoxC.Text, InitialFuel3MolValueTextBoxC.Text,
+                                                 InitialOxygenMolValueTextBoxC.Text, InitialAirMolValueTextBoxC.Text, InitialNitrogenMolValueTextBoxC.Text, InitialAirMolValueTextBoxC.Text);
 
-            if (CCheckBox.Checked && IsPossibleCalñulate(CCheckBox, initialMixtureC, finalMixtureC))
-            {
-                DetonationFunctions detonationFunctions = new DetonationFunctions(initialMixtureC.ValuesArray, finalMixtureC.ValuesArray, initialFuels, finalFuels);
-                MessageBox.Show("Done of variant C.", "Calculations completed");
+                Mixture finalMixtureC = GetParsedMixture((IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem,
+                                                      FinalFuel1MolValueTextBoxC.Text, FinalFuel2MolValueTextBoxC.Text, FinalFuel3MolValueTextBoxC.Text,
+                                                      FinalOxygenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text, FinalNitrogenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text);
+
+                if (IsPossibleCalñulate(CCheckBox, initialMixtureC, finalMixtureC))
+                {
+                    DetonationFunctions.CalculateDetonationFunctions(initialMixtureC.ValuesArray, finalMixtureC.ValuesArray, initialFuels, finalFuels);
+                    MessageBox.Show("Done of variant C.", "Calculations completed");
+                }
             }
         }
 
