@@ -1,3 +1,5 @@
+using Deton.Fuels;
+using Deton.Logic;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -7,8 +9,6 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Deton.Fuels;
-using Deton.Logic;
 using Windows.System;
 
 namespace Deton.Graphically
@@ -69,7 +69,6 @@ namespace Deton.Graphically
                 return;
             }
 
-            //Mixture initialMixture = new Mixture((IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem, InitialFuel1MolValueTextBoxA.Text);
             IFuel[] initialFuels = new IFuel[] { (IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem };
             IFuel[] finalFuels = new IFuel[] { (IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem };
 
@@ -100,17 +99,19 @@ namespace Deton.Graphically
             if (ACheckBox.Checked && IsPossibleCalÒulate(ACheckBox, initialMixtureA, finalMixtureA))
             {
                 DetonationFunctions detonationFunctions = new DetonationFunctions(initialMixtureA.ValuesArray, finalMixtureA.ValuesArray, initialFuels, finalFuels);
-                MessageBox.Show("Done.", "Calculations completed");
+                MessageBox.Show("Done of variant A.", "Calculations completed");
             }
 
             if (BCheckBox.Checked && IsPossibleCalÒulate(BCheckBox, initialMixtureB, finalMixtureB))
             {
-
+                DetonationFunctions detonationFunctions = new DetonationFunctions(initialMixtureB.ValuesArray, finalMixtureB.ValuesArray, initialFuels, finalFuels);
+                MessageBox.Show("Done of variant B.", "Calculations completed");
             }
 
             if (CCheckBox.Checked && IsPossibleCalÒulate(CCheckBox, initialMixtureC, finalMixtureC))
             {
-
+                DetonationFunctions detonationFunctions = new DetonationFunctions(initialMixtureC.ValuesArray, finalMixtureC.ValuesArray, initialFuels, finalFuels);
+                MessageBox.Show("Done of variant C.", "Calculations completed");
             }
         }
 
@@ -203,85 +204,36 @@ namespace Deton.Graphically
                                                   FinalFuel1MolValueTextBoxC.Text, FinalFuel2MolValueTextBoxC.Text, FinalFuel3MolValueTextBoxC.Text,
                                                   FinalOxygenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text, FinalNitrogenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text);
 
-            if (initialMixtureA != null)
-            {
-                InitialEquimolarTextBoxA.Text = Convert.ToString(Math.Round(initialMixtureA.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
-                InitialStoichiometricTextBoxA.Text = Convert.ToString(Math.Round(initialMixtureA.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
-            }
-            else
-            {
-                InitialEquimolarTextBoxA.Text = "Œ¯Ë·Í‡";
-                InitialStoichiometricTextBoxA.Text = "Œ¯Ë·Í‡";
-            }
 
-            if (initialMixtureB != null)
-            {
-                InitialEquimolarTextBoxB.Text = Convert.ToString(Math.Round(initialMixtureB.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
-                InitialStoichiometricTextBoxB.Text = Convert.ToString(Math.Round(initialMixtureB.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
-            }
-            else
-            {
-                InitialEquimolarTextBoxB.Text = "Œ¯Ë·Í‡";
-                InitialStoichiometricTextBoxB.Text = "Œ¯Ë·Í‡";
-            }
-
-            if (initialMixtureC != null)
-            {
-                InitialEquimolarTextBoxC.Text = Convert.ToString(Math.Round(initialMixtureC.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
-                InitialStoichiometricTextBoxC.Text = Convert.ToString(Math.Round(initialMixtureC.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
-            }
-            else
-            {
-                InitialEquimolarTextBoxC.Text = "Œ¯Ë·Í‡";
-                InitialStoichiometricTextBoxC.Text = "Œ¯Ë·Í‡";
-            }
-
-            if (finalMixtureA != null)
-            {
-                FinalEquimolarTextBoxA.Text = Convert.ToString(Math.Round(finalMixtureA.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
-                FinalStoichiometricTextBoxA.Text = Convert.ToString(Math.Round(finalMixtureA.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
-            }
-            else
-            {
-                FinalEquimolarTextBoxA.Text = "Œ¯Ë·Í‡";
-                FinalStoichiometricTextBoxA.Text = "Œ¯Ë·Í‡";
-            }
-
-            if (finalMixtureB != null)
-            {
-                FinalEquimolarTextBoxB.Text = Convert.ToString(Math.Round(finalMixtureB.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
-                FinalStoichiometricTextBoxB.Text = Convert.ToString(Math.Round(finalMixtureB.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
-            }
-            else
-            {
-                FinalEquimolarTextBoxB.Text = "Œ¯Ë·Í‡";
-                FinalStoichiometricTextBoxB.Text = "Œ¯Ë·Í‡";
-            }
-
-            if (finalMixtureC != null)
-            {
-                FinalEquimolarTextBoxC.Text = Convert.ToString(Math.Round(finalMixtureC.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
-                FinalStoichiometricTextBoxC.Text = Convert.ToString(Math.Round(finalMixtureC.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
-            }
-            else
-            {
-                FinalEquimolarTextBoxC.Text = "Œ¯Ë·Í‡";
-                FinalStoichiometricTextBoxC.Text = "Œ¯Ë·Í‡";
-            }
+            SetValueInEqAndStechO2TextBox(InitialEquimolarTextBoxA, InitialStoichiometricTextBoxA, initialMixtureA);
+            SetValueInEqAndStechO2TextBox(InitialEquimolarTextBoxB, InitialStoichiometricTextBoxB, initialMixtureB);
+            SetValueInEqAndStechO2TextBox(InitialEquimolarTextBoxC, InitialStoichiometricTextBoxC, initialMixtureC);
+            SetValueInEqAndStechO2TextBox(FinalEquimolarTextBoxA, FinalStoichiometricTextBoxA, finalMixtureA);
+            SetValueInEqAndStechO2TextBox(FinalEquimolarTextBoxB, FinalStoichiometricTextBoxB, finalMixtureB);
+            SetValueInEqAndStechO2TextBox(FinalEquimolarTextBoxC, FinalStoichiometricTextBoxC, finalMixtureC);
         }
 
-        private void SetValueInEqAndStechO2TextBox(TextBox textBox)
+        private void SetValueInEqAndStechO2TextBox(TextBox O2toEquimolarO2Value, TextBox O2toStoichiometricO2Value, Mixture mixture)
         {
-
+            if (mixture != null)
+            {
+                O2toEquimolarO2Value.Text = Convert.ToString(Math.Round(mixture.O2toEquimolarO2Value, 2, MidpointRounding.AwayFromZero));
+                O2toStoichiometricO2Value.Text = Convert.ToString(Math.Round(mixture.O2toStoichiometricO2Value, 2, MidpointRounding.AwayFromZero));
+            }
+            else
+            {
+                O2toEquimolarO2Value.Text = "Œ¯Ë·Í‡";
+                O2toStoichiometricO2Value.Text = "Œ¯Ë·Í‡";
+            }
         }
 
         private Mixture GetParsedMixture(IFuel fuel1, IFuel fuel2, IFuel fuel3, string fuel1MolValueText, string fuel2MolValueText, string fuel3MolValueText,
-                       string oxygenMolValueText, string airMolValueText, string nitrogenMolValueText, string argonMolValueText)
+                                         string oxygenMolValueText, string airMolValueText, string nitrogenMolValueText, string argonMolValueText)
         {
             if (double.TryParse(fuel1MolValueText, out double fuel1MolValue) && double.TryParse(fuel2MolValueText, out double fuel2MolValuet) &&
-            double.TryParse(fuel3MolValueText, out double fuel3MolValue) && double.TryParse(oxygenMolValueText, out double oxygenMolValue) &&
-            double.TryParse(airMolValueText, out double airMolValue) && double.TryParse(nitrogenMolValueText, out double nitrogenMolValue) &&
-            double.TryParse(argonMolValueText, out double argonMolValue))
+                double.TryParse(fuel3MolValueText, out double fuel3MolValue) && double.TryParse(oxygenMolValueText, out double oxygenMolValue) &&
+                double.TryParse(airMolValueText, out double airMolValue) && double.TryParse(nitrogenMolValueText, out double nitrogenMolValue) &&
+                double.TryParse(argonMolValueText, out double argonMolValue))
             {
                 return new Mixture(fuel1, fuel2, fuel3, fuel1MolValue, fuel2MolValuet, fuel3MolValue, oxygenMolValue, airMolValue, nitrogenMolValue, argonMolValue);
             }
@@ -289,7 +241,7 @@ namespace Deton.Graphically
             return null;
         }
 
-        async private void autosaveToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void autosaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             await Launcher.LaunchFolderPathAsync(Environment.CurrentDirectory + "\\Autosave");
         }
