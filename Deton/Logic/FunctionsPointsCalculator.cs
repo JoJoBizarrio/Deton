@@ -780,8 +780,6 @@ namespace Deton.Logic
             }
 
             return functionsPoints;
-
-            
         }
     }
 }
