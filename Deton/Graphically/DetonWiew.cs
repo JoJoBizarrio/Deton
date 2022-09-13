@@ -11,13 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Windows.System;
 
+
 namespace Deton.Graphically
 {
     internal partial class DetonWiew : Form
     {
         readonly double Epsilon = 0.00000001;
 
-        public DetonWiew(IFuel[] fuels)
+        public DetonWiew(IFuel[] fuels, Variant variantA)
         {
             InitializeComponent();
 
@@ -71,7 +72,6 @@ namespace Deton.Graphically
 
             IFuel[] initialFuels = new IFuel[] { (IFuel)InitialFuelComboBox1.SelectedItem, (IFuel)InitialFuelComboBox2.SelectedItem, (IFuel)InitialFuelComboBox3.SelectedItem };
             IFuel[] finalFuels = new IFuel[] { (IFuel)FinalFuelComboBox1.SelectedItem, (IFuel)FinalFuelComboBox2.SelectedItem, (IFuel)FinalFuelComboBox3.SelectedItem };
-
 
             if (ACheckBox.Checked)
             {
