@@ -39,9 +39,7 @@ namespace Deton.Graphically
                 new Pentane() 
             };
 
-            Variant variant = new Variant(new ComboBox());
-
-            Application.Run(new DetonWiew(fuels, variant));
+            Application.Run(new DetonWiew(fuels));
         }
     }
 }

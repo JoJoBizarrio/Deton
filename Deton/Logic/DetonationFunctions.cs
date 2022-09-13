@@ -11,7 +11,7 @@ namespace Deton.Logic
 {
     internal class DetonationFunctions
     {
-        public static void CalculateDetonationFunctions(double[] initialValues, double[] finalValues, IFuel[] initialFuels, IFuel[] finalFuels, int pointsAmount = 20)
+        public static void CalculateDetonationFunctions(Conditions conditions, int pointsAmount = 20)
         {
             FunctionsPointsCalculator functionsPointsCalculator = new FunctionsPointsCalculator();
 
@@ -20,7 +20,7 @@ namespace Deton.Logic
             for (int i = 0; i <= pointsAmount; i++)
             {
                 detonationFunctions.Add(new double[16]); 
-                detonationFunctions[i] = functionsPointsCalculator.Detka(i, initialValues, finalValues, initialFuels, finalFuels);
+                detonationFunctions[i] = functionsPointsCalculator.Detka(i, conditions.InitialMixture.ValuesArray, conditions.FinalMixture.ValuesArray, conditions.InitialMixture.FuelsArray, conditions.FinalMixture.FuelsArray);
             }
 
             Saver.Autosave(detonationFunctions);
