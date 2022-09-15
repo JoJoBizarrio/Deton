@@ -15,10 +15,10 @@ namespace Deton.Logic
     internal class FunctionsPointsCalculator
     {
         // {EXIT}
-        double D, GAMA1, MU0, MUMIN, MUMAX, E, KPA;
+        double D; //GAMA1, MU0, MUMIN, MUMAX, E, KPA;
 
         // {TPR}
-        double T, P, RO, MU, MUA, CE, CF, LI1, LI3, ENT; //, R
+        double T, P, RO, MU, MUA, CE, CF, LI1, LI3, ENT; //, R  //
         double[] RIA = new double[5];
 
         // {ENTO} 
@@ -412,8 +412,15 @@ namespace Deton.Logic
                 double D12 = (FEQ1 - FEQ1K) / DL;
                 double D22 = (FEQ2 - FEQ2K) / DL;
                 double DT = D11 * D22 - D12 * D21;
+
+                //if (DT == 0)
+                //{
+                //    break;
+                //}
+
                 double D1 = (FEQ2K * D12 - FEQ1K * D22) / DT;
                 double D3 = (FEQ1K * D21 - FEQ2K * D11) / DT;
+
 
                 double AD = Math.Abs(D1) + Math.Abs(D3);
 
@@ -681,7 +688,7 @@ namespace Deton.Logic
             UCJ = D - CE;
         }
 
-        public double[] Detka(int j, double[] Alfa, double[] Beta, IFuel[] initialFuels, IFuel[] finalFuels)
+        public double[] Detka(int j, Conditions conditions)
         {
             double[] functionsPoints = new double[18];
 
@@ -738,27 +745,27 @@ namespace Deton.Logic
                 r2 = 1.0 * k / (100 - k);
             }
 
-            for (int i = 0; i <= 2; i++)
+            for (int i = 0; i < 3; i++)
             {
-                II[i] = r1 * Alfa[i];
-                II[3 + i] = r2 * Beta[i];
+                II[i] = r1 * conditions.InitialMixture.ValuesArray[i];
+                II[3 + i] = r2 * conditions.FinalMixture.ValuesArray[i];
             }
 
-            II[6] = r1 * Alfa[3] + r2 * Beta[3];
-            II[7] = r1 * Alfa[5] + r2 * Beta[5];
-            II[8] = r1 * Alfa[4] + r2 * Beta[4];
-            II[9] = r1 * Alfa[6] + r2 * Beta[6];
+            II[6] = r1 * conditions.InitialMixture.ValuesArray[3] + r2 * conditions.FinalMixture.ValuesArray[3];
+            II[8] = r1 * conditions.InitialMixture.ValuesArray[4] + r2 * conditions.FinalMixture.ValuesArray[4];
+            II[7] = r1 * conditions.InitialMixture.ValuesArray[5] + r2 * conditions.FinalMixture.ValuesArray[5];
+            II[9] = r1 * conditions.InitialMixture.ValuesArray[6] + r2 * conditions.FinalMixture.ValuesArray[6];
 
             for (int i = 0; i <= 2; i++)
             {
-                CA[i] = initialFuels[i].CarbonAmount;
-                CA[3 + i] = finalFuels[i].CarbonAmount;
+                CA[i] = conditions.InitialMixture.FuelsArray[i].CarbonAmount;
+                CA[3 + i] = conditions.FinalMixture.FuelsArray[i].CarbonAmount;
 
-                HA[i] = initialFuels[i].HydrogenAmount;
-                HA[3 + i] = finalFuels[i].HydrogenAmount;
+                HA[i] = conditions.InitialMixture.FuelsArray[i].HydrogenAmount;
+                HA[3 + i] = conditions.FinalMixture.FuelsArray[i].HydrogenAmount;
 
-                BENT[i] = initialFuels[i].Enthalpy;
-                BENT[3 + i] = finalFuels[i].Enthalpy;
+                BENT[i] = conditions.InitialMixture.FuelsArray[i].Enthalpy;
+                BENT[3 + i] = conditions.FinalMixture.FuelsArray[i].Enthalpy;
             }
 
             Detonation();

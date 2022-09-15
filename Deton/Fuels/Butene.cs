@@ -8,6 +8,10 @@
 
         public double Enthalpy => -0.13;
 
+        public string Formula => "C4H8";
+
+        public string Title => "Butene";
+
         public override string ToString()
         {
             return "C4H8 - Butene";

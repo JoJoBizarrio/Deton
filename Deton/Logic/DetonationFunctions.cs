@@ -20,10 +20,10 @@ namespace Deton.Logic
             for (int i = 0; i <= pointsAmount; i++)
             {
                 detonationFunctions.Add(new double[16]); 
-                detonationFunctions[i] = functionsPointsCalculator.Detka(i, conditions.InitialMixture.ValuesArray, conditions.FinalMixture.ValuesArray, conditions.InitialMixture.FuelsArray, conditions.FinalMixture.FuelsArray);
+                detonationFunctions[i] = functionsPointsCalculator.Detka(i, conditions);
             }
 
-            Saver.Autosave(detonationFunctions);
+            Saver.Autosave(detonationFunctions, conditions);
         }
     }
 }

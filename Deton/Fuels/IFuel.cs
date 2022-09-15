@@ -11,6 +11,10 @@
         /// </summary>
         double Enthalpy { get; }
 
+        string Formula { get; }
+
+        string Title { get; }
+
         string ToString();
     }
 }

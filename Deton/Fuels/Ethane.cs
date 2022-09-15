@@ -2,6 +2,10 @@
 {
     internal class Ethane : IFuel
     {
+        public string Title => "Ethane";
+
+        public string Formula => "C2H6";
+
         public int CarbonAmount => 2;
 
         public int HydrogenAmount => 6;

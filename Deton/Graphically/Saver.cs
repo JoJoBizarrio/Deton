@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System;
+using Deton.Logic;
+
 
 namespace Deton.Graphically
 {
     internal class Saver 
     {
-        public static void Autosave(List<double[]> functionsPoints)
+        public static void Autosave(List<double[]> functionsPoints, Conditions detonationConditions)
         {
             string folderPath = Environment.CurrentDirectory + "\\Autosave";
 
@@ -43,6 +45,8 @@ namespace Deton.Graphically
 
             using StreamWriter streamWriter = new StreamWriter(txtPath);
             {
+                streamWriter.WriteLine(detonationConditions);
+
                 for (int j = 0; j < functionsPoints[j].Length; j++)
                 {
                     streamWriter.Write(valuesNames[j]);

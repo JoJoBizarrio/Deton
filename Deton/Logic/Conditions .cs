@@ -16,5 +16,10 @@ namespace Deton.Logic
             InitialMixture = initialMixture;
             FinalMixture = finalMixture;
         }
+
+        public override string ToString()
+        {
+            return $"{InitialMixture}  =>  {FinalMixture}"; 
+        }
     }
 }

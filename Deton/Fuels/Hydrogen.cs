@@ -8,6 +8,10 @@
 
         public double Enthalpy => 0.0;
 
+        public string Formula => "H2";
+
+        public string Title => "Hydrogen";
+
         public override string ToString()
         {
             return "H2 - Hydrogen";

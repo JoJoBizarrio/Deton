@@ -44,10 +44,10 @@ namespace Deton.Graphically
             FinalFuelComboBox3.SelectedIndex = 0;
 
             InitialFuel1MolValueTextBoxA.Text = "1";
-            FinalFuel1MolValueTextBoxA.Text = "1";
+            FinalFuel1MolValueTextBoxA.Text = "1,1";
 
             InitialOxygenMolValueTextBoxA.Text = "1";
-            FinalOxygenMolValueTextBoxA.Text = "2";
+            FinalOxygenMolValueTextBoxA.Text = "1";
 
             string autosavePath = Environment.CurrentDirectory + "\\Autosave";
 
@@ -82,13 +82,11 @@ namespace Deton.Graphically
 
             for (int i = 0; i < variantsCheckBoxes.Length; i++)
             {
-                if (variantsCheckBoxes[i].Checked)
+                if (variantsCheckBoxes[i].Checked && IsPossibleCalñulate(variantsCheckBoxes[i], conditionsList[i]))
                 {
-                    if (IsPossibleCalñulate(variantsCheckBoxes[i], conditionsList[i]))
-                    {
-                        DetonationFunctions.CalculateDetonationFunctions(conditionsList[i]);
-                        MessageBox.Show($"Done of variant {variantsCheckBoxes[i].Text}.", "Calculations completed");
-                    }
+                    DetonationFunctions.CalculateDetonationFunctions(conditionsList[i]);
+                    MessageBox.Show($"Done of variant {variantsCheckBoxes[i].Text}.", "Calculations completed");
+
                 }
             }
         }
@@ -181,6 +179,7 @@ namespace Deton.Graphically
                 warningMessage += "Incorrect entered value(s) of final mix.";
                 isPossibleCalculate = false;
             }
+            /*
             else if (conditions.InitialMixture.O2toEquimolarO2Value < 1.0 - Epsilon)
             {
                 warningMessage += "EqO2 < 1.0 in initial";
@@ -191,7 +190,7 @@ namespace Deton.Graphically
                 warningMessage += "EqO2 < 1.0 in final";
                 isPossibleCalculate = false;
             }
-
+            */
             if (!isPossibleCalculate)
             {
                 MessageBox.Show(warningMessage, "Warn: Initial parameters of variant " + variantCheckBox.Text);
