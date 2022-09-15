@@ -2,15 +2,9 @@ using Deton.Fuels;
 using Deton.Logic;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Windows.System;
-
+using System.Diagnostics;
 
 namespace Deton.Graphically
 {
@@ -35,19 +29,19 @@ namespace Deton.Graphically
                 FinalFuelComboBox3.Items.Add(e);
             }
 
-            InitialFuelComboBox1.SelectedIndex = 5;
+            InitialFuelComboBox1.SelectedIndex = 0;
             InitialFuelComboBox2.SelectedIndex = 0;
             InitialFuelComboBox3.SelectedIndex = 0;
 
-            FinalFuelComboBox1.SelectedIndex = 5;
+            FinalFuelComboBox1.SelectedIndex = 0;
             FinalFuelComboBox2.SelectedIndex = 0;
             FinalFuelComboBox3.SelectedIndex = 0;
 
-            InitialFuel1MolValueTextBoxA.Text = "1";
-            FinalFuel1MolValueTextBoxA.Text = "1,1";
+            InitialFuel1MolValueTextBoxA.Text = "0";
+            FinalFuel1MolValueTextBoxA.Text = "0";
 
-            InitialOxygenMolValueTextBoxA.Text = "1";
-            FinalOxygenMolValueTextBoxA.Text = "1";
+            InitialOxygenMolValueTextBoxA.Text = "0";
+            FinalOxygenMolValueTextBoxA.Text = "0";
 
             string autosavePath = Environment.CurrentDirectory + "\\Autosave";
 
@@ -98,19 +92,19 @@ namespace Deton.Graphically
                 new string[]
                 {
                     InitialFuel1MolValueTextBoxA.Text, InitialFuel2MolValueTextBoxA.Text, InitialFuel3MolValueTextBoxA.Text,
-                    InitialOxygenMolValueTextBoxA.Text, InitialAirMolValueTextBoxA.Text, InitialNitrogenMolValueTextBoxA.Text, InitialAirMolValueTextBoxA.Text
+                    InitialOxygenMolValueTextBoxA.Text, InitialAirMolValueTextBoxA.Text, InitialNitrogenMolValueTextBoxA.Text, InitialArgonMolValueTextBoxA.Text
                 },
 
                 new string[]
                 {
                     InitialFuel1MolValueTextBoxB.Text, InitialFuel2MolValueTextBoxB.Text, InitialFuel3MolValueTextBoxB.Text,
-                    InitialOxygenMolValueTextBoxB.Text, InitialAirMolValueTextBoxB.Text, InitialNitrogenMolValueTextBoxB.Text, InitialAirMolValueTextBoxB.Text,
+                    InitialOxygenMolValueTextBoxB.Text, InitialAirMolValueTextBoxB.Text, InitialNitrogenMolValueTextBoxB.Text, InitialArgonMolValueTextBoxB.Text,
                 },
 
                 new string[]
                 {
                     InitialFuel1MolValueTextBoxC.Text, InitialFuel2MolValueTextBoxC.Text, InitialFuel3MolValueTextBoxC.Text,
-                    InitialOxygenMolValueTextBoxC.Text, InitialAirMolValueTextBoxC.Text, InitialNitrogenMolValueTextBoxC.Text, InitialAirMolValueTextBoxC.Text,
+                    InitialOxygenMolValueTextBoxC.Text, InitialAirMolValueTextBoxC.Text, InitialNitrogenMolValueTextBoxC.Text, InitialArgonMolValueTextBoxC.Text,
                 },
 
             };
@@ -120,19 +114,19 @@ namespace Deton.Graphically
                  new string[]
                  {
                      FinalFuel1MolValueTextBoxA.Text, FinalFuel2MolValueTextBoxA.Text, FinalFuel3MolValueTextBoxA.Text,
-                     FinalOxygenMolValueTextBoxA.Text, FinalAirMolValueTextBoxA.Text, FinalNitrogenMolValueTextBoxA.Text, FinalAirMolValueTextBoxA.Text,
+                     FinalOxygenMolValueTextBoxA.Text, FinalAirMolValueTextBoxA.Text, FinalNitrogenMolValueTextBoxA.Text, FinalArgonMolValueTextBoxA.Text,
                  },
 
                  new string[]
                  {
                      FinalFuel1MolValueTextBoxB.Text, FinalFuel2MolValueTextBoxB.Text, FinalFuel3MolValueTextBoxB.Text,
-                     FinalOxygenMolValueTextBoxB.Text, FinalAirMolValueTextBoxB.Text, FinalNitrogenMolValueTextBoxB.Text, FinalAirMolValueTextBoxB.Text,
+                     FinalOxygenMolValueTextBoxB.Text, FinalAirMolValueTextBoxB.Text, FinalNitrogenMolValueTextBoxB.Text, FinalArgonMolValueTextBoxB.Text,
                  },
 
                  new string[]
                  {
                      FinalFuel1MolValueTextBoxC.Text, FinalFuel2MolValueTextBoxC.Text, FinalFuel3MolValueTextBoxC.Text,
-                     FinalOxygenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text, FinalNitrogenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text
+                     FinalOxygenMolValueTextBoxC.Text, FinalAirMolValueTextBoxC.Text, FinalNitrogenMolValueTextBoxC.Text, FinalArgonMolValueTextBoxC.Text
                  }
             };
 
@@ -179,18 +173,17 @@ namespace Deton.Graphically
                 warningMessage += "Incorrect entered value(s) of final mix.";
                 isPossibleCalculate = false;
             }
-            /*
-            else if (conditions.InitialMixture.O2toEquimolarO2Value < 1.0 - Epsilon)
+            else if (conditions.InitialMixture.O2toEquimolarO2Value < 1.0 + Epsilon)
             {
                 warningMessage += "EqO2 < 1.0 in initial";
                 isPossibleCalculate = false;
             }
-            else if (conditions.FinalMixture.O2toEquimolarO2Value < 1.0 - Epsilon)
+            else if (conditions.FinalMixture.O2toEquimolarO2Value < 1.0 + Epsilon)
             {
                 warningMessage += "EqO2 < 1.0 in final";
                 isPossibleCalculate = false;
             }
-            */
+
             if (!isPossibleCalculate)
             {
                 MessageBox.Show(warningMessage, "Warn: Initial parameters of variant " + variantCheckBox.Text);
@@ -259,9 +252,17 @@ namespace Deton.Graphically
             }
         }
 
-        private async void autosaveToolStripMenuItem_Click(object sender, EventArgs e)
+        //private async void autosaveToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    await Windows.System.Launcher.LaunchFolderPathAsync(Environment.CurrentDirectory + "\\Autosave");
+        //}
+
+        private void autosaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            await Launcher.LaunchFolderPathAsync(Environment.CurrentDirectory + "\\Autosave");
+            Process auvtosaveOpener = new Process();
+            auvtosaveOpener.StartInfo.FileName = "explorer";
+            auvtosaveOpener.StartInfo.Arguments = Environment.CurrentDirectory + "\\Autosave";
+            auvtosaveOpener.Start();
         }
     }
 }

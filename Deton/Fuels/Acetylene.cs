@@ -14,7 +14,7 @@
 
         public override string ToString()
         {
-            return "C2H2 - Acetylene ";
+            return "C2H2 - Acetylene";
         }
     }
 }

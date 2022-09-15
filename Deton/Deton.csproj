@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>disable</ImplicitUsings>
     <SignAssembly>False</SignAssembly>
+    <StartupObject>Deton.Graphically.DetonMain</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

@@ -10,7 +10,7 @@
 
         public int HydrogenAmount => 12;
 
-        public double Enthalpy => -173.33;
+        public double Enthalpy => -146.77;
 
         public override string ToString()
         {

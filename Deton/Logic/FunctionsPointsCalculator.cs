@@ -1,14 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using Deton.Fuels;
 
 namespace Deton.Logic
 {
@@ -390,12 +380,6 @@ namespace Deton.Logic
                     break;
                 }
 
-                //if (I1 > 600)
-                //{
-                //    avst = 1;
-                //    break;
-                //}
-
                 double KLI1 = LI1;
                 double KLI3 = LI3;
                 double FEQ1K = FEQ1;
@@ -411,16 +395,10 @@ namespace Deton.Logic
 
                 double D12 = (FEQ1 - FEQ1K) / DL;
                 double D22 = (FEQ2 - FEQ2K) / DL;
-                double DT = D11 * D22 - D12 * D21;
-
-                //if (DT == 0)
-                //{
-                //    break;
-                //}
+                double DT = D11 * D22 - D12 * D21; // место где DT обращается в ноль и значения О/С < 1 больше не считает. в дальнейшем D1 и D3 обраттятся в NaN
 
                 double D1 = (FEQ2K * D12 - FEQ1K * D22) / DT;
                 double D3 = (FEQ1K * D21 - FEQ2K * D11) / DT;
-
 
                 double AD = Math.Abs(D1) + Math.Abs(D3);
 
@@ -432,8 +410,6 @@ namespace Deton.Logic
 
                 LI1 = KLI1 + D1;
                 LI3 = KLI3 + D3;
-
-                // if BreakFlag then exit;
             }
 
             ENT = 0;
@@ -504,26 +480,17 @@ namespace Deton.Logic
             P *= 1.01;
             EN();
 
-            // if (avst != 0) then exit;
-            // if BreakFlag then exit;
-
             double ENTP1 = ENT;
             double ROP1 = RO;
 
             P = PK * 0.99;
             EN();
 
-            // if (avst != 0) then exit;
-            // if BreakFlag then exit;
-
             double ENTP = ENT;
             double ROP = RO;
             P = PK;
             T *= 1.01;
             EN();
-
-            // if (avst != 0) then exit;
-            // if BreakFlag then exit;
 
             double ENTT1 = ENT;
             double ROT1 = RO;
@@ -535,9 +502,6 @@ namespace Deton.Logic
             T = TK;
             EN();
 
-            // if (avst != 0) then exit;
-            // if BreakFlag then exit;
-
             double ENTRO = (ENTT1 - ENTT) / (ROT1 - ROT);
             ENTP = (ENTP1 - ENTP - ENTRO * (ROP1 - ROP)) / (0.02 * P * 101325);
             double CE2 = RO * ENTRO / (1.0 - RO * ENTP);
@@ -548,9 +512,6 @@ namespace Deton.Logic
         private void FUCE()
         {
             EQI();
-
-            // if (avst != 0) then exit;
-            // if BreakFlag then exit;
 
             D = RO * CE / RO0;
             FUCE1 = (1 + GE) / (P0 * ATM + RO0 * D * D) * P * ATM - 1;
@@ -574,9 +535,6 @@ namespace Deton.Logic
                 P = P * (1.0 + ED);
                 FUCE();
 
-                // if (avst != 0) then exit;
-                // if BreakFlag then exit;
-
                 double F1P = FUCE1;
                 double F2P = FUCE2;
 
@@ -584,19 +542,12 @@ namespace Deton.Logic
                 T = T * (1.0 + ED);
                 FUCE();
 
-                // if (avst != 0) then exit;
-                // if BreakFlag then exit;
-
                 double F1T = FUCE1;
                 double F2T = FUCE2;
                 T = TK;
                 FUCE();
 
-                // if BreakFlag then exit;
-
                 double S = RO / RO0;
-
-                // if (avst != 0) then exit;
 
                 if (Math.Abs(FUCE1) + Math.Abs(FUCE2) < 0.3E-5)
                 {
@@ -680,10 +631,8 @@ namespace Deton.Logic
             double ENT6 = BENT[5] * 1000.0 / Calor;
 
             ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
-            ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (0.78116 * II[8] + II[7]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
+            ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (II[7] + 0.78116 * II[8]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
             UCE();
-
-            // if BreakFlag then exit;
 
             UCJ = D - CE;
         }
@@ -769,9 +718,6 @@ namespace Deton.Logic
             }
 
             Detonation();
-
-            // if (avst != 0) then exit;
-            // if BreakFlag then exit;
 
             functionsPoints[0] = D; // { DX}
             functionsPoints[1] = T; // { TCJ}

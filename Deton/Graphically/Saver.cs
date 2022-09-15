@@ -3,7 +3,6 @@ using System.IO;
 using System;
 using Deton.Logic;
 
-
 namespace Deton.Graphically
 {
     internal class Saver 
@@ -66,7 +65,7 @@ namespace Deton.Graphically
 
             if (File.Exists(txtPath))
             {
-                File.Move(txtPath, txtPath.Replace(txtFormat, csvFormat));
+                    File.Move(txtPath, txtPath.Replace(txtFormat, csvFormat), true);
             }
         }
     }

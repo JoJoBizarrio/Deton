@@ -18,8 +18,6 @@
 
         public double Enthalpy => 0;
 
-
-
         public override string ToString()
         {
             return "Not selected";

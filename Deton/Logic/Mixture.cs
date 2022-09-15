@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using Deton.Fuels;
-using System.Globalization;
 
 namespace Deton.Logic
 {
@@ -85,7 +82,7 @@ namespace Deton.Logic
         }
 
         public Mixture(IFuel fuel1, IFuel fuel2, IFuel fuel3, double fuel1MolValue, double fuel2MolValue, double fuel3MolValue,
-                       double oxygenMolValue, double airMolValue, double nitrogenMolValue = 0, double argonMolValue = 0)
+                       double oxygenMolValue, double airMolValue, double nitrogenMolValue, double argonMolValue)
         {
             Fuel1 = fuel1;
             Fuel2 = fuel2;
@@ -127,57 +124,58 @@ namespace Deton.Logic
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
+            string plus = " + ";
 
-            if (Fuel1.GetType() != new NotSelected().GetType())
+            if (Fuel1.GetType() != new NotSelected().GetType() || Fuel1MolValue != 0)
             {
                 stringBuilder.Append(Fuel1MolValue.ToString("F2"));
                 stringBuilder.Append(Fuel1.Formula);
-                stringBuilder.Append(" + ");
+                stringBuilder.Append(plus);
             }
 
-            if (Fuel2.GetType() != new NotSelected().GetType())
+            if (Fuel2.GetType() != new NotSelected().GetType() || Fuel2MolValue != 0)
             {
                 stringBuilder.Append(Fuel2MolValue.ToString("F2"));
                 stringBuilder.Append(Fuel2.Formula);
-                stringBuilder.Append(" + ");
+                stringBuilder.Append(plus);
             }
 
-            if (Fuel3.GetType() != new NotSelected().GetType())
+            if (Fuel3.GetType() != new NotSelected().GetType() || Fuel3MolValue != 0)
             {
                 stringBuilder.Append(Fuel3MolValue.ToString("F2"));
                 stringBuilder.Append(Fuel3.Formula);
-                stringBuilder.Append(" + ");
+                stringBuilder.Append(plus);
             }
 
             if (OxygenMolValue != 0)
             {
                 stringBuilder.Append(OxygenMolValue.ToString("F2"));
                 stringBuilder.Append("O2");
-                stringBuilder.Append(" + ");
+                stringBuilder.Append(plus);
             }
 
             if (AirMolValue != 0)
             {
                 stringBuilder.Append(AirMolValue.ToString("F2"));
                 stringBuilder.Append("Air");
-                stringBuilder.Append(" + ");
+                stringBuilder.Append(plus);
             }
 
             if (NitrogenMolValue != 0)
             {
                 stringBuilder.Append(NitrogenMolValue.ToString("F2"));
                 stringBuilder.Append("N2");
-                stringBuilder.Append(" + ");
+                stringBuilder.Append(plus);
             }
 
             if (ArgonMolValue != 0)
             {
                 stringBuilder.Append(ArgonMolValue.ToString("F2"));
                 stringBuilder.Append("Ar");
-                stringBuilder.Append(" + ");
+                stringBuilder.Append(plus);
             }
 
-            stringBuilder.Remove(stringBuilder.Length - " + ".Length, " + ".Length);
+            stringBuilder.Remove(stringBuilder.Length - plus.Length, plus.Length);
 
             return stringBuilder.ToString();
         }
