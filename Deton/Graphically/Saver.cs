@@ -34,7 +34,7 @@ namespace Deton.Graphically
             string txtFormat = ".txt";
             string txtPath = csvPath.Remove(csvPath.Length - csvFormat.Length) + txtFormat;
 
-            string[] valuesNames = new string[] 
+            string[] valuesTitles = new string[] 
             {
                 "1 - Detonation velocity (D), m/s", "2 - Tempreture (T), K", "3 - Pressure (P), atm", "4 - Density (R0), kg/m^3", 
                 "5 - Mass velocity (U), m/s", "6 - Molecular mass (W), g/mol", "7 - Kinetic head (Ro*U^2/2), atm", 
@@ -48,7 +48,7 @@ namespace Deton.Graphically
 
                 for (int j = 0; j < functionsPoints[j].Length; j++)
                 {
-                    streamWriter.Write(valuesNames[j]);
+                    streamWriter.Write(valuesTitles[j]);
                     streamWriter.Write(";");
 
                     for (int k = 0; k < functionsPoints.Count; k++)

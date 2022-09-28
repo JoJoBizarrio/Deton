@@ -2,9 +2,9 @@
 {
     internal class Conditions
     {
-        public Mixture InitialMixture { get; set; }
+        public Mixture InitialMixture { get; }
 
-        public Mixture FinalMixture { get; set; }
+        public Mixture FinalMixture { get; }
 
         public Conditions(Mixture initialMixture, Mixture finalMixture)
         {
@@ -14,7 +14,7 @@
 
         public override string ToString()
         {
-            return $"{InitialMixture}  =>  {FinalMixture}"; 
+            return $"{InitialMixture}  =>  {FinalMixture}";
         }
     }
 }

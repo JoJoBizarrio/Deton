@@ -143,7 +143,7 @@ namespace Deton.Graphically
             return conditionsList;
         }
 
-        private Mixture GetParsedMixture(IFuel[] fuels, string[] compoundsMolsStringsArray)
+        static private Mixture GetParsedMixture(IFuel[] fuels, string[] compoundsMolsStringsArray)
         {
             double[] compoundsMolsValuesArray = new double[compoundsMolsStringsArray.Length];
 
@@ -165,22 +165,22 @@ namespace Deton.Graphically
 
             if (conditions.InitialMixture == null)
             {
-                warningMessage += "Incorrect entered value(s) of initial mix.";
+                warningMessage += "Incorrect entered value(s) of initial mixture.";
                 isPossibleCalculate = false;
             }
             else if (conditions.FinalMixture == null)
             {
-                warningMessage += "Incorrect entered value(s) of final mix.";
+                warningMessage += "Incorrect entered value(s) of final mixture.";
                 isPossibleCalculate = false;
             }
             else if (conditions.InitialMixture.O2toEquimolarO2Value < 1.0 + Epsilon)
             {
-                warningMessage += "EqO2 < 1.0 in initial";
+                warningMessage += "Surplace of oxigen less 1.0 of initial mixture.";
                 isPossibleCalculate = false;
             }
             else if (conditions.FinalMixture.O2toEquimolarO2Value < 1.0 + Epsilon)
             {
-                warningMessage += "EqO2 < 1.0 in final";
+                warningMessage += "Surplace of oxigen less 1.0 of final mixture.";
                 isPossibleCalculate = false;
             }
 
@@ -247,8 +247,8 @@ namespace Deton.Graphically
             }
             else
             {
-                O2toEquimolarO2Value.Text = "Îøèáêà";
-                O2toStoichiometricO2Value.Text = "Îøèáêà";
+                O2toEquimolarO2Value.Text = "fault";
+                O2toStoichiometricO2Value.Text = "fault";
             }
         }
 
