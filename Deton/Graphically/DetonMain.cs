@@ -13,7 +13,7 @@ namespace Deton.Graphically
         [STAThread]
         static void Main()
         {
-            //ApplicationConfiguration.Initialize();
+            ApplicationConfiguration.Initialize();
 
             IFuel[] fuels = new IFuel[] 
             { 
