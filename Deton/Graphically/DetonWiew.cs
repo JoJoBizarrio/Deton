@@ -78,9 +78,19 @@ namespace Deton.Graphically
             {
                 if (variantsCheckBoxes[i].Checked && IsPossibleCalñulate(variantsCheckBoxes[i], conditionsList[i]))
                 {
+                    if (conditionsList[i].InitialMixture.Fuel1MolValue < Epsilon && conditionsList[i].InitialMixture.Fuel2MolValue < Epsilon &&
+                        conditionsList[i].InitialMixture.Fuel3MolValue < Epsilon && conditionsList[i].FinalMixture.Fuel1MolValue < Epsilon &&
+                        conditionsList[i].FinalMixture.Fuel2MolValue < Epsilon && conditionsList[i].FinalMixture.Fuel3MolValue < Epsilon &&
+                        conditionsList[i].InitialMixture.AirMolValue < Epsilon && conditionsList[i].InitialMixture.OxygenMolValue < Epsilon &&
+                        conditionsList[i].InitialMixture.ArgonMolValue < Epsilon && conditionsList[i].InitialMixture.NitrogenMolValue < Epsilon &&
+                        conditionsList[i].FinalMixture.AirMolValue < Epsilon && conditionsList[i].FinalMixture.OxygenMolValue < Epsilon &&
+                        conditionsList[i].FinalMixture.ArgonMolValue < Epsilon && conditionsList[i].FinalMixture.NitrogenMolValue < Epsilon)
+                    {
+                        continue;
+                    }
+
                     DetonationFunctions.CalculateDetonationFunctions(conditionsList[i]);
                     MessageBox.Show($"Done of variant {variantsCheckBoxes[i].Text}.", "Calculations completed");
-
                 }
             }
         }
