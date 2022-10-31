@@ -5,10 +5,10 @@ namespace Deton.Logic
     internal class FunctionsPointsCalculator
     {
         // {EXIT}
-        double D; //GAMA1, MU0, MUMIN, MUMAX, E, KPA;
+        double D; 
 
         // {TPR}
-        double T, P, RO, MU, MUA, CE, CF, LI1, LI3, ENT; //, R  //
+        double T, P, RO, MU, MUA, CE, CF, LI1, LI3, ENT; 
         double[] RIA = new double[5];
 
         // {ENTO} 
@@ -46,9 +46,8 @@ namespace Deton.Logic
         double[] II = new double[9];
 
         // {param}
-        double UCJ, FORCE, DX, TCJ, PCJ, ROCJ, MUCJ;
+        double UCJ;
         double[] RI = new double[11];
-        double[] RIRI = new double[10];
 
         private void SetHK()
         {

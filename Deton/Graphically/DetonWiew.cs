@@ -147,7 +147,8 @@ namespace Deton.Graphically
 
             for (int i = 0; i < 3; i++)
             {
-                conditionsList[i] = new Conditions(GetParsedMixture(initialFuels, variantsInitialValuesStringsArrayList[i]), GetParsedMixture(finalFuels, variantsFinalValuesStringsArrayList[i]));
+                conditionsList[i] = new Conditions(GetParsedMixture(initialFuels, variantsInitialValuesStringsArrayList[i]),
+                                                   GetParsedMixture(finalFuels, variantsFinalValuesStringsArrayList[i]));
             }
 
             return conditionsList;
