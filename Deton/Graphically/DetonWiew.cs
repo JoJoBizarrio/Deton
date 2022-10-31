@@ -1,5 +1,6 @@
 using Deton.Fuels;
 using Deton.Logic;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -116,7 +117,6 @@ namespace Deton.Graphically
                     InitialFuel1MolValueTextBoxC.Text, InitialFuel2MolValueTextBoxC.Text, InitialFuel3MolValueTextBoxC.Text,
                     InitialOxygenMolValueTextBoxC.Text, InitialAirMolValueTextBoxC.Text, InitialNitrogenMolValueTextBoxC.Text, InitialArgonMolValueTextBoxC.Text,
                 },
-
             };
 
             List<string[]> variantsFinalValuesStringsArrayList = new List<string[]>

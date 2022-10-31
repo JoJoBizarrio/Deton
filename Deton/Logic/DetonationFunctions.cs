@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using Deton.Graphically;
 
 namespace Deton.Logic
@@ -7,8 +8,6 @@ namespace Deton.Logic
     {
         public static void CalculateDetonationFunctions(Conditions conditions, int pointsAmount = 20)
         {
-           
-
             FunctionsPointsCalculator functionsPointsCalculator = new FunctionsPointsCalculator();
 
             List<double[]> detonationFunctions = new List<double[]>(pointsAmount + 1);
