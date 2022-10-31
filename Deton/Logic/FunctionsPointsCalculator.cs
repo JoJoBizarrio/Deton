@@ -4,14 +4,14 @@ namespace Deton.Logic
 {
     internal class FunctionsPointsCalculator
     {
-        // {EXIT}
-        double D; 
+        // EXIT
+        double D;
 
-        // {TPR}
-        double T, P, RO, MU, MUA, CE, CF, LI1, LI3, ENT; 
+        // TPR
+        double T, P, RO, MU, MUA, CE, CF, LI1, LI3, ENT;
         double[] RIA = new double[5];
 
-        // {ENTO} 
+        // ENTO
         double RO0, ENT0; // P0, ATM,  CALOR
 
         const double P0 = 1.0;
@@ -19,33 +19,33 @@ namespace Deton.Logic
         const double ATM = 101325.0;
         const double Calor = 4.1868;
 
-        // {LKP} 
+        // LKP
         double[] LKP = new double[10];
 
-        // {FEQ} 
+        // FEQ
         double FEQ1, FEQ2;
 
-        // {HK}
+        // HK
         double[,] H = new double[19, 12];
         double[,] K = new double[19, 12];
-        // {GF} 
+
+        // GF
         double GF;
 
-        // {G}
+        // G
         double GE;
 
-        // {FUC}
+        // FUC
         double FUCE1, FUCE2;
         byte avst;
 
-        // {ENTR}
-
+        // ENTR
         double[] CA = new double[6];
         double[] HA = new double[6];
         double[] BENT = new double[6];
         double[] II = new double[9];
 
-        // {param}
+        // param
         double UCJ;
         double[] RI = new double[11];
 
@@ -368,7 +368,6 @@ namespace Deton.Logic
 
             double DL = 1.0E-3;
             LKPI(T);
-            //int I1 = 0;
 
             for (int i = 0; i <= 600; i++)
             {
@@ -718,13 +717,13 @@ namespace Deton.Logic
 
             Detonation();
 
-            functionsPoints[0] = D; // { DX}
-            functionsPoints[1] = T; // { TCJ}
-            functionsPoints[2] = P; // { PCJ}
-            functionsPoints[3] = RO; //  { ROCJ}
-            functionsPoints[4] = D - CE; // { UCJ}
-            functionsPoints[5] = MU; // { MUCJ}
-            functionsPoints[6] = RO * UCJ * UCJ / 2.0 / ATM; //  { FORCE}
+            functionsPoints[0] = D;
+            functionsPoints[1] = T;
+            functionsPoints[2] = P;
+            functionsPoints[3] = RO;
+            functionsPoints[4] = D - CE;
+            functionsPoints[5] = MU;
+            functionsPoints[6] = RO * UCJ * UCJ / 2.0 / ATM; // FORCE
 
             for (int i = 0; i <= 10; i++)
             {
