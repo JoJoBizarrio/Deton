@@ -629,7 +629,8 @@ namespace Deton.Logic
             double ENT6 = BENT[5] * 1000.0 / Calor;
 
             ENT0 = ENT1 * II[0] + ENT2 * II[1] + ENT3 * II[2] + ENT4 * II[3] + ENT5 * II[4] + ENT6 * II[5];
-            ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (II[7] + 0.78116 * II[8]) + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
+            ENT0 = (ENT0 + ENT7 * (II[6] + 0.20954 * II[8]) + ENT8 * (II[7] + 0.78116 * II[8]) 
+                   + ENT10 * (II[9] + 0.0093 * II[8])) / Weit * Calor * 1000;
             UCE();
 
             UCJ = D - CE;
