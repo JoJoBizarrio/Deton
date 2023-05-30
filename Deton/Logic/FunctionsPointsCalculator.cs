@@ -596,7 +596,7 @@ namespace Deton.Logic
             double Weit6 = (12.011 * CA[5] + 1.008 * HA[5]) * II[5];
             double Weit = Weit1 + Weit2 + Weit3 + Weit4 + Weit5 + Weit6;
 
-            Weit += 32.0 * II[6] + 28.016 * II[7] + 40.0 * II[9] + Wair * II[8];  // 6 - кислород, 7 - азот, 9 - аргон, 8 - воздух
+            Weit += 32.0 * II[6] + 28.016 * II[7] + 4.0 * II[9] + Wair * II[8];  // 6 - кислород, 7 - азот, 9 - аргон, 8 - воздух
             double All = II[0] + II[1] + II[2] + II[3] + II[4] + II[5] + II[6] + II[7] + II[8] + II[9];
             double MU0 = Weit / All;
 
